@@ -5,9 +5,22 @@ const { marked } = require('marked');
 
 const root = path.resolve(__dirname, '..');
 const sources = [
-  '양식/개발계획서.md',
+  '기준/양식/개발계획서.md',
   ...[1, 2, 3, 4, 5].map(n => `관제시스템 과제 진행/과제${n}/과제계획.md`),
 ];
+const outputFor = source => path.join(root, '보기본', source.startsWith('기준/')
+  ? '개발계획서.html'
+  : path.basename(path.dirname(source)) + '_과제계획.html');
+// Resolve body links from the Markdown's directory, then rebase to the view.
+function rebaseHref(href, input, output) {
+  if (!href || /^(?:#|[a-z][a-z\d+.-]*:|\/\/|\/)/i.test(href)) return href;
+  const split = href.search(/[?#]/);
+  const file = split < 0 ? href : href.slice(0, split);
+  const suffix = split < 0 ? '' : href.slice(split);
+  const target = path.resolve(path.dirname(input), decodeURIComponent(file));
+  const relative = url(path.relative(path.dirname(output), target));
+  return relative + (file.endsWith('/') && !relative.endsWith('/') ? '/' : '') + suffix;
+}
 const headings = ['문서 개요', '배경과 목적', '용어 설명', '기능 범위', '사용할 기술', '개발 로드맵', '완료 기준', '참고 사항·제약'];
 const esc = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const url = value => value.split(path.sep).map(encodeURIComponent).join('/');
@@ -77,24 +90,27 @@ for (const { source, input, markdown } of documents) {
     throw new Error(`8개 절을 확인하세요: ${source}`);
   }
   const meta = key => markdown.match(new RegExp(`^\\| ${key} \\| (.+?) \\|$`, 'm'))?.[1] ?? '미정';
-  const output = input.replace(/\.md$/, '.html');
+  const output = outputFor(source);
   const toc = headings.map((h, i) => `<li><a href="#s${i + 1}">${esc(h)}</a></li>`).join('');
   const body = parts.map((m, i) => {
     let html = marked.parse(m[3], { gfm: true });
+    html = html.replace(/\b(href|src)="([^"]*)"/g,
+      (_, attribute, href) => attribute + '="' + rebaseHref(href, input, output) + '"');
     html = html.replace(/<table>([\s\S]*?)<\/table>/g, '<div class="table-wrap"><table>$1</table></div>');
     html = html.replace(/<blockquote>\s*<p>단계 흐름: ([\s\S]*?)<\/p>\s*<\/blockquote>/g,
       (_, line) => `<ol class="timeline" aria-label="개발 단계">${line.split('→').map(label => `<li>${label.trim()}</li>`).join('')}</ol>`);
     return `<section id="s${i + 1}"><h2><span class="num">${i + 1}</span>${esc(headings[i])}</h2>${html}</section>`;
   }).join('\n');
   const toolbar = sources.map((s, i) => {
-    const target = path.join(root, s.replace(/\.md$/, '.html'));
+    const target = outputFor(s);
     const label = i === 0 ? '빈 양식' : `과제${i}`;
     return target === output ? `<strong>${label}</strong>` : `<a href="${url(path.relative(path.dirname(output), target))}">${label}</a>`;
   }).join('');
   const html = `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><style>${css}</style></head>
 <body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>${esc(title)}</h1><div class="meta"><div><span>문서</span>${esc(meta('버전'))} · 수정 ${esc(meta('수정일'))}</div><div><span>계획 검토</span>${esc(meta('계획 검토 상태'))}</div><div><span>개발 / 실행 검증</span>${esc(meta('개발 상태'))} / ${esc(meta('실행 검증 상태'))}</div></div></div></header>
-<main class="wrap"><nav class="toolbar" aria-label="계획서 이동">${toolbar}<a href="${url(path.basename(input))}">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol>${toc}</ol></nav>${body}<footer>가상 AMR 관제 시스템 · 개발계획 공통 양식 · 8개 절</footer></main></body></html>\n`;
+<main class="wrap"><nav class="toolbar" aria-label="계획서 이동">${toolbar}<a href="${url(path.relative(path.dirname(output), input))}">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol>${toc}</ol></nav>${body}<footer>가상 AMR 관제 시스템 · 개발계획 공통 양식 · 8개 절</footer></main></body></html>\n`;
+  fs.mkdirSync(path.dirname(output), { recursive: true });
   fs.writeFileSync(output, html, 'utf8');
   console.log(path.relative(root, output));
 }
