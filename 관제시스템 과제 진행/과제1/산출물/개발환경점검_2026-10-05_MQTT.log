@@ -1,0 +1,11 @@
+Captured from the actual console stdout on 2026-10-05 (Asia/Seoul).
+Command: dotnet C:\practice\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll --host 127.0.0.1 --port 1883 --heartbeat --duration-seconds 5
+Exit code: 0
+{"Event":"Configuration","Host":"127.0.0.1","Port":1883,"ClientId":"amr-control-b56276cb847d4147a645e87338b511a3","KeepAliveSeconds":5,"TimeoutSeconds":3,"Authentication":"anonymous"}
+{"State":"Connecting","Reason":"ConnectRequested","TimestampUnixMilliseconds":1791195767542,"Error":null}
+{"State":"Connected","Reason":"Connected","TimestampUnixMilliseconds":1791195767832,"Error":null}
+Subscribed: amr/+/heartbeat
+{"State":"Disconnecting","Reason":"DisconnectRequested","TimestampUnixMilliseconds":1791195772840,"Error":null}
+{"State":"Disconnected","Reason":"DisconnectCompleted","TimestampUnixMilliseconds":1791195772863,"Error":null}
+{"State":"Disconnected","Reason":"DisconnectRequested","TimestampUnixMilliseconds":1791195772864,"Error":null}
+{"State":"Disposed","Reason":"Disposed","TimestampUnixMilliseconds":1791195772864,"Error":null}
