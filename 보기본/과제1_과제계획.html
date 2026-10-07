@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.9 초안 · 수정 2026-10-06</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — 기존 추적기의 COM-01~04 passing, COM-05 not_started; COM-06 후속 / 기존 S024 등의 통과 근거 연결. 이번 작업은 문서 대조이며 제품 재시험 미실행; 과제 전체 검증 미완료</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.14 초안 · 수정 2026-10-07</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — 기존 C:\practice의 COM-01~04 passing 기록 보존. 새 실습 저장소의 준비 Issue #2 완료·PR #3 병합, COM-01~06 구현 미착수 / 기존 S024와 새 준비 작업의 실행 근거 연결. 새 실습 COM-01~06은 미검증; 이번 초안 작성에서는 제품 재시험 미실행, 과제 전체 검증 미완료</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><strong>과제1</strong><a href="%EA%B3%BC%EC%A0%9C2_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제2</a><a href="%EA%B3%BC%EC%A0%9C3_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제3</a><a href="%EA%B3%BC%EC%A0%9C4_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제4</a><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -52,11 +52,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>수정일</td>
-<td>2026-10-06</td>
+<td>2026-10-07</td>
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.9 초안</td>
+<td>v0.14 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -76,11 +76,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>개발 상태</td>
-<td>진행 중 — 기존 추적기의 COM-01~04 passing, COM-05 not_started; COM-06 후속</td>
+<td>진행 중 — 기존 C:\practice의 COM-01<del>04 passing 기록 보존. 새 실습 저장소의 준비 Issue #2 완료·PR #3 병합, COM-01</del>06 구현 미착수</td>
 </tr>
 <tr>
 <td>실행 검증 상태</td>
-<td>기존 S024 등의 통과 근거 연결. 이번 작업은 문서 대조이며 제품 재시험 미실행; 과제 전체 검증 미완료</td>
+<td>기존 S024와 새 준비 작업의 실행 근거 연결. 새 실습 COM-01~06은 미검증; 이번 초안 작성에서는 제품 재시험 미실행, 과제 전체 검증 미완료</td>
 </tr>
 <tr>
 <td>개발 시작 예정일</td>
@@ -128,11 +128,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>이번 작업</td>
-<td>기존 채택 계약·검증 기록에 맞춰 과제1 명세·예제·실행 안내·진도와 후속 개발 기준 정리</td>
+<td>사용자의 범위 보완 요청에 따라 신입 1인 개발용 COM-01~06 전체 16개 작업안 작성</td>
 </tr>
 <tr>
 <td>이번 작업 준비</td>
-<td>수신 v3·Command v1·DN-10과 연결. HB-01~06은 필요 시 선택할 회귀 절차로 보존; 새 구현 작업은 착수 시 구체화</td>
+<td><a href="#solo-task1">과제1 전체 분할안</a>·<a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">Issue 목록</a>. 기존 #4·#5·#6 활용 + 새 13개 초안 사용자 검토 대기·미게시. 기존 COM-03 11개 문서는 학습 단계로 보존. 제품 구현·시험 미실행</td>
 </tr>
 <tr>
 <td>실제 진행 기록</td>
@@ -140,6 +140,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </tbody></table></div>
 <p>이 계획은 프로젝트의 과제1을 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 2026-10-05의 기존 코드 확인 기록을 보존하고, 2026-10-06에는 <code>C:\practice</code> HEAD <code>47ee27b</code>의 채택 계약·추적기·실행 안내·기존 증거와 대조했다. 기존 통과 기능을 처음부터 다시 구현하는 계획으로 사용하지 않는다. 원문 요구인 COM-06을 포함한 최종 범위와 기존 MVP 개발 순서를 구분한다.</p>
+<p>사용자는 별도 저장소 <code>inhhlee/amr-control-system-demo</code>에서 직접 구현·시험·Issue·PR 절차를 실습하기로 했다. 현재 계획 범위는 COM-01~06 전체이며 첫 구현은 COM-03의 정상 접속·종료다. 기존 <code>C:\practice</code>의 구현·통과 기록을 새 실습의 완료 근거로 가져오지 않는다. 명세·계획 원본은 <code>C:\process-plan</code>이고 코드·상세 실행 증거는 <code>C:\amr-control-system-demo</code>에서 관리한다.</p>
 </section>
 <section id="s2"><h2><span class="num">2</span>배경과 목적</h2><p>Docker 기반 Mosquitto를 통해 가상 AMR과 관제 사이의 MQTT 통신 계층을 구성하고, 콘솔에서 송수신·연결 끊김·재접속 및 메시지 검증 결과를 확인한다.</p>
 </section>
@@ -371,12 +372,12 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tbody></table></div>
 <p><a id="com01-work"></a></p>
 <h3>이번 구현 작업 단위</h3>
-<p><strong>이번 작업은 기준 문서 정합성 보완이며 제품 구현·시험은 수행하지 않는다.</strong> 다음 구현은 기존 MVP 순서에서 작업 하나를 구체화한다. 아래 기존 Heartbeat 대상 파일과 HB-01~06은 계약·코드·환경 변경 또는 증거 부족으로 회귀가 필요할 때 선택하는 절차다. 현재 <code>passing</code>을 문서 정정만으로 취소하거나 HB 시험을 무조건 반복하지 않는다.</p>
+<p><strong>현재 계획 범위는 <a href="#solo-task1">새 저장소의 COM-01~06 전체</a>이며 첫 작업은 기존 Issue #4다.</strong> 앞선 요청에서 #4·#5·#6을 게시했고 이번에는 새 13개 초안을 작성했다. 아래 새 실습 모듈은 <code>C:\amr-control-system-demo</code> 기준이며 제품 소스는 생성 예정이다. <code>C:\practice</code> 링크가 붙은 행과 기존 작업 순서는 2026-10-06의 기준 정리·조건부 회귀 자료로 보존한다. 기존 <code>passing</code>을 취소하거나 HB 시험을 무조건 반복하지 않는다.</p>
 <ul>
 <li>기능: 기준 정합성은 COM-01~06, 아래 조건부 회귀는 COM-01의 Heartbeat와 COM-04 검사 경계</li>
 <li>적용 계약: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B3%B5%ED%86%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%85%EC%84%B8.md#heartbeat-contract">COM-01-Heartbeat-v0.2</a>, 수신 계약 v3의 기존 개발용 기준을 문서에 반영</li>
 <li>선행 결정: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B2%80%ED%86%A0%20%EB%B0%8F%20%EA%B2%B0%EC%A0%95%EC%82%AC%ED%95%AD.md#com01-readiness">D-03·D-04 및 미정 사항 영향</a></li>
-<li>코드 기준 위치: <code>C:\practice</code>. 착수 때 Git 변경·추적기·현재 revision의 증거를 확인한다. 2026-10-06 대조 HEAD는 <code>47ee27b</code>; 기준선 실행 결과는 기존 S024 등과 구분한다.</li>
+<li>기존 HB 조건부 회귀의 코드 기준 위치: <code>C:\practice</code>. 선택할 때 Git 변경·추적기·현재 revision의 증거를 확인한다. 2026-10-06 대조 HEAD는 <code>47ee27b</code>; 기준선 실행 결과는 기존 S024 등과 구분한다. 새 COM-01~06 실습은 <code>C:\amr-control-system-demo</code>에서 진행한다.</li>
 <li>아래 HB 회귀의 제외 범위: Telemetry·Alarm·Command/ACK, AMR별 큐·부하, 개별 AMR Timeout 판정, 자동 재접속·재구독, 실제 Core·GUI·DB 통합. 기존 구현은 유지하며 각 기능의 전체 시험에서 확인한다.</li>
 </ul>
 <div class="table-wrap"><table>
@@ -390,6 +391,69 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </thead>
 <tbody><tr>
+<td>COM-03 / COM03-A</td>
+<td>C:\amr-control-system-demo의 기존 통신 라이브러리·콘솔·시험 프로젝트, 새 <code>src/Amr.Communication/Mqtt/</code></td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/02_COM-03_%EC%A0%91%EC%86%8D%EA%B3%BC_%EC%A0%95%EC%83%81%EC%A2%85%EB%A3%8C.md">접속과 정상 종료</a>: 접속 설정·실제 연결·Ctrl+C 정리·정상 수명주기 시험</td>
+<td>준비 #2·PR #3 반영 확인; 개발용 설정은 초안 검토 후 적용</td>
+<td>실제 프로젝트 전용 Broker 접속 승인 뒤 Connected, Ctrl+C 종료 0, 새 실행의 고유 ID로 재접속</td>
+</tr>
+<tr>
+<td>COM-03 / COM03-B</td>
+<td>새 실습 COM03-A의 연결 코드·콘솔·시험</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/03_COM-03_%EC%A0%91%EC%86%8D%EC%8B%A4%ED%8C%A8_%EC%B2%98%EB%A6%AC.md">접속 실패 처리</a>: 입력 오류·최초 실패·대기 제한·사용자 취소</td>
+<td>COM03-A의 PR 반영; 접속 대기와 KeepAlive 감지 구분</td>
+<td>잘못된 입력 거부, 실패·대기 제한은 비정상 종료, 사용자 취소는 정리 후 종료 0, Connected 오표시 없음</td>
+</tr>
+<tr>
+<td>COM-03 / COM03-C</td>
+<td>새 실습 선행 연결 코드·시험, 필요한 최소 격리 시험 도구·README</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/04_COM-03_%EC%97%B0%EA%B2%B0%EC%9C%A0%EC%A7%80%EC%99%80_%EB%81%8A%EA%B9%80%EA%B0%90%EC%A7%80.md">연결 유지와 끊김 감지</a>: 상태 변화·중복 통지·종료 경합 및 실제 MQTT 관찰</td>
+<td>COM03-B 반영; 격리 Broker·무응답 조건·라이브러리 기준 관찰 범위 준비</td>
+<td>무메시지 KeepAlive 유지, Broker 종료·무응답 감지, 중복 통지 구분, 새 실행 복구와 A~C 근거 정리</td>
+</tr>
+<tr>
+<td>COM-01 / COM01-A·B·C</td>
+<td>새 실습 <code>src/Amr.Communication/Mqtt/</code>의 구독·분기·AMR별 큐와 기존 콘솔·시험 프로젝트</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/16_COM-01_Heartbeat_%EC%88%98%EC%8B%A0.md">첫 Heartbeat</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/19_COM-01_%EB%8B%A4%EC%A4%91AMR_%EC%9C%A0%ED%98%95%EB%B3%84%EC%A0%84%EB%8B%AC.md">네 유형/다중 AMR</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/20_COM-01_AMR%EB%B3%84_%EC%88%98%EC%8B%A0%ED%81%90.md">수신 큐</a></td>
+<td>#4 접속, 수신 모델 전달 전 COM04-A·B; DN-09</td>
+<td>실제 MQTT 대상·유형 분리, AMR별 순서·독립성·과부하·종료 확인. 송신은 COM05-A·B 연결</td>
+</tr>
+<tr>
+<td>COM-04 / COM04-A·B</td>
+<td>새 실습 <code>src/Amr.Communication/Validation/</code>·모델·기존 시험 프로젝트</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/17_COM-04_Heartbeat_%EC%9E%85%EB%A0%A5%EA%B2%80%EC%82%AC.md">Heartbeat 검사</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/18_COM-04_%EB%A9%94%EC%8B%9C%EC%A7%80%EC%9C%A0%ED%98%95_%ED%99%95%EC%9E%A5%EA%B2%80%EC%82%AC.md">Telemetry·Alarm·ACK 검사</a></td>
+<td>수신 v3·DN-01·02, 처음 구독 COM01-A</td>
+<td>정상 필드 보존, 오류 거부, 실제 오류 후 정상 수신 지속</td>
+</tr>
+<tr>
+<td>COM-02 / COM02-A·B</td>
+<td>새 실습 <code>src/Amr.Communication/Monitoring/</code>과 수신/세션 경계·시험</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/21_COM-02_Heartbeat_%EC%A4%91%EB%8B%A8%EA%B3%BC%EB%B3%B5%EA%B5%AC.md">한 AMR 감시</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/22_COM-02_%EB%8B%A4%EC%A4%91AMR_%EC%84%B8%EC%85%98%EA%B0%90%EC%8B%9C.md">다중 AMR·세션 정리</a></td>
+<td>COM01-C·#6, DN-10 기존 개발 계약</td>
+<td>수신 시각·단조 시간 기준 중단/복구, 느린 Core·단절·새 세션의 감시 분리</td>
+</tr>
+<tr>
+<td>COM-05 / COM05-A·B</td>
+<td>새 실습 <code>src/Amr.Communication/Command/</code>, 콘솔 Core 대역·최소 AMR 시험 도구·시험</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/23_COM-05_Command_%EB%B0%9C%ED%96%89.md">세 명령 발행</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/24_COM-05_ACK_%EC%9A%94%EC%B2%AD%EB%8C%80%EC%A1%B0.md">ACK 보존·요청 대조</a></td>
+<td>COM01-B·C, DN-08 Command v1·수신 ACK v3</td>
+<td>세 명령 ID/대상 보존, 역순·성공/실패 ACK 대조. 실제 Core 업무 상태 제외</td>
+</tr>
+<tr>
+<td>COM-06 / COM06-P·A·B</td>
+<td>새 실습 README의 정책·Mqtt/ 재접속/재구독·명령/감시 세션 경계·시험</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/25_COM-06_%EB%B3%B5%EA%B5%AC%EC%A0%95%EC%B1%85_%EA%B2%B0%EC%A0%95.md">정책 정리</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/26_COM-06_%EC%9E%90%EB%8F%99%EC%9E%AC%EC%A0%91%EC%86%8D.md">재접속</a> → <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/27_COM-06_%EC%9E%AC%EA%B5%AC%EB%8F%85%EA%B3%BC_%EB%AA%85%EB%A0%B9%EC%B2%98%EB%A6%AC.md">재구독·명령 처리</a></td>
+<td>#6·COM02-B·COM05-B, D-08 및 관련 D-07 선택 후 구현</td>
+<td>동일 프로세스 자동 복구·한계/취소·구독 성공·정책별 대기 명령 처리·새 메시지 수신</td>
+</tr>
+<tr>
+<td>COM-01~06 / TASK1-V</td>
+<td>새 실습 README·<code>evidence/task1/&lt;실행ID&gt;/</code> 결과 색인·필요한 회귀</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/28_%EA%B3%BC%EC%A0%9C1_COM%EC%A0%84%EC%B2%B4_%EA%B2%80%EC%A6%9D%EC%A0%95%EB%A6%AC.md">전체 근거와 콘솔 재현</a></td>
+<td>COM06-B와 모든 기능의 유효한 근거</td>
+<td>실제 MQTT·대역·자동 시험을 구분하고 누락/실패가 있으면 과제 전체 미완료</td>
+</tr>
+<tr>
 <td>COM-01</td>
 <td><a href="C:/practice/src/Amr.TestClient/Program.cs">Amr.TestClient/Program.cs</a></td>
 <td>기존: Heartbeat 생성·약 1초 간격 발행<br>회귀 선택 시: Topic·id·status, 현재 Unix 밀리초, QoS·Retain 및 종료 처리 확인</td>
@@ -432,8 +496,8 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <td><a href="#com01-test">HB-01~06</a> 중 해당 시험: 코드 수정 후 관련 회귀와 표준 verify 통과</td>
 </tr>
 </tbody></table></div>
-<p>현재 <code>MqttPublisher</code>에는 Command 발행이 이미 구현돼 있다. Heartbeat 발행자는 TestClient이며 이를 옮기는 구조 변경은 필요하지 않다. <code>MessageValidator.cs</code>·<code>PayloadValidator.cs</code>는 계약 대조 대상이며 기존 계약을 바꾸어 시험을 통과시키지 않는다. 수신 경로의 <code>AmrMessageDispatcher</code>·AMR별 큐·Heartbeat 감시도 기존 구조로 유지한다.</p>
-<p><strong>이번 작업 순서</strong></p>
+<p>기존 <code>C:\practice</code>의 <code>MqttPublisher</code>에는 Command 발행이 이미 구현돼 있다. Heartbeat 발행자는 TestClient이며 이를 옮기는 구조 변경은 필요하지 않다. <code>MessageValidator.cs</code>·<code>PayloadValidator.cs</code>는 계약 대조 대상이며 기존 계약을 바꾸어 시험을 통과시키지 않는다. 수신 경로의 <code>AmrMessageDispatcher</code>·AMR별 큐·Heartbeat 감시도 기존 구조로 유지한다.</p>
+<p><strong>기존 저장소 기준 정리·조건부 회귀 순서(보존)</strong></p>
 <ol>
 <li>기존 계약·DN·기능 추적기의 revision·증거를 대조하고 데이터·기능·결정사항·계획의 불일치를 정정한다.</li>
 <li>JSON 예제, 실행 옵션·경로, 문서 링크·ID·상태와 HTML 보기본을 확인한다. 이번 문서 정리의 완료 근거는 <a href="../%EB%B3%B4%EA%B4%80/%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0/2026-10-06_%EA%B3%BC%EC%A0%9C1_%EA%B8%B0%EC%A4%80%EC%A0%95%ED%95%A9%EC%84%B1_%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0.md">기준 정합성 변경보고</a>에 기록한다.</li>
@@ -441,6 +505,30 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <li>HB 회귀를 선택한 경우에만 아래 실행 절차를 적용한다. 실패 원인을 환경·코드로 나눠 필요한 부분을 보완하고 관련 회귀·실제 MQTT 결과를 기록한다.</li>
 <li>전체 과제 완료는 COM-05 전체 검증과 COM-06 자동 복구를 포함한 아래 기준으로 판단한다.</li>
 </ol>
+<p><a id="demo-work"></a></p>
+<p><strong>새 저장소 실습 — 준비 완료 후 COM-01~06을 순차 개발</strong></p>
+<ul>
+<li>사용자 선택: <code>inhhlee/amr-control-system-demo</code>, 로컬 <code>C:\amr-control-system-demo</code>에서 별도 구현·시험. 개발 기반 준비는 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/2">Issue #2</a> 완료와 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/3">PR #3</a> main 병합으로 확인했다.</li>
+<li>기준 코드: main <code>963a1fa8d48f432aaa87f07f15a61db57e22db88</code>. 준비 검증 원본 커밋 <code>0d757940ff23061a96e59e5b0575499204032142</code>가 병합 부모에 포함된다. 상세 결과·증거·버전 차이는 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#%EC%A4%80%EB%B9%84-%EC%99%84%EB%A3%8C%EC%99%80-%ED%99%95%EC%9D%B8%ED%95%9C-%ED%98%84%EC%9E%AC-%EC%83%81%ED%83%9C">Issue 목록</a>에서 연결한다.</li>
+<li>현재 구조: <code>global.json</code>, <code>AmrControlSystem.slnx</code>, 통신 라이브러리·준비 콘솔·시험 프로젝트, 협업 규칙, <code>docker/compose.yaml</code>·Mosquitto 설정이 존재한다. MQTTnet 5.2.0.1603 참조는 준비됐고 연결 소스·기능 시험은 아직 없다.</li>
+<li>Broker: 준비한 Compose 프로젝트는 <code>amr-demo</code>, 설정 주소는 <code>127.0.0.1:1884</code>다. 모델 검사 통과를 실제 기동·MQTT 연결 통과로 확대하지 않는다. 실제 기동·접속은 COM03-A의 새 시험 범위다.</li>
+<li>첫 작업은 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/4">COM03-A / #4</a>의 정상 접속·종료다. 이후 송수신·검사와 COM-03 실패·끊김, AMR 감시·명령/ACK·자동 복구를 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>의 순서로 진행한다. 기존 #5는 #4, #6은 #5가 선행이며 게시 기준 v0.11의 본문·완료조건은 보존한다. 새 작업 순서는 사용자 검토 대기다.</li>
+<li>개발용 제안: MQTT 5·Clean Start·실행별 고유 Client ID·KeepAlive 5초·접속 대기 제한 3초. 현재 명세의 운영 확정값으로 취급하지 않는다. 완료조건·시험 입력·허용 오차와 상세 설정은 각 초안에서 관리하고 실제 적용값은 코드 README와 증거에 기록한다.</li>
+<li>새 실습의 포함 범위: COM-01~06의 MQTT 송수신·검사·개별 AMR 감시·Broker 감시·명령/ACK·자동 재접속/재구독. 실제 Core·GUI·DB·가상 AMR 이동은 제외하며 필요한 최소 시험 대역을 사용한다. 업무 상태·Alarm·ACK 업무 정책은 담당 과제·결정사항과 구분한다.</li>
+</ul>
+<p>각 작업의 대상·변경·선행 조건·예상 결과는 위 작업 단위 표에 연결했다. 상세 완료조건·예정 시험과 GitHub 게시할 본문은 각 초안이 담당하며 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md">Issue 목록</a>에서 순서와 상태를 관리한다.</p>
+<p><a id="solo-task1"></a>
+<a id="solo-com03"></a></p>
+<p><strong>신입 1인 개발을 위한 과제1 전체 작업안 — 사용자 검토 대기</strong></p>
+<ul>
+<li>2026-10-07 사용자는 COM-03뿐 아니라 COM-01~06 전체를 혼자 개발할 수 있는 작업으로 나눠 달라고 범위를 명확히 했다. 전체일정의 과제1 결과물을 유지한다.</li>
+<li>총 16개 작업: 기존 COM-03 #4·#5·#6 + COM-01 3개·COM-04 2개·COM-02 2개·COM-05 2개·COM-06 3개·전체 검증 1개. COM-06에는 미정 정책을 선택하는 준비 작업 1개를 포함한다. 새 13개는 미게시다.</li>
+<li>학습 흐름: 접속·종료 → 한 종류 수신·입력 검사 → 네 유형·여러 AMR·수신 큐 → 접속 실패·끊김 → AMR별 감시 → 명령/ACK → 자동 재접속·재구독 → 전체 근거 정리. 실제 순서·필수 선행·각 범위와 예상 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">Issue 목록</a>과 연결한 개별 초안에서 관리한다.</li>
+<li>기존 COM-03 11개 문서는 각 #4~#6의 학습·확인 단계로 보존한다. 모든 단계를 새 Issue·브랜치·PR로 만드는 이전 제안은 조정했다. 무응답 도구처럼 실제 진행이 큰 부분은 착수 결과를 보고 추가 분리할 수 있으며 원래 완료조건을 삭제하지 않는다.</li>
+<li>새 초안에는 목적·관련 ID·선행·대상·배울 내용·작업 순서·완료조건·입력/예상 결과가 있다. 실행 전 현 코드와 대조하며, 한 번에 한 Issue만 진행한다.</li>
+<li>DN-01·02·08·09·10은 기존 개발용 채택 범위를 유지한다. D-08 재시도·복구 및 D-07 중 복구 시 명령 처리는 COM06-P에서 선택한다. 권고안·횟수·간격을 승인 없이 확정하지 않으며 이 미정을 앞선 정상 송수신의 차단 조건으로 삼지 않는다.</li>
+<li>새 일정은 미정이다. 처음에는 실제 학습·개발·시험 소요를 기록해 다음 작업 크기를 조정한다. 이번 문서 작성은 새 GitHub 게시·본문 변경·제품 구현·시험을 포함하지 않는다.</li>
+</ul>
 </section>
 <section id="s7"><h2><span class="num">7</span>완료 기준</h2><h3>과제 전체 완료 체크</h3>
 <ul>
@@ -495,6 +583,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <p>실행 후에는 사용 설정·계약 버전, 입력, 절차, 예상 결과, 실제 결과, 판정 및 Log·화면·DB 등 근거를 검증 결과에 작성한다. 미정 정책에 의존하는 시험은 해당 결정 항목과 적용 값을 함께 기록한다.</p>
 <p><a id="com01-test"></a></p>
 <h3>이번 작업 시험</h3>
+<p>새 실습의 예정 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>에 연결한 COM-01<del>06 각 초안에서 관리한다. 기존 COM03-A</del>C의 게시된 시험 조건은 보존하며 11개 학습 단계로 따라갈 수 있다. 각 작업에서 모은 증거를 TASK1-V에서 최종 코드에 대조한다. 현재 결과는 미검증이고 기능 부분 완료·기능 전체 완료·과제1 완료를 구분한다. 아래 HB-01~06은 기존 저장소의 조건부 회귀 자료다.</p>
 <p>다음 표는 기존 Heartbeat 회귀 절차다. 이번 기준 정리에서 재시험은 미실행이며, 다음 구현의 영향·증거 부족을 확인한 뒤 필요한 항목을 선택한다. 실제 제품의 기존 통과 기록과 문서용 HB-01~06의 미실행 상태를 구분한다. 상세 실행 순서는 다음 하위 절을 따른다.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -551,6 +640,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </ul>
 <p>이번 작업의 준비가 끝났다는 것은 위 시험을 수행할 파일·입력·절차·판정 기준을 설명할 수 있다는 뜻이다. 위 체크는 실제 시험 후에만 표시한다.</p>
 <h3>상세 실행 절차</h3>
+<p>새 실습은 승인한 실제 Issue URL과 <code>C:\process-plan</code>의 최신 문서를 코드 채팅에 전달한다. 처음에는 기존 #4의 정상 접속·종료부터 진행하고 각 작업의 실제 인자·명령을 코드 README에 작성한다. 시험 대역·실제 Broker·무응답 도구의 범위를 구분해 <code>evidence/&lt;기능ID&gt;/&lt;실행ID&gt;/</code>에 근거를 남긴다. 최종 근거는 TASK1-V에서 연결하며 이번 문서 작업 중 제품 실행 명령은 수행하지 않았다.</p>
 <p>아래는 <strong>Heartbeat 회귀를 선택했을 때 실행할 절차</strong>다. 이번 문서 정리에서 수행한 시험 결과가 아니다. 정상 메시지는 <code>id</code>, <code>ts</code>, <code>status: &quot;OK&quot;</code>를 포함하는 계약·JSON 예제를 사용한다. 다음 코드 작업에서는 표준 기준선 확인 후 선택한 범위의 절차를 수행한다.</p>
 <p>선행 조건은 SDK·Docker·기존 <code>amr-mosquitto</code> 준비, 다른 AMR_001 발행 실험과 혼동되지 않는 실행 시간대, 두 개의 PowerShell 터미널이다. 다른 프로세스를 임의로 종료하지 않는다. MQTT Explorer는 필요하지 않으며 컨테이너에 있는 <code>mosquitto_pub</code>을 사용한다. <code>-s</code>, <code>-V</code>, <code>-q</code>, <code>-t</code> 옵션은 2026-10-05 준비 당시 확인한 절차를 유지하며 실제 착수 때 현재 환경과 대조한다.</p>
 <p><strong>터미널 A — 관제 수신을 먼저 시작한다.</strong></p>
@@ -567,7 +657,7 @@ dotnet run --project .\src\Amr.TestClient -- AMR_001
 </code></pre>
 <p>발행자가 연결된 뒤 10초 이내에 최소 3건의 발행·수신이 대응하는지 ID·ts로 비교한다. 이는 로컬 기능 확인을 위한 관찰 조건이며 전송 보장이나 성능 기준이 아니다. 관찰 후 B의 발행자를 Ctrl+C로 정상 종료한다. A의 수신자는 계속 유지한다.</p>
 <p><strong>터미널 B — 고정 예제와 오류 예제를 한 건씩 발행한다.</strong></p>
-<pre><code class="language-powershell">$exampleDir = &#39;C:\plan\관제시스템 과제 진행\과제1\산출물\COM-01_Heartbeat_예제&#39;
+<pre><code class="language-powershell">$exampleDir = &#39;C:\process-plan\관제시스템 과제 진행\과제1\산출물\COM-01_Heartbeat_예제&#39;
 Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#39;) | docker exec -i amr-mosquitto mosquitto_pub -h 127.0.0.1 -p 1883 -V mqttv5 -q 0 -t amr/AMR_001/heartbeat -s
 </code></pre>
 <p>출력은 A에서 확인한다. 같은 명령의 파일명을 순서대로 <code>heartbeat-missing-ts.json</code>, <code>heartbeat-id-mismatch.json</code>, 마지막으로 다시 <code>heartbeat-valid.json</code>으로 바꾸어 실행한다. 각 입력 직후 기대 출력을 확인한 뒤 다음 입력을 보낸다. <code>-r</code>을 사용하지 않아 Retain=false를 유지한다. 명령의 비정상 종료나 수신 결과 누락은 기록하며, 발행 종료 코드만으로 성공 판정하지 않는다.</p>
@@ -589,7 +679,7 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 <h3>다음 작업·기록 위치</h3>
 <ul>
 <li>기준 정리 결과: 기존 채택 계약과 COM-01~04 통과 기록, COM-05·COM-06 잔여 범위, HB 회귀 입력·명령·경로를 연결했다. 상세 전후 내용과 문서 확인 결과는 <a href="../%EB%B3%B4%EA%B4%80/%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0/2026-10-06_%EA%B3%BC%EC%A0%9C1_%EA%B8%B0%EC%A4%80%EC%A0%95%ED%95%A9%EC%84%B1_%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0.md">변경보고</a> 참조.</li>
-<li>다음 개발: 기존 MVP M1-00의 기준선·재사용 범위를 확인하고 미완료 작업 하나의 범위·완료조건을 Issue 초안으로 구체화할 수 있다. 이번 기준 정리에서는 제품 구현·시험·GitHub 작업을 실행하지 않았다.</li>
+<li>다음 개발: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">COM-01~06 전체 작업안</a>을 검토하고 첫 구현은 기존 #4로 시작한다. 새 13개 초안은 검토 후 선택한 항목을 게시한다. 기존 11개 COM-03 문서는 학습 단계이며 일괄 게시하지 않는다. 이번 요청에서는 문서만 작성했고 GitHub 변경·제품 구현·시험·PR 생성은 수행하지 않았다.</li>
 <li>결정 항목 처리: D-03·D-04·D-09 등의 기존 임시 채택은 유지한다. 실제 Core 매핑·업무 ACK 예외·운영 감시·재접속은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B2%80%ED%86%A0%20%EB%B0%8F%20%EA%B2%B0%EC%A0%95%EC%82%AC%ED%95%AD.md#com01-readiness">영향 표</a>의 시점에 필요한 부분만 결정한다.</li>
 <li>주간 기록: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09</a>에 확인된 일일업무와 산출물을 요약한다. 현재 집계는 2026-10-06까지이며 이후 실적은 확인 후 추가한다.</li>
 <li>기록 위치와 상태 갱신: <a href="../README.md#document-map">업무 문서 역할 안내</a>와 <a href="../%EA%B8%B0%EC%A4%80/%EA%B3%B5%ED%86%B5%20%EC%9E%91%EC%84%B1%20%EA%B7%9C%EC%B9%99.md#changes">공통 변경 기준</a>을 따른다.</li>
@@ -604,6 +694,26 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-07</td>
+<td>v0.14 초안</td>
+<td>사용자 범위 보완에 따라 COM-01<del>06 전체 16개 순차 작업안과 새 13개 초안 연결. 기존 #4</del>#6 활용, COM-03 11개 문서는 학습 단계로 보존. 원래 완료조건·기존 증거 유지, 새 게시·구현·시험 미실행.</td>
+</tr>
+<tr>
+<td>2026-10-07</td>
+<td>v0.13 초안</td>
+<td>사용자 신입 1인 개발 요청·전체일정에 맞춰 기존 COM03-A<del>C를 기본 8개·후속 검증 3개로 나눈 문서 개편안 연결. 기존 #4</del>#6 본문·원래 완료조건·C:\practice 기록 보존. 신규 초안 사용자 검토 대기·미게시, 제품 구현·시험 미실행.</td>
+</tr>
+<tr>
+<td>2026-10-07</td>
+<td>v0.12 초안</td>
+<td>사용자 승인 후 COM03-A~C를 실제 #4·#5·#6으로 게시·본문 대조하고 선행 링크·목록·초안의 로컬 기록을 갱신. v0.11의 구현 범위·시험 조건·완료 체크는 유지하며 게시 상태만 반영. 코드 구현·시험 미실행.</td>
+</tr>
+<tr>
+<td>2026-10-07</td>
+<td>v0.11 초안</td>
+<td>현재 원본 v0.9에 별도 저장소의 준비 #2·PR #3 병합과 COM03-A~C 초안·실제 코드 경로·예정 시험을 연결. 과거 Issue #2가 인용한 미확인 v0.10과 구분하여 버전을 부여했다. 기존 C:\practice의 범위·근거·완료 체크 보존; 새 제품 시험 미실행.</td>
+</tr>
+<tr>
 <td>2026-10-06</td>
 <td>v0.9 초안</td>
 <td>현재 채택 계약·COM-01~04 기록·후속 MVP와 과제 전체 완료 경계 연결. Heartbeat status·수신 옵션·입력 경로 정정, HB 절차를 조건부 회귀로 보존. <a href="../%EB%B3%B4%EA%B4%80/%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0/2026-10-06_%EA%B3%BC%EC%A0%9C1_%EA%B8%B0%EC%A4%80%EC%A0%95%ED%95%A9%EC%84%B1_%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0.md">변경 근거와 확인</a>.</td>
