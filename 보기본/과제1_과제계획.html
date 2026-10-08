@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.17 초안 · 수정 2026-10-08</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — 기존 C:\practice의 COM-01~04 passing 기록 보존. 새 실습 저장소의 준비 Issue #2 완료·PR #3 병합, COM-01~06 구현 미착수 / 기존 S024와 새 준비 작업의 실행 근거 연결. 새 실습 COM-01~06은 미검증; 이번 초안 작성에서는 제품 재시험 미실행, 과제 전체 검증 미완료</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.18 초안 · 수정 2026-10-08</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — 기존 C:\practice의 COM-01~04 passing 기록 보존. 새 실습 저장소의 준비 Issue #2 완료·PR #3 병합, COM-01~06 구현 미착수 / 기존 S024와 새 준비 작업의 실행 근거 연결. 새 실습 COM-01~06은 미검증; 이번 초안 작성에서는 제품 재시험 미실행, 과제 전체 검증 미완료</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><strong>과제1</strong><a href="%EA%B3%BC%EC%A0%9C2_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제2</a><a href="%EA%B3%BC%EC%A0%9C3_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제3</a><a href="%EA%B3%BC%EC%A0%9C4_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제4</a><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -56,7 +56,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.17 초안</td>
+<td>v0.18 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -136,7 +136,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>실제 진행 기록</td>
-<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09 주간 기록</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-05.md">2026-10-05 준비 기록</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-06.md">2026-10-06 일일업무</a></td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09 주간 기록</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-05.md">10월 5일 준비</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-06.md">10월 6일</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-07.md">10월 7일</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-08.md">10월 8일</a></td>
 </tr>
 </tbody></table></div>
 <p>이 계획은 프로젝트의 과제1을 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 2026-10-05의 기존 코드 확인 기록을 보존하고, 2026-10-06에는 <code>C:\practice</code> HEAD <code>47ee27b</code>의 채택 계약·추적기·실행 안내·기존 증거와 대조했다. 기존 통과 기능을 처음부터 다시 구현하는 계획으로 사용하지 않는다. 원문 요구인 COM-06을 포함한 최종 범위와 기존 MVP 개발 순서를 구분한다.</p>
@@ -682,7 +682,7 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 <li>기준 정리 결과: 기존 채택 계약과 COM-01~04 통과 기록, COM-05·COM-06 잔여 범위, HB 회귀 입력·명령·경로를 연결했다. 상세 전후 내용과 문서 확인 결과는 <a href="../%EB%B3%B4%EA%B4%80/%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0/2026-10-06_%EA%B3%BC%EC%A0%9C1_%EA%B8%B0%EC%A4%80%EC%A0%95%ED%95%A9%EC%84%B1_%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0.md">변경보고</a> 참조.</li>
 <li>다음 개발: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/06_COM-03_%EC%B5%9C%EC%86%8C%EC%A0%91%EC%86%8D.md">통합 #8</a>의 개념·현재 Broker·기준 코드·대상·시험을 확인한 뒤 같은 feature/8-mqtt-connect에서 A2·A3를 진행한다. PR base는 develop이다. 별도 새 13개 초안은 검토 후 선택한 항목을 게시하고 08~15번 학습 안내는 별도 게시하지 않는다. 이번 통합 작업에서 제품 구현·시험·새 PR 생성은 수행하지 않았다.</li>
 <li>결정 항목 처리: D-03·D-04·D-09 등의 기존 임시 채택은 유지한다. 실제 Core 매핑·업무 ACK 예외·운영 감시·재접속은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B2%80%ED%86%A0%20%EB%B0%8F%20%EA%B2%B0%EC%A0%95%EC%82%AC%ED%95%AD.md#com01-readiness">영향 표</a>의 시점에 필요한 부분만 결정한다.</li>
-<li>주간 기록: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09</a>에 확인된 일일업무와 산출물을 요약한다. 현재 집계는 2026-10-06까지이며 이후 실적은 확인 후 추가한다.</li>
+<li>주간 기록: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09</a>에 확인된 일일업무와 산출물을 요약한다. 현재 집계는 2026-10-08까지이며 10월 9일 실적은 수행 후 추가한다. 개발 기반·A1 시험 당시 결과·학습 문서/이슈 정리와 남은 MQTT 구현·검증을 구분한다.</li>
 <li>기록 위치와 상태 갱신: <a href="../README.md#document-map">업무 문서 역할 안내</a>와 <a href="../%EA%B8%B0%EC%A4%80/%EA%B3%B5%ED%86%B5%20%EC%9E%91%EC%84%B1%20%EA%B7%9C%EC%B9%99.md#changes">공통 변경 기준</a>을 따른다.</li>
 </ul>
 <h3>변경 이력</h3>
@@ -695,6 +695,11 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-08</td>
+<td>v0.18 초안</td>
+<td>오늘·주간 보고 요청으로 10월 7~8일 일일 근거와 10월 8일까지의 주간 집계를 연결. 기존 실행·실패·후속 병합/통합 기록을 보존하고 제품 상태·기한·완료조건은 유지. 문서 기록 연결·보기본 갱신 범위이며 제품 재시험·외부 상태 재조회 없음.</td>
+</tr>
+<tr>
 <td>2026-10-08</td>
 <td>v0.17 초안</td>
 <td>사용자 승인으로 A2·A3를 #8 한 Issue·브랜치·PR로 통합하고 #9는 통합 종료. 원래 완료조건·시험 보존, 작업 수 17개·다음 작업 #8 정정, A1 PR #12 develop 병합 확인. 제품 구현·시험은 수행하지 않음.</td>
