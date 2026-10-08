@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.14 초안 · 수정 2026-10-07</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — 기존 C:\practice의 COM-01~04 passing 기록 보존. 새 실습 저장소의 준비 Issue #2 완료·PR #3 병합, COM-01~06 구현 미착수 / 기존 S024와 새 준비 작업의 실행 근거 연결. 새 실습 COM-01~06은 미검증; 이번 초안 작성에서는 제품 재시험 미실행, 과제 전체 검증 미완료</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.17 초안 · 수정 2026-10-08</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — 기존 C:\practice의 COM-01~04 passing 기록 보존. 새 실습 저장소의 준비 Issue #2 완료·PR #3 병합, COM-01~06 구현 미착수 / 기존 S024와 새 준비 작업의 실행 근거 연결. 새 실습 COM-01~06은 미검증; 이번 초안 작성에서는 제품 재시험 미실행, 과제 전체 검증 미완료</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><strong>과제1</strong><a href="%EA%B3%BC%EC%A0%9C2_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제2</a><a href="%EA%B3%BC%EC%A0%9C3_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제3</a><a href="%EA%B3%BC%EC%A0%9C4_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제4</a><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -52,11 +52,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>수정일</td>
-<td>2026-10-07</td>
+<td>2026-10-08</td>
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.14 초안</td>
+<td>v0.17 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -128,11 +128,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>이번 작업</td>
-<td>사용자의 범위 보완 요청에 따라 신입 1인 개발용 COM-01~06 전체 16개 작업안 작성</td>
+<td>사용자 승인으로 A2·A3를 #8 하나로 통합하고 #9는 통합 종료. #4 원래 완료조건·시험을 유지하며 원본·목록·전체일정 연결 갱신</td>
 </tr>
 <tr>
 <td>이번 작업 준비</td>
-<td><a href="#solo-task1">과제1 전체 분할안</a>·<a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">Issue 목록</a>. 기존 #4·#5·#6 활용 + 새 13개 초안 사용자 검토 대기·미게시. 기존 COM-03 11개 문서는 학습 단계로 보존. 제품 구현·시험 미실행</td>
+<td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>. 실제 작업 17개와 총괄 #4·통합 종료 #9 구분. A1 PR #12 develop 병합 확인, 다음은 통합 #8. #5·#6 및 새 13개 초안 검토 대기·미게시 유지. 이번 통합 중 제품 구현·시험 미실행</td>
 </tr>
 <tr>
 <td>실제 진행 기록</td>
@@ -372,7 +372,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tbody></table></div>
 <p><a id="com01-work"></a></p>
 <h3>이번 구현 작업 단위</h3>
-<p><strong>현재 계획 범위는 <a href="#solo-task1">새 저장소의 COM-01~06 전체</a>이며 첫 작업은 기존 Issue #4다.</strong> 앞선 요청에서 #4·#5·#6을 게시했고 이번에는 새 13개 초안을 작성했다. 아래 새 실습 모듈은 <code>C:\amr-control-system-demo</code> 기준이며 제품 소스는 생성 예정이다. <code>C:\practice</code> 링크가 붙은 행과 기존 작업 순서는 2026-10-06의 기준 정리·조건부 회귀 자료로 보존한다. 기존 <code>passing</code>을 취소하거나 HB 시험을 무조건 반복하지 않는다.</p>
+<p><strong>현재 계획 범위는 <a href="#solo-task1">새 저장소의 COM-01~06 전체</a>이며 다음 작업은 A2·A3 통합 #8이다.</strong> A1 PR #12는 develop에 반영됐다. #4는 A1 #7·통합 #8의 정상 접속·종료 결과를 모으는 총괄이고 기존 #5·#6과 별도 새 13개 초안은 유지한다. 아래 새 실습 모듈은 <code>C:\amr-control-system-demo</code> 기준이며 제품 소스는 생성 예정이다. <code>C:\practice</code> 링크가 붙은 행과 기존 작업 순서는 2026-10-06의 기준 정리·조건부 회귀 자료로 보존한다. 기존 <code>passing</code>을 취소하거나 HB 시험을 무조건 반복하지 않는다.</p>
 <ul>
 <li>기능: 기준 정합성은 COM-01~06, 아래 조건부 회귀는 COM-01의 Heartbeat와 COM-04 검사 경계</li>
 <li>적용 계약: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B3%B5%ED%86%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%85%EC%84%B8.md#heartbeat-contract">COM-01-Heartbeat-v0.2</a>, 수신 계약 v3의 기존 개발용 기준을 문서에 반영</li>
@@ -512,7 +512,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <li>기준 코드: main <code>963a1fa8d48f432aaa87f07f15a61db57e22db88</code>. 준비 검증 원본 커밋 <code>0d757940ff23061a96e59e5b0575499204032142</code>가 병합 부모에 포함된다. 상세 결과·증거·버전 차이는 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#%EC%A4%80%EB%B9%84-%EC%99%84%EB%A3%8C%EC%99%80-%ED%99%95%EC%9D%B8%ED%95%9C-%ED%98%84%EC%9E%AC-%EC%83%81%ED%83%9C">Issue 목록</a>에서 연결한다.</li>
 <li>현재 구조: <code>global.json</code>, <code>AmrControlSystem.slnx</code>, 통신 라이브러리·준비 콘솔·시험 프로젝트, 협업 규칙, <code>docker/compose.yaml</code>·Mosquitto 설정이 존재한다. MQTTnet 5.2.0.1603 참조는 준비됐고 연결 소스·기능 시험은 아직 없다.</li>
 <li>Broker: 준비한 Compose 프로젝트는 <code>amr-demo</code>, 설정 주소는 <code>127.0.0.1:1884</code>다. 모델 검사 통과를 실제 기동·MQTT 연결 통과로 확대하지 않는다. 실제 기동·접속은 COM03-A의 새 시험 범위다.</li>
-<li>첫 작업은 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/4">COM03-A / #4</a>의 정상 접속·종료다. 이후 송수신·검사와 COM-03 실패·끊김, AMR 감시·명령/ACK·자동 복구를 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>의 순서로 진행한다. 기존 #5는 #4, #6은 #5가 선행이며 게시 기준 v0.11의 본문·완료조건은 보존한다. 새 작업 순서는 사용자 검토 대기다.</li>
+<li>A1 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/7">#7</a>의 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/12">PR #12</a>는 develop에 병합됐다. 다음은 통합 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/8">#8</a>에서 현재 환경 확인 → A2 접속·해제 → A3 유지·Ctrl+C·자동 시험이다. #8 PR 반영 후 총괄 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/4">#4</a>의 전체 조건을 확인한다. #5는 #4 완료, #6은 #5가 선행이다. #9 종료는 통합을 뜻하며 구현 완료가 아니다. 이후 순서·별도 새 초안 검토 상태는 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>을 따른다.</li>
 <li>개발용 제안: MQTT 5·Clean Start·실행별 고유 Client ID·KeepAlive 5초·접속 대기 제한 3초. 현재 명세의 운영 확정값으로 취급하지 않는다. 완료조건·시험 입력·허용 오차와 상세 설정은 각 초안에서 관리하고 실제 적용값은 코드 README와 증거에 기록한다.</li>
 <li>새 실습의 포함 범위: COM-01~06의 MQTT 송수신·검사·개별 AMR 감시·Broker 감시·명령/ACK·자동 재접속/재구독. 실제 Core·GUI·DB·가상 AMR 이동은 제외하며 필요한 최소 시험 대역을 사용한다. 업무 상태·Alarm·ACK 업무 정책은 담당 과제·결정사항과 구분한다.</li>
 </ul>
@@ -522,12 +522,13 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <p><strong>신입 1인 개발을 위한 과제1 전체 작업안 — 사용자 검토 대기</strong></p>
 <ul>
 <li>2026-10-07 사용자는 COM-03뿐 아니라 COM-01~06 전체를 혼자 개발할 수 있는 작업으로 나눠 달라고 범위를 명확히 했다. 전체일정의 과제1 결과물을 유지한다.</li>
-<li>총 16개 작업: 기존 COM-03 #4·#5·#6 + COM-01 3개·COM-04 2개·COM-02 2개·COM-05 2개·COM-06 3개·전체 검증 1개. COM-06에는 미정 정책을 선택하는 준비 작업 1개를 포함한다. 새 13개는 미게시다.</li>
+<li>총 17개 작업: COM-03 A1 #7·A2/A3 통합 #8·B #5·C #6의 4개 + COM-01 3개·COM-04 2개·COM-02 2개·COM-05 2개·COM-06 3개·전체 검증 1개. 총괄 #4·준비 완료 #2·통합 종료 #9는 작업 수에서 제외한다. COM-06 정책 결정 작업과 별도 새 13개 초안의 미게시 상태는 유지한다.</li>
 <li>학습 흐름: 접속·종료 → 한 종류 수신·입력 검사 → 네 유형·여러 AMR·수신 큐 → 접속 실패·끊김 → AMR별 감시 → 명령/ACK → 자동 재접속·재구독 → 전체 근거 정리. 실제 순서·필수 선행·각 범위와 예상 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">Issue 목록</a>과 연결한 개별 초안에서 관리한다.</li>
-<li>기존 COM-03 11개 문서는 각 #4~#6의 학습·확인 단계로 보존한다. 모든 단계를 새 Issue·브랜치·PR로 만드는 이전 제안은 조정했다. 무응답 도구처럼 실제 진행이 큰 부분은 착수 결과를 보고 추가 분리할 수 있으며 원래 완료조건을 삭제하지 않는다.</li>
+<li>2026-10-08 앞선 요청으로 별도 게시한 A2 #8·A3 #9를 후속 사용자 승인에 따라 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/06_COM-03_%EC%B5%9C%EC%86%8C%EC%A0%91%EC%86%8D.md">#8</a> 하나로 통합했다. A1 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/05_COM-03_Broker_%EA%B8%B0%EB%8F%99%ED%99%95%EC%9D%B8.md">#7</a>은 유지하고 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/07_COM-03_CtrlC_%EC%A0%95%EC%83%81%EC%A2%85%EB%A3%8C.md">#9</a>는 통합 안내·이전 본문을 보존한다. 기존 ID·경로·#4 앵커를 유지하며 A2·A3는 같은 브랜치·PR 내부의 학습 단계다. #5·#6의 B1<del>B3·C1</del>C4 및 08~15번 연결 문서도 유지한다. 원래 완료조건·시험 항목은 줄이지 않는다.</li>
+<li>학습·진행 방식은 관련 개념 질문 → 사용자 답변 확인 → 필요한 설명·재확인 → 해당 단계 진행이다. 이번 문서 통합 전 접속/구독·사용자 취소·Broker 연결과 개별 AMR Heartbeat 감시의 구분을 질문으로 확인했다. 학습 이해 확인은 구현·시험 완료 근거로 사용하지 않는다.</li>
 <li>새 초안에는 목적·관련 ID·선행·대상·배울 내용·작업 순서·완료조건·입력/예상 결과가 있다. 실행 전 현 코드와 대조하며, 한 번에 한 Issue만 진행한다.</li>
 <li>DN-01·02·08·09·10은 기존 개발용 채택 범위를 유지한다. D-08 재시도·복구 및 D-07 중 복구 시 명령 처리는 COM06-P에서 선택한다. 권고안·횟수·간격을 승인 없이 확정하지 않으며 이 미정을 앞선 정상 송수신의 차단 조건으로 삼지 않는다.</li>
-<li>새 일정은 미정이다. 처음에는 실제 학습·개발·시험 소요를 기록해 다음 작업 크기를 조정한다. 이번 문서 작성은 새 GitHub 게시·본문 변경·제품 구현·시험을 포함하지 않는다.</li>
+<li>새 일정은 미정이다. 실제 학습·개발·시험 소요를 기록해 다음 작업 크기를 조정한다. 이번 요청에서는 #8 통합·#9 관리상 종료·#4 및 원본 문서 연결만 수행했다. 제품 구현·시험·커밋·푸시·새 PR 생성은 수행하지 않았다.</li>
 </ul>
 </section>
 <section id="s7"><h2><span class="num">7</span>완료 기준</h2><h3>과제 전체 완료 체크</h3>
@@ -583,7 +584,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <p>실행 후에는 사용 설정·계약 버전, 입력, 절차, 예상 결과, 실제 결과, 판정 및 Log·화면·DB 등 근거를 검증 결과에 작성한다. 미정 정책에 의존하는 시험은 해당 결정 항목과 적용 값을 함께 기록한다.</p>
 <p><a id="com01-test"></a></p>
 <h3>이번 작업 시험</h3>
-<p>새 실습의 예정 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>에 연결한 COM-01<del>06 각 초안에서 관리한다. 기존 COM03-A</del>C의 게시된 시험 조건은 보존하며 11개 학습 단계로 따라갈 수 있다. 각 작업에서 모은 증거를 TASK1-V에서 최종 코드에 대조한다. 현재 결과는 미검증이고 기능 부분 완료·기능 전체 완료·과제1 완료를 구분한다. 아래 HB-01~06은 기존 저장소의 조건부 회귀 자료다.</p>
+<p>새 실습의 예정 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>에 연결한 각 원본에서 관리한다. #4의 원래 시험·완료조건은 보존하고 A1<del>A3가 맡은 결과를 연결한다. #5·#6은 통합한 학습 체크리스트를 유지한다. 각 작업의 증거를 TASK1-V에서 최종 코드에 대조한다. A1 Broker 기동 근거는 PR #12에 있고 현재 MQTT 결과는 미검증이다. 기능 부분 완료·기능 전체 완료·과제1 완료를 구분한다. 아래 HB-01</del>06은 기존 저장소의 조건부 회귀 자료다.</p>
 <p>다음 표는 기존 Heartbeat 회귀 절차다. 이번 기준 정리에서 재시험은 미실행이며, 다음 구현의 영향·증거 부족을 확인한 뒤 필요한 항목을 선택한다. 실제 제품의 기존 통과 기록과 문서용 HB-01~06의 미실행 상태를 구분한다. 상세 실행 순서는 다음 하위 절을 따른다.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -640,7 +641,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </ul>
 <p>이번 작업의 준비가 끝났다는 것은 위 시험을 수행할 파일·입력·절차·판정 기준을 설명할 수 있다는 뜻이다. 위 체크는 실제 시험 후에만 표시한다.</p>
 <h3>상세 실행 절차</h3>
-<p>새 실습은 승인한 실제 Issue URL과 <code>C:\process-plan</code>의 최신 문서를 코드 채팅에 전달한다. 처음에는 기존 #4의 정상 접속·종료부터 진행하고 각 작업의 실제 인자·명령을 코드 README에 작성한다. 시험 대역·실제 Broker·무응답 도구의 범위를 구분해 <code>evidence/&lt;기능ID&gt;/&lt;실행ID&gt;/</code>에 근거를 남긴다. 최종 근거는 TASK1-V에서 연결하며 이번 문서 작업 중 제품 실행 명령은 수행하지 않았다.</p>
+<p>새 실습은 승인한 실제 Issue URL과 <code>C:\process-plan</code>의 최신 문서를 코드 채팅에 전달한다. A1 PR #12 반영 후 통합 #8에서 현재 Broker·기준 코드와 환경을 확인하고 A2 중간 결과 → A3 최종 수명주기 순서로 진행한다. #9용 별도 브랜치·PR은 만들지 않는다. 실제 인자·명령은 코드 README에 작성한다. 시험 대역·실제 Broker·무응답 도구의 범위를 구분해 <code>evidence/&lt;기능ID&gt;/&lt;실행ID&gt;/</code>에 근거를 남긴다. #4에서 정상 접속·종료 전체를 확인하고 최종 과제 근거는 TASK1-V에서 연결한다. 이번 게시·문서 작업 중 제품 실행 명령은 수행하지 않았다.</p>
 <p>아래는 <strong>Heartbeat 회귀를 선택했을 때 실행할 절차</strong>다. 이번 문서 정리에서 수행한 시험 결과가 아니다. 정상 메시지는 <code>id</code>, <code>ts</code>, <code>status: &quot;OK&quot;</code>를 포함하는 계약·JSON 예제를 사용한다. 다음 코드 작업에서는 표준 기준선 확인 후 선택한 범위의 절차를 수행한다.</p>
 <p>선행 조건은 SDK·Docker·기존 <code>amr-mosquitto</code> 준비, 다른 AMR_001 발행 실험과 혼동되지 않는 실행 시간대, 두 개의 PowerShell 터미널이다. 다른 프로세스를 임의로 종료하지 않는다. MQTT Explorer는 필요하지 않으며 컨테이너에 있는 <code>mosquitto_pub</code>을 사용한다. <code>-s</code>, <code>-V</code>, <code>-q</code>, <code>-t</code> 옵션은 2026-10-05 준비 당시 확인한 절차를 유지하며 실제 착수 때 현재 환경과 대조한다.</p>
 <p><strong>터미널 A — 관제 수신을 먼저 시작한다.</strong></p>
@@ -679,7 +680,7 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 <h3>다음 작업·기록 위치</h3>
 <ul>
 <li>기준 정리 결과: 기존 채택 계약과 COM-01~04 통과 기록, COM-05·COM-06 잔여 범위, HB 회귀 입력·명령·경로를 연결했다. 상세 전후 내용과 문서 확인 결과는 <a href="../%EB%B3%B4%EA%B4%80/%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0/2026-10-06_%EA%B3%BC%EC%A0%9C1_%EA%B8%B0%EC%A4%80%EC%A0%95%ED%95%A9%EC%84%B1_%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0.md">변경보고</a> 참조.</li>
-<li>다음 개발: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">COM-01~06 전체 작업안</a>을 검토하고 첫 구현은 기존 #4로 시작한다. 새 13개 초안은 검토 후 선택한 항목을 게시한다. 기존 11개 COM-03 문서는 학습 단계이며 일괄 게시하지 않는다. 이번 요청에서는 문서만 작성했고 GitHub 변경·제품 구현·시험·PR 생성은 수행하지 않았다.</li>
+<li>다음 개발: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/06_COM-03_%EC%B5%9C%EC%86%8C%EC%A0%91%EC%86%8D.md">통합 #8</a>의 개념·현재 Broker·기준 코드·대상·시험을 확인한 뒤 같은 feature/8-mqtt-connect에서 A2·A3를 진행한다. PR base는 develop이다. 별도 새 13개 초안은 검토 후 선택한 항목을 게시하고 08~15번 학습 안내는 별도 게시하지 않는다. 이번 통합 작업에서 제품 구현·시험·새 PR 생성은 수행하지 않았다.</li>
 <li>결정 항목 처리: D-03·D-04·D-09 등의 기존 임시 채택은 유지한다. 실제 Core 매핑·업무 ACK 예외·운영 감시·재접속은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B2%80%ED%86%A0%20%EB%B0%8F%20%EA%B2%B0%EC%A0%95%EC%82%AC%ED%95%AD.md#com01-readiness">영향 표</a>의 시점에 필요한 부분만 결정한다.</li>
 <li>주간 기록: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09</a>에 확인된 일일업무와 산출물을 요약한다. 현재 집계는 2026-10-06까지이며 이후 실적은 확인 후 추가한다.</li>
 <li>기록 위치와 상태 갱신: <a href="../README.md#document-map">업무 문서 역할 안내</a>와 <a href="../%EA%B8%B0%EC%A4%80/%EA%B3%B5%ED%86%B5%20%EC%9E%91%EC%84%B1%20%EA%B7%9C%EC%B9%99.md#changes">공통 변경 기준</a>을 따른다.</li>
@@ -694,6 +695,21 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-08</td>
+<td>v0.17 초안</td>
+<td>사용자 승인으로 A2·A3를 #8 한 Issue·브랜치·PR로 통합하고 #9는 통합 종료. 원래 완료조건·시험 보존, 작업 수 17개·다음 작업 #8 정정, A1 PR #12 develop 병합 확인. 제품 구현·시험은 수행하지 않음.</td>
+</tr>
+<tr>
+<td>2026-10-08</td>
+<td>v0.16 초안</td>
+<td>사용자 후속 요청으로 A1~A3를 실제 #7·#8·#9로 게시하고 #4를 총괄로 전환. 선행 PR 순서·실제 작업 18개와 총괄 구분·원본/목록/전체일정 연결. 기존 완료조건·#5/#6·새 13개 초안과 제품 미착수·미검증 상태 보존.</td>
+</tr>
+<tr>
+<td>2026-10-08</td>
+<td>v0.15 초안</td>
+<td>사용자 요청과 단계별 이해 확인 후 COM-03 학습 11단계의 상세 순서·체크리스트를 기존 #4~#6 로컬 안내에 통합. 기존 ID·경로는 연결 안내로 유지하고 단계별 병합 문구를 정리. 질문 후 진행 방식 연결, 기존 완료조건·시험·GitHub 게시 본문·제품 상태 유지.</td>
+</tr>
+<tr>
 <td>2026-10-07</td>
 <td>v0.14 초안</td>
 <td>사용자 범위 보완에 따라 COM-01<del>06 전체 16개 순차 작업안과 새 13개 초안 연결. 기존 #4</del>#6 활용, COM-03 11개 문서는 학습 단계로 보존. 원래 완료조건·기존 증거 유지, 새 게시·구현·시험 미실행.</td>
