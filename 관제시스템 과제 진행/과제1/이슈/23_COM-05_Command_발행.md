@@ -2,12 +2,38 @@
 
 ## 로컬 관리 정보
 
-- 초안 ID: COM05-A / 작성일: 2026-10-07 / 버전: v0.1
-- 문서 작성: 완료 / 내용 검토: 사용자 검토 대기 / 구현: 미착수 / 실행 검증: 미검증
-- GitHub Issue·PR: 미게시·없음. 2026-10-07 저장소 Issue·PR 전체 검색에서 같은 작업은 조회되지 않음. 게시 직전에 다시 확인
+- 초안 ID: COM05-A / 작성일: 2026-10-07 / 버전: v0.4
+- 문서 작성: 완료 / 내용 검토: 사용자 검토 대기 / 구현: 로컬 완료 / 실행 검증: 자동·실제 MQTT 통과
+- GitHub Issue·PR: [#29](https://github.com/inhhlee/amr-control-system-demo/issues/29) closed/completed / [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 병합 완료(d777ab7). 2026-10-20 동일 작업 검색 후 신규 게시
 - 기준: [과제계획](../과제계획.md#solo-task1) v0.14, [전체일정](../../전체일정.md#solo-demo) v0.11, [전체 순서](README.md#solo-issues)
 - 기능 기준: [기능명세](../../명세/기능명세.md) v0.7 COM-05, [공통데이터명세](../../명세/공통데이터명세.md#task1-contracts) v0.4, [결정사항](../../명세/검토%20및%20결정사항.md) v0.5
 - 게시 시 로컬 관리 정보는 제외한다. 본문의 미게시 선행 초안은 실제 Issue URL로 바꾸며, 공유할 수 없는 문서는 문서명·버전·항목과 필요한 내용을 전달한다.
+
+## 2026-10-20 병합·종료 결과
+
+- 사용자 요청으로 01:52:38 KST [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30)을 develop에 merge commit 방식으로 병합했다. [병합 d777ab7](https://github.com/inhhlee/amr-control-system-demo/commit/d777ab7d8ef034d66a862343231268cd1476af24)의 부모는 64df6f0·검토 head a6f3b8d다.
+- 01:52:54 KST #29를 closed/completed로 종료했다. 완료조건 5개·자동758개·실제 MQTT/Seq 근거 및 미해결 리뷰 스레드 없음 확인.
+- 병합 커밋과 검토 커밋의 전체 Git tree가 811c0672170fbc7c00b3b7d9392d5c1aaf291eb3으로 동일하다. CI checks/statuses 없음, 이번 단계 제품 재시험 없음.
+- 실제 AMR 동작·COM05-B ACK 대조·자동 복구 등 후속 범위 유지. 로컬 develop 최신화·브랜치 정리는 요청 범위 밖이므로 수행하지 않았다.
+- 아래 게시 전·병합 전 문구는 당시 기록이다.
+
+## 2026-10-20 게시·리뷰 결과
+
+- 사용자 요청에 따라 기존 AGENTS.md의 설계·검토·학습 설명 15줄도 포함해 [a6f3b8d](https://github.com/inhhlee/amr-control-system-demo/commit/a6f3b8de9e28509d58835ac08166b0982519d3bf)로 커밋·푸시했다.
+- [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30), base develop / head feature/29-mqtt-command-publish.
+- [AI COMMENT 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/30#pullrequestreview-5574833740)에서 수정 필요 결함을 발견하지 못했다. 입력 검증·동시성/취소·자원 소유권·기존 수신 영향·시험 근거를 대조했다. 사람 승인·병합 완료가 아니다.
+- 기존 자동758개·실제 MQTT/Seq 근거와 현재 C# 소스·프로젝트 58개 해시 일치. 이번 게시 단계 제품 재시험 없음, CI checks/statuses 없음.
+- 선택 이유·대안·예상 질문·미검증 범위는 리뷰와 기존 검증결과에 연결한다. develop 병합·Issue 종료는 미수행이다.
+- 아래 미커밋·PR 전 표시는 구현 당시 기록이다.
+
+## 2026-10-20 구현·시험 결과
+
+- 사용자 요청으로 COM05-A를 재개했다. 이번 기준은 과제계획 v0.39·결정사항 v0.7이며 아래 v0.14/v0.5 참조는 10/7 초안 당시 기록이다.
+- develop 64df6f0에서 feature/29-mqtt-command-publish 생성. 기존 AGENTS.md 변경 보존.
+- 실제 생성 경로: src/Amr.Communication/Command/ 모델·순수 Validator·Publisher, 콘솔 CommandConsoleRunner, Command/ 및 Console/ 시험, tests/manual/COM05-A/ 실제 시험 도구.
+- 전체 758개(신규167) 및 실제 MOVE·STOP·RESET 대상/ID/필드·불량 거부·Retain·Seq 검색 통과. 발행 취소·제한·실패는 전달 불확실성과 구분하고 자동 재시도하지 않는다.
+- [검증결과](../산출물/2026-10-20_COM05-A_MQTT송신_20261020-command-full-02_검증결과.md). 로컬 구현·시험까지이며 커밋·푸시·PR·병합·Issue 종료는 미수행. 실제 AMR 동작·ACK 요청 대조는 제외.
+- 아래 생성 예정·미착수 서술은 원래 작업 계획으로 보존한다.
 
 ## 목적
 

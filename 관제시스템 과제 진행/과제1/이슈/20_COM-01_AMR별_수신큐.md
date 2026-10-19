@@ -2,11 +2,11 @@
 
 ## 로컬 관리 정보
 
-- 초안 ID: COM01-C / 작성일: 2026-10-07 / 수정일: 2026-10-19 / 버전: v0.4
-- 문서 작성·GitHub 게시: 완료 / 내용 검토: Codex가 현재 코드·DN-09·선행 반영과 대조 / 세부 API: 구현 전 설계에서 확인 / 구현: 콘솔 연결·취소/종료 보완 완료·전체 진행 중 / 실행 검증: 자동 543건·실제 MQTT 세 세션 통과
-- GitHub Issue: [#23](https://github.com/inhhlee/amr-control-system-demo/issues/23) open / PR: 없음.
+- 초안 ID: COM01-C / 작성일: 2026-10-07 / 수정일: 2026-10-19 / 버전: v0.5
+- 문서 작성·GitHub 게시: 완료 / 내용 검토: Codex가 현재 코드·DN-09·선행 반영과 대조 / 세부 API: 구현·검토 완료 / 구현: COM01-C 완료·develop 반영 / 실행 검증: 자동 547건·실제 MQTT 정상/중단 통과
+- GitHub Issue: [#23](https://github.com/inhhlee/amr-control-system-demo/issues/23) closed/completed / PR: [#24](https://github.com/inhhlee/amr-control-system-demo/pull/24) develop 병합.
 - 게시 직전 COM01-C·수신 큐 관련 Issue와 PR을 검색했고 동일 작업은 없었다. #21은 closed, PR #22는 develop 병합 상태다.
-- 확인 코드: develop / b8af05738d08b76db84f2b020789539c8062ad07 / feature/23-amr-receive-queue 미커밋 변경.
+- 완료 확인 코드: develop / e2076145615d1310e1a52405cd5c35d66ca71a5e / 검토 head accda109ff20668b4b9fadf15b53e7a21015cfa1와 파일 차이 없음.
 - 게시 준비 기준: [과제계획](../과제계획.md#solo-task1) v0.28·[전체일정](../../전체일정.md#solo-demo) v0.21. 게시 후 현재 상태는 v0.29·v0.22와 [Issue 목록](README.md#solo-issues) v0.20에 연결한다.
 - DN-09 원본: [AMR별 수신 처리](<C:/practice/src/Amr.Communication/Mqtt/RECEIVE_QUEUE.md>) S022/DN-09. 계약만 대조했으며 기존 소스·통과 기록을 새 실습 근거로 복사하지 않았다.
 - v0.2: 기존 소스 경로·#21/PR #22 반영, 대기/처리 중 수량·세션 제한·오류 구분·취소/늦은 완료·예정 시험을 구체화했다. 기존 목적·제외 범위·완료조건 5개를 유지한다.
@@ -15,6 +15,14 @@
 - v0.3 진행 기록: COM01-C #23 첫 단계: AMR별 순서·독립 처리 내부 큐와 신규 자동시험 9건을 구현했다. 빌드 경고·오류 0, 기존 529건 포함 538건 통과. 콘솔 연결·취소·폐기·종료 제한·실제 MQTT는 다음 단계이며 미커밋이다. [검증결과](<C:/amr-control-system-demo/evidence/COM-01/20261019-queue-order-02/README.md>) 아래 GitHub 게시 본문과 전체 완료조건은 보존하며 전체 완료 체크는 하지 않는다.
 
 - v0.4 진행 기록: COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. [검증결과](<C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md>) v0.3 기록은 당시 결과로 보존한다. GitHub 전체 완료 체크는 변경하지 않았다.
+
+## v0.5 완료 확인 — 2026-10-19
+
+PR #24는 22:43:57 KST에 develop에 merge commit e207614로 반영된 상태를 확인했다. 이번 요청 시작 시 이미 병합되어 있었으며 중복 병합하지 않았다. 22:46:50 KST에 완료조건 5개와 근거를 GitHub 본문에 연결하고 #23을 completed로 종료했다. 과거 v0.2~v0.4와 아래 예정 시험은 당시 기록으로 보존한다.
+
+자동시험 547건, 실제 MQTT 정상/종료/새 세션 15건, 실제 Broker 중단 5건의 근거는 [최종 검증결과](https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md)와 [PR #24 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/24#pullrequestreview-5572421997)에 연결한다. 기존 시험 소스와 병합 코드가 같아 제품 시험을 반복하지 않았다. AI 자체 COMMENT 리뷰이며 원격 CI checks/statuses는 0건이다.
+
+실제 MQTT 과부하·장시간 부하·네트워크 무응답/KeepAlive 상세와 실제 Core·GUI·자동 복구는 미검증이다. 처리자 동기 구간은 짧게 반환해야 한다. COM01-C 완료를 COM-01 전체·과제1 전체·main 배포 완료로 확대하지 않는다.
 
 ## 목적
 
@@ -80,11 +88,11 @@
 
 ## 완료조건
 
-- [ ] 같은 AMR의 네 유형이 접수 순서대로 처리되고 다른 AMR은 독립적으로 진행된다. 대상·모델·최초 수신 시각과 id 없는 ACK의 값이 보존된다.
-- [ ] 큐/AMR 한계 초과 시 MQTT 수신부가 빈자리를 기다리지 않고 새 입력을 거부한다. QueueFull·AmrLimitReached를 입력 오류와 구분해 기록한다.
-- [ ] 처리자 예외를 HandlerFailed로 기록한 뒤 다음 입력을 처리한다. 취소 후 새 전달은 시작하지 않으며 잔여 폐기 수량을 기록한다.
-- [ ] 종료 대기 한계를 넘으면 오류와 정리 결과를 알리고 늦은 완료·실패를 관찰한다. 정상 종료·연결 끊김·새 세션에서 이전 큐가 재사용되지 않는다.
-- [ ] 기존 검사·수신부 회귀와 실제 MQTT 연결 결과를 확인하고, 실제 변경·확인 결과·미검증 범위를 README와 Issue·PR에 연결한다.
+- [x] 같은 AMR의 네 유형이 접수 순서대로 처리되고 다른 AMR은 독립적으로 진행된다. 대상·모델·최초 수신 시각과 id 없는 ACK의 값이 보존된다.
+- [x] 큐/AMR 한계 초과 시 MQTT 수신부가 빈자리를 기다리지 않고 새 입력을 거부한다. QueueFull·AmrLimitReached를 입력 오류와 구분해 기록한다.
+- [x] 처리자 예외를 HandlerFailed로 기록한 뒤 다음 입력을 처리한다. 취소 후 새 전달은 시작하지 않으며 잔여 폐기 수량을 기록한다.
+- [x] 종료 대기 한계를 넘으면 오류와 정리 결과를 알리고 늦은 완료·실패를 관찰한다. 정상 종료·연결 끊김·새 세션에서 이전 큐가 재사용되지 않는다.
+- [x] 기존 검사·수신부 회귀와 실제 MQTT 연결 결과를 확인하고, 실제 변경·확인 결과·미검증 범위를 README와 Issue·PR에 연결한다.
 
 ## 시험 방법과 예상 결과
 

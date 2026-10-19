@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.31 초안 · 수정 2026-10-19</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — COM04-B #18은 [PR #20](https://github.com/inhhlee/amr-control-system-demo/pull/20) develop 병합·Issue 종료를 확인했다. COM01-B [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. [검증결과](&lt;C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md&gt;) COM-01~06 전체·과제1은 미완료다. / COM01-B [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. [검증결과](&lt;C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md&gt;) 실제 Core·GUI·자동 복구와 Broker 강제 단절 시험은 미검증이다.</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제1 통신 서버와 클라이언트 과제계획</h1><div class="meta"><div><span>문서</span>v0.42 초안 · 수정 2026-10-20</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>진행 중 — COM04-B #18은 [PR #20](https://github.com/inhhlee/amr-control-system-demo/pull/20) develop 병합·Issue 종료를 확인했다. COM01-B [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C [#23](https://github.com/inhhlee/amr-control-system-demo/issues/23)은 [PR #24](https://github.com/inhhlee/amr-control-system-demo/pull/24)의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. [최종 검증결과](https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md). 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다. COM-01~06 전체·과제1은 미완료다. / COM01-B [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C [#23](https://github.com/inhhlee/amr-control-system-demo/issues/23)은 [PR #24](https://github.com/inhhlee/amr-control-system-demo/pull/24)의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. [최종 검증결과](https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md). 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다. 실제 Core·GUI·자동 복구는 미검증이다.</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><strong>과제1</strong><a href="%EA%B3%BC%EC%A0%9C2_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제2</a><a href="%EA%B3%BC%EC%A0%9C3_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제3</a><a href="%EA%B3%BC%EC%A0%9C4_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제4</a><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -52,11 +52,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>수정일</td>
-<td>2026-10-19</td>
+<td>2026-10-20</td>
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.31 초안</td>
+<td>v0.42 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -76,11 +76,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>개발 상태</td>
-<td>진행 중 — COM04-B #18은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/20">PR #20</a> develop 병합·Issue 종료를 확인했다. COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. <a href="C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md">검증결과</a> COM-01~06 전체·과제1은 미완료다.</td>
+<td>진행 중 — COM04-B #18은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/20">PR #20</a> develop 병합·Issue 종료를 확인했다. COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C <a href="https://github.com/inhhlee/amr-control-system-demo/issues/23">#23</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/24">PR #24</a>의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. <a href="https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md">최종 검증결과</a>. 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다. COM-01~06 전체·과제1은 미완료다.</td>
 </tr>
 <tr>
 <td>실행 검증 상태</td>
-<td>COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. <a href="C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md">검증결과</a> 실제 Core·GUI·자동 복구와 Broker 강제 단절 시험은 미검증이다.</td>
+<td>COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C <a href="https://github.com/inhhlee/amr-control-system-demo/issues/23">#23</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/24">PR #24</a>의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. <a href="https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md">최종 검증결과</a>. 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다. 실제 Core·GUI·자동 복구는 미검증이다.</td>
 </tr>
 <tr>
 <td>개발 시작 예정일</td>
@@ -128,11 +128,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>이번 작업</td>
-<td>사용자 요청에 따라 #21 네 유형 수신·전달만 구현·검증했다. AMR별 큐는 미구현이며 변경은 미커밋이다.</td>
+<td>사용자 후속 요청으로 COM05-A <a href="https://github.com/inhhlee/amr-control-system-demo/issues/29">#29</a> 로컬 구현·시험과 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/30">PR #30</a> develop 병합(d777ab7)·#29 완료 종료 확인. 나머지 보류 기능과 과제2 #28 예정 범위 유지</td>
 </tr>
 <tr>
 <td>이번 작업 준비</td>
-<td>#17의 질문 → 답변 확인 → 설명·설계 → 단계별 구현·시험을 수행했다. 전체 Payload 검사·정상 모델·수신자 경계를 기존 구독부에 연결했다. #18은 사용자 단계별 승인 후 Telemetry·Alarm·ACK 구현과 전체 자동시험 463건을 통과했다. 실제 세 유형 MQTT는 미실행이다.</td>
+<td>LOG #26의 대상·정책·시험은 <a href="#log26-work">작업 범위</a>, 실제 결과는 코드 공간 evidence/LOG/에 연결. 선행 #5 근거 유지</td>
 </tr>
 <tr>
 <td>실제 진행 기록</td>
@@ -142,7 +142,33 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <p>이 계획은 프로젝트의 과제1을 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 2026-10-05의 기존 코드 확인 기록을 보존하고, 2026-10-06에는 <code>C:\practice</code> HEAD <code>47ee27b</code>의 채택 계약·추적기·실행 안내·기존 증거와 대조했다. 기존 통과 기능을 처음부터 다시 구현하는 계획으로 사용하지 않는다. 원문 요구인 COM-06을 포함한 최종 범위와 기존 MVP 개발 순서를 구분한다.</p>
 <p>사용자는 별도 저장소 <code>inhhlee/amr-control-system-demo</code>에서 직접 구현·시험·Issue·PR 절차를 실습하기로 했다. 현재 계획 범위는 COM-01~06 전체이며 첫 구현은 COM-03의 정상 접속·종료다. 기존 <code>C:\practice</code>의 구현·통과 기록을 새 실습의 완료 근거로 가져오지 않는다. 명세·계획 원본은 <code>C:\process-plan</code>이고 코드·상세 실행 증거는 <code>C:\amr-control-system-demo</code>에서 관리한다.</p>
 <p><strong>2026-10-12 당시 확인: PR #13은 10월 11일, <a href="https://github.com/inhhlee/amr-control-system-demo/pull/14">총괄 검증 PR #14</a>와 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/16">Heartbeat 수신 PR #16</a>은 10월 12일 develop에 반영됐고 #4·#7·#8·#15는 종료됐다. COM01-A 자동시험 18개·실제 MQTT 수신/필터/정상 종료 근거를 연결했다. 다음은 COM04-A #17의 질문·설계 후 단계별 구현이며 #18은 A 반영 뒤 진행한다. 이번 기록 정리에서는 제품 재시험을 하지 않았다. main 반영은 미결정이고 COM-01~06 전체·과제1은 미완료다.</strong> <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-12.md">오늘 기록</a>에서 최신 요약과 당시 단계별 이력을 구분한다.</p>
-<p><strong>2026-10-19 현재:</strong> COM04-B #18은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/20">PR #20</a> develop 병합·Issue 종료를 확인했다. COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. <a href="C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md">검증결과</a> #18의 병합 커밋은 <code>e40e2b4a72f5901a32e723a04661482f51f23f9a</code>이다. #18의 자동시험 463건은 선행 검사기 근거이며 COM01-B 다중 Topic 연동 통과로 집계하지 않는다. <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-19.md">오늘 기록</a>을 따른다.</p>
+<p><strong>2026-10-19 현재:</strong> COM04-B #18은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/20">PR #20</a> develop 병합·Issue 종료를 확인했다. COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C <a href="https://github.com/inhhlee/amr-control-system-demo/issues/23">#23</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/24">PR #24</a>의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. <a href="https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md">최종 검증결과</a>. 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다. #18의 병합 커밋은 <code>e40e2b4a72f5901a32e723a04661482f51f23f9a</code>이다. #18의 자동시험 463건은 선행 검사기 근거이며 COM01-B 다중 Topic 연동 통과로 집계하지 않는다. <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-19.md">오늘 기록</a>을 따른다.</p>
+<p>2026-10-20 최신 병합·종료: COM03-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/5">#5</a>는 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/25">PR #25</a>를 develop에 merge commit 방식으로 병합한 뒤 완료조건 7개를 확인해 completed로 종료했다. 병합 커밋은 <a href="https://github.com/inhhlee/amr-control-system-demo/commit/b4265aff198ead9d234c592cfaf9b89f9e217024">b4265af</a>이며 전체 파일 트리는 검토한 2d1e394와 동일하다. 기존 자동시험 566건·실제 TCP/MQTT 6개 시나리오와 AI COMMENT 리뷰가 근거다. 이번 병합 단계에서 재시험은 하지 않았고, CI 검사 결과·필수 보호 규칙·미해결 리뷰 지적은 없다. COM-03 전체·과제1 전체는 미완료이며 과제1 재개 시 다음 기능은 #6이다.</p>
+<p>2026-10-20 추가 작업: <a href="https://github.com/inhhlee/amr-control-system-demo/issues/26">LOG #26</a>을 생성하고 최신 develop b4265af에서 feature/26-serilog-seq를 시작했다. AGENTS.md 기존 미커밋 지침 변경은 보존하며 기능 변경과 구분한다. 이번 요청은 구현·시험까지다.</p>
+<p><a id="log26-work"></a></p>
+<p><strong>LOG #26 구현·검증 범위</strong></p>
+<ul>
+<li><p>근거: 사용자 지정 Serilog + Seq, 개발환경 v0.8, 결정사항 v0.6 D-10, 기능명세 v0.7 COM-01·03·04. 기존 콘솔·수신 계약과 SQLite 업무 History 구분을 유지한다.</p>
+</li>
+<li><p>기존 대상: 콘솔 csproj·Program.cs·ConsoleRunner.cs, tests 프로젝트·COM01-B MQTT 시험 도구·README. 생성 대상: 콘솔 Logging/SeqLogSink.cs·SeqLogging.cs·StructuredLog.cs, SeqLoggingTests.cs, tests/manual/LOG/Verify-Seq.ps1, evidence/LOG/ 실행별 근거.</p>
+</li>
+<li><p>기존 Seq amr-seq를 재사용한다. 관리 Compose는 C:/practice/docker/docker-compose.yml, 데이터는 C:/practice/docker/seq/data, 호스트는 127.0.0.1:5341. 새 프로젝트 Broker는 자체 Compose의 1884를 사용하며 기존 1883 Broker는 변경하지 않는다.</p>
+</li>
+<li><p>임시 개발 정책: AMR_SEQ_URL로 선택 활성화, 실행별 RunId, API 키는 환경 변수. 공식 Serilog Compact formatter와 Seq CLEF 수집 API를 사용한다. 큐 1024건·배치 128건·이벤트 16KB·문자열 속성 512자(잘림 표시), HTTP 1초·종료 flush 3초 후 실제 HTTP 취소·작업 종료 대기. 실패 배치는 재전송하지 않으며 Sent/Failed(수집 미확인)/Dropped를 집계한다.</p>
+</li>
+<li><p>선택 이유: MQTT 콜백에서 네트워크 대기를 제거하고 유한 종료와 유실 집계를 직접 검증한다. 대안인 기본 Seq sink는 전송 코드 유지보수가 적지만, 이번 종료/계수 정책을 별도로 보완해야 한다. 운영용 무손실·디스크 spool·장기 부하는 제외한다.</p>
+</li>
+<li><p>시험 입력/예상: 정상 메시지와 불량 입력은 기존 stdout/stderr·종료 코드를 유지하고 Seq에서 AMR/이벤트 속성 조회; 401/500·전송 예외·느린 응답은 MQTT를 막지 않고 실패 집계; 포화 시 새 로그 폐기; Ctrl+C 시 유한 flush·HTTP/작업 정리; 동시 AMR은 속성 문맥 격리; Payload·인증정보·자유 형식 예외는 Seq에 전송하지 않음.</p>
+</li>
+<li><p>상태: 로컬 구현·검증 완료. 자동시험 580건, 실제 Seq 114건 조회·AMR 필터 12건, Seq 정상/접속불가 각각 MQTT 수신20·거부4·두 번 정상 종료, HTTP 무응답 약2.858초 종료·소켓 EOF 통과. <a href="C:/amr-control-system-demo/evidence/LOG/20261020-seq-unit-03/README.md">상세 검증</a>. 커밋·푸시·PR·병합·Issue 종료는 미수행.</p>
+</li>
+<li><p>2026-10-20 후속 게시·P2 수정: <a href="https://github.com/inhhlee/amr-control-system-demo/pull/27">PR #27</a>, 최신 4ed8142. 대상은 ConsoleRunner와 신규 ConsoleShutdownReasonTests, FakeMqttClient 구독 진입 신호다. 최초 원인 원자적 보존으로 UserCanceled/ConnectionLost를 분리하고 후행 신호가 정리를 앞당기지 않도록 했다. 연결 취소·구독 대기/완료·양쪽 순서·콜백 중 경합·동시32회의 원인/종료 코드/자원 정리를 검증했다. 신규11건 포함591건 통과, <a href="https://github.com/inhhlee/amr-control-system-demo/blob/4ed814289dfa43d6e1c38f1233f0a394fc807741/evidence/LOG/20261020-p2-green-01/README.md">근거</a>, <a href="https://github.com/inhhlee/amr-control-system-demo/pull/27#pullrequestreview-5574401350">재리뷰</a>에서 P2 해결 확인. 실제 Seq/MQTT 재시험은 미실행이며 초기 실제 연동 근거와 구분한다. 병합·Issue 종료는 미수행.</p>
+</li>
+<li><p>2026-10-20 최종 병합·종료: <a href="https://github.com/inhhlee/amr-control-system-demo/pull/27">PR #27</a>을 develop에 merge commit <a href="https://github.com/inhhlee/amr-control-system-demo/commit/64df6f0e639c7c9fbb1c474711940ab2eeabb287">64df6f0</a>으로 병합했다. 전체 트리가 검토·시험한 4ed8142와 동일하며, 완료조건6개를 확인하고 #26을 completed로 종료했다. 기존591건·실제 연동·P2 재리뷰 근거를 적용했고 이번 제품 재시험은 없다. 로컬 develop 최신화·브랜치 정리는 별도 후속 단계이며 과제1 전체·운영 무손실 완료를 뜻하지 않는다.</p>
+</li>
+</ul>
+<p><strong>2026-10-20 후속 요청 — COM05-A 범위 재개:</strong> <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/23_COM-05_Command_%EB%B0%9C%ED%96%89.md">#29 담당 문서</a>에 실제 모듈·시험·단계를 연결했다. 전체758개·실제 MQTT 세 명령·Seq 검색 통과, <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%82%B0%EC%B6%9C%EB%AC%BC/2026-10-20_COM05-A_MQTT%EC%86%A1%EC%8B%A0_20261020-command-full-02_%EA%B2%80%EC%A6%9D%EA%B2%B0%EA%B3%BC.md">검증결과</a>. 사용자 요청으로 AGENTS.md 포함 a6f3b8d 커밋·푸시 및 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/30">PR #30</a>·<a href="https://github.com/inhhlee/amr-control-system-demo/pull/30#pullrequestreview-5574833740">AI 리뷰</a>를 완료했다. 수정 필요 결함 미발견 후 사용자 요청으로 develop d777ab7 병합·#29 완료 종료를 확인했다. 검토 a6f3b8d와 전체 tree 동일, 제품 재시험 없음. COM05-B와 다른 보류 범위는 유지한다. 아래 보류 기록은 이전 선택의 이력이다.</p>
+<p><strong>2026-10-20 우선순위 변경:</strong> 사용자가 과제1 잔여 개발 보류·과제2 우선 진행을 선택했다. #6·COM-02·COM-05·COM-06·TASK1-V와 기존 미검증·리뷰 이월을 유지한다. 개발 상태는 진행 중이며 전체 완료로 바꾸지 않는다. <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EC%A0%84%EC%B2%B4%EC%9D%BC%EC%A0%95.md#task2-priority">전체일정의 보류 범위·재조율 조건</a>을 따르며 다음 예정 작업은 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-21.md">10/21 과제2</a>다. 과거의 다음 작업 표시는 당시 기록이다.</p>
 </section>
 <section id="s2"><h2><span class="num">2</span>배경과 목적</h2><p>Docker 기반 Mosquitto를 통해 가상 AMR과 관제 사이의 MQTT 통신 계층을 구성하고, 콘솔에서 송수신·연결 끊김·재접속 및 메시지 검증 결과를 확인한다.</p>
 </section>
@@ -374,7 +400,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tbody></table></div>
 <p><a id="com01-work"></a></p>
 <h3>이번 구현 작업 단위</h3>
-<p><strong>현재 계획 범위는 <a href="#solo-task1">새 저장소의 COM-01~06 전체</a>이며 COM01-A #15의 PR #16이 develop에 반영됐다. COM04-A #17과 COM04-B #18도 develop 반영을 마쳤으며 COM01-B #21도 PR #22 develop 반영·종료를 확인했다. COM01-C #23은 콘솔 큐·취소/종료와 실제 MQTT를 확인했다. 단절/과부하/경합 반복은 미검증이다.</strong> A1 PR #12는 develop에 반영됐다. #4는 A1 #7·통합 #8의 정상 접속·종료 결과를 모으는 총괄이고 기존 #5·#6과 별도 새 13개 초안은 유지한다. 아래 새 실습 모듈은 <code>C:\amr-control-system-demo</code> 기준이며 #8 접속·종료, COM01-A 구독·진단, COM04-A·B 네 유형 검사·모델과 시험은 생성했고 실제 다중 Topic 수신은 #21에서 구현·로컬 검증했다. <code>C:\practice</code> 링크가 붙은 행과 기존 작업 순서는 2026-10-06의 기준 정리·조건부 회귀 자료로 보존한다. 기존 <code>passing</code>을 취소하거나 HB 시험을 무조건 반복하지 않는다.</p>
+<p><strong>현재 계획 범위는 <a href="#solo-task1">새 저장소의 COM-01~06 전체</a>이며 COM01-A #15의 PR #16이 develop에 반영됐다. COM04-A #17과 COM04-B #18도 develop 반영을 마쳤으며 COM01-B #21도 PR #22 develop 반영·종료를 확인했다. COM01-C #23은 PR #24 develop 병합·종료를 확인했다. 자동 547건·실제 Broker 중단·경합 시험을 확인했고 실제 MQTT 과부하·장시간 부하는 미검증이다.</strong> A1 PR #12는 develop에 반영됐다. #4는 A1 #7·통합 #8의 정상 접속·종료 결과를 모으는 총괄이고 기존 #5·#6과 별도 새 13개 초안은 유지한다. 아래 새 실습 모듈은 <code>C:\amr-control-system-demo</code> 기준이며 #8 접속·종료, COM01-A 구독·진단, COM04-A·B 네 유형 검사·모델과 시험은 생성했고 실제 다중 Topic 수신은 #21에서 구현·로컬 검증했다. <code>C:\practice</code> 링크가 붙은 행과 기존 작업 순서는 2026-10-06의 기준 정리·조건부 회귀 자료로 보존한다. 기존 <code>passing</code>을 취소하거나 HB 시험을 무조건 반복하지 않는다.</p>
 <ul>
 <li>기능: 기준 정합성은 COM-01~06, 아래 조건부 회귀는 COM-01의 Heartbeat와 COM-04 검사 경계</li>
 <li>적용 계약: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B3%B5%ED%86%B5%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%85%EC%84%B8.md#heartbeat-contract">COM-01-Heartbeat-v0.2</a>, 수신 계약 v3의 기존 개발용 기준을 문서에 반영</li>
@@ -401,7 +427,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>COM-03 / COM03-B</td>
-<td>새 실습 COM03-A의 연결 코드·콘솔·시험</td>
+<td>기존 Mqtt/Connection/MqttConnection.cs·설정·Program.cs·시험, 신규 MqttConnectionException.cs·ConsoleRunner.cs·실패 시험·tests/manual/COM03-B</td>
 <td><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/03_COM-03_%EC%A0%91%EC%86%8D%EC%8B%A4%ED%8C%A8_%EC%B2%98%EB%A6%AC.md">접속 실패 처리</a>: 입력 오류·최초 실패·대기 제한·사용자 취소</td>
 <td>COM03-A의 PR 반영; 접속 대기와 KeepAlive 감지 구분</td>
 <td>잘못된 입력 거부, 실패·대기 제한은 비정상 종료, 사용자 취소는 정리 후 종료 0, Connected 오표시 없음</td>
@@ -586,7 +612,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <p>실행 후에는 사용 설정·계약 버전, 입력, 절차, 예상 결과, 실제 결과, 판정 및 Log·화면·DB 등 근거를 검증 결과에 작성한다. 미정 정책에 의존하는 시험은 해당 결정 항목과 적용 값을 함께 기록한다.</p>
 <p><a id="com01-test"></a></p>
 <h3>이번 작업 시험</h3>
-<p>새 실습의 예정 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>에 연결한 각 원본에서 관리한다. #4의 원래 시험·완료조건은 보존하고 A1<del>A3가 맡은 결과를 연결한다. #5·#6은 통합한 학습 체크리스트를 유지한다. 각 작업의 증거를 TASK1-V에서 최종 코드에 대조한다. A1 Broker 기동 근거는 PR #12에 있고 MQTT 정상 접속·유지·종료의 로컬 시험은 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-11.md">10월 11일 기록</a>에 연결한다. #8 PR #13·총괄 PR #14 develop 반영과 #4·#8 종료를 확인했다. COM01-A #15·PR #16의 자동시험 18개·실제 MQTT 근거는 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-12.md">10월 12일 기록</a>에 연결한다. COM04-A #17의 자동시험 113개·실제 MQTT 근거와 PR #19 반영은 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-19.md">10월 19일 기록</a>에 연결한다. COM04-B #18의 자동시험과 COM01-B #21의 실제 MQTT 결과는 PR #20·#22에 연결됐고 COM01-C는 자동 543건·실제 MQTT 큐 순서/독립성·Ctrl+C를 확인했고 남은 경계를 별도로 관리한다. 기능 부분 완료·기능 전체 완료·과제1 완료를 구분한다. 아래 HB-01</del>06은 기존 저장소의 조건부 회귀 자료다.</p>
+<p>새 실습의 예정 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%9D%B4%EC%8A%88/README.md#solo-issues">전체 작업 목록</a>에 연결한 각 원본에서 관리한다. #4의 원래 시험·완료조건은 보존하고 A1<del>A3가 맡은 결과를 연결한다. #5·#6은 통합한 학습 체크리스트를 유지한다. 각 작업의 증거를 TASK1-V에서 최종 코드에 대조한다. A1 Broker 기동 근거는 PR #12에 있고 MQTT 정상 접속·유지·종료의 로컬 시험은 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-11.md">10월 11일 기록</a>에 연결한다. #8 PR #13·총괄 PR #14 develop 반영과 #4·#8 종료를 확인했다. COM01-A #15·PR #16의 자동시험 18개·실제 MQTT 근거는 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-12.md">10월 12일 기록</a>에 연결한다. COM04-A #17의 자동시험 113개·실제 MQTT 근거와 PR #19 반영은 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-19.md">10월 19일 기록</a>에 연결한다. COM04-B #18의 자동시험과 COM01-B #21의 실제 MQTT 결과는 PR #20·#22에 연결됐고 COM01-C #23은 자동 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인하고 PR #24로 develop에 반영·종료했다. 실제 MQTT 과부하·장시간 부하 등 미검증 범위는 유지한다. 기능 부분 완료·기능 전체 완료·과제1 완료를 구분한다. 아래 HB-01</del>06은 기존 저장소의 조건부 회귀 자료다.</p>
 <p>다음 표는 기존 Heartbeat 회귀 절차다. 이번 기준 정리에서 재시험은 미실행이며, 다음 구현의 영향·증거 부족을 확인한 뒤 필요한 항목을 선택한다. 실제 제품의 기존 통과 기록과 문서용 HB-01~06의 미실행 상태를 구분한다. 상세 실행 순서는 다음 하위 절을 따른다.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -643,7 +669,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </ul>
 <p>이번 작업의 준비가 끝났다는 것은 위 시험을 수행할 파일·입력·절차·판정 기준을 설명할 수 있다는 뜻이다. 위 체크는 실제 시험 후에만 표시한다.</p>
 <h3>상세 실행 절차</h3>
-<p>새 실습은 승인한 실제 Issue URL과 <code>C:\process-plan</code>의 최신 문서를 코드 채팅에 전달한다. 정상 접속·종료 #8은 A1 PR #12 반영 후 A2 중간 결과 → A3 최종 수명주기 순서로 수행했다. COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C #23 콘솔 MQTT 연결·실제 시험 완료. 빌드 경고·오류 0, 자동시험 543건 통과. 실제 MQTT 15건은 정상 10·검사 거부 1·처리 취소 1·대기 폐기 3이며 세 세션 종료 0을 확인했다. Broker 강제 단절·실제 과부하·종료 경합 반복은 미검증, 변경은 미커밋이다. <a href="C:/amr-control-system-demo/evidence/COM-01/20261019-queue-mqtt-01/README.md">검증결과</a> #9용 별도 브랜치·PR은 만들지 않는다. 실제 인자·명령은 코드 README에 작성한다. 시험 대역·실제 Broker·무응답 도구의 범위를 구분해 <code>evidence/&lt;기능ID&gt;/&lt;실행ID&gt;/</code>에 근거를 남긴다. #4에서 정상 접속·종료 전체를 확인하고 최종 과제 근거는 TASK1-V에서 연결한다. 이번 구현 요청에서 수행한 자동시험·실제 MQTT 결과는 위 실행 근거에 기록했다.</p>
+<p>새 실습은 승인한 실제 Issue URL과 <code>C:\process-plan</code>의 최신 문서를 코드 채팅에 전달한다. 정상 접속·종료 #8은 A1 PR #12 반영 후 A2 중간 결과 → A3 최종 수명주기 순서로 수행했다. COM01-B <a href="https://github.com/inhhlee/amr-control-system-demo/issues/21">#21</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/22">PR #22</a>로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C <a href="https://github.com/inhhlee/amr-control-system-demo/issues/23">#23</a>은 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/24">PR #24</a>의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. <a href="https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md">최종 검증결과</a>. 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다. #9용 별도 브랜치·PR은 만들지 않는다. 실제 인자·명령은 코드 README에 작성한다. 시험 대역·실제 Broker·무응답 도구의 범위를 구분해 <code>evidence/&lt;기능ID&gt;/&lt;실행ID&gt;/</code>에 근거를 남긴다. #4에서 정상 접속·종료 전체를 확인하고 최종 과제 근거는 TASK1-V에서 연결한다. 이번 구현 요청에서 수행한 자동시험·실제 MQTT 결과는 위 실행 근거에 기록했다.</p>
 <p>아래는 <strong>Heartbeat 회귀를 선택했을 때 실행할 절차</strong>다. 이번 문서 정리에서 수행한 시험 결과가 아니다. 정상 메시지는 <code>id</code>, <code>ts</code>, <code>status: &quot;OK&quot;</code>를 포함하는 계약·JSON 예제를 사용한다. 다음 코드 작업에서는 표준 기준선 확인 후 선택한 범위의 절차를 수행한다.</p>
 <p>선행 조건은 SDK·Docker·기존 <code>amr-mosquitto</code> 준비, 다른 AMR_001 발행 실험과 혼동되지 않는 실행 시간대, 두 개의 PowerShell 터미널이다. 다른 프로세스를 임의로 종료하지 않는다. MQTT Explorer는 필요하지 않으며 컨테이너에 있는 <code>mosquitto_pub</code>을 사용한다. <code>-s</code>, <code>-V</code>, <code>-q</code>, <code>-t</code> 옵션은 2026-10-05 준비 당시 확인한 절차를 유지하며 실제 착수 때 현재 환경과 대조한다.</p>
 <p><strong>터미널 A — 관제 수신을 먼저 시작한다.</strong></p>
@@ -682,7 +708,7 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 <h3>다음 작업·기록 위치</h3>
 <ul>
 <li>기준 정리 결과: 기존 채택 계약과 COM-01~04 통과 기록, COM-05·COM-06 잔여 범위, HB 회귀 입력·명령·경로를 연결했다. 상세 전후 내용과 문서 확인 결과는 <a href="../%EB%B3%B4%EA%B4%80/%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0/2026-10-06_%EA%B3%BC%EC%A0%9C1_%EA%B8%B0%EC%A4%80%EC%A0%95%ED%95%A9%EC%84%B1_%EB%B3%80%EA%B2%BD%EB%B3%B4%EA%B3%A0.md">변경보고</a> 참조.</li>
-<li>다음 작업: <a href="https://github.com/inhhlee/amr-control-system-demo/issues/23">COM01-C #23</a>의 남은 Broker 강제 단절·과부하·종료 경합 시험과 전체 완료조건을 대조한다. 이번 요청의 콘솔 연결·실제 시험은 완료했으며 커밋하지 않았다. COM01-A 이월 항목과 develop→main 미정 상태는 유지한다.</li>
+<li>다음 작업: COM01-C #23의 PR #24 develop 반영·종료를 완료 근거로 연결한다. 후속 기능은 기존 Issue 목록의 선행 조건과 사용자 요청에 따라 선택하며 아직 착수하지 않는다. 실제 MQTT 과부하·장시간 부하, COM01-A 이월 항목과 develop→main 미정 상태는 유지한다.</li>
 <li>결정 항목 처리: D-03·D-04·D-09 등의 기존 임시 채택은 유지한다. 실제 Core 매핑·업무 ACK 예외·운영 감시·재접속은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B2%80%ED%86%A0%20%EB%B0%8F%20%EA%B2%B0%EC%A0%95%EC%82%AC%ED%95%AD.md#com01-readiness">영향 표</a>의 시점에 필요한 부분만 결정한다.</li>
 <li>주간 기록: <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EC%A3%BC%EA%B0%84/2026-10-05_10-09.md">2026-10-05~10-09</a>에 확인된 일일업무와 산출물을 요약한다. 현재 집계는 2026-10-08까지이며 10월 9일 실적은 수행 후 추가한다. 개발 기반·A1 시험 당시 결과·학습 문서/이슈 정리와 남은 MQTT 구현·검증을 구분한다.</li>
 <li>기록 위치와 상태 갱신: <a href="../README.md#document-map">업무 문서 역할 안내</a>와 <a href="../%EA%B8%B0%EC%A4%80/%EA%B3%B5%ED%86%B5%20%EC%9E%91%EC%84%B1%20%EA%B7%9C%EC%B9%99.md#changes">공통 변경 기준</a>을 따른다.</li>
@@ -697,6 +723,46 @@ Get-Content -Raw -LiteralPath (Join-Path $exampleDir &#39;heartbeat-valid.json&#
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-20</td>
+<td>v0.39 초안</td>
+<td>사용자 요청으로 과제1 잔여 개발 보류·과제2 우선 진행 연결. 완료 근거·미완료 기능·미검증·Issue 상태와 전체 미정 기한은 유지.</td>
+</tr>
+<tr>
+<td>2026-10-20</td>
+<td>v0.38 초안</td>
+<td>#26 PR #27 develop 병합64df6f0·트리 동일·완료조건6개 확인·Issue 종료. 재시험 없이 기존 근거 적용.</td>
+</tr>
+<tr>
+<td>2026-10-20</td>
+<td>v0.37 초안</td>
+<td>#26 PR #27 게시 및 P2 종료 원인 분리, 전체591건·4ed8142·재리뷰 해결. 병합/종료 미수행.</td>
+</tr>
+<tr>
+<td>2026-10-20</td>
+<td>v0.36 초안</td>
+<td>사용자 추가 LOG #26의 기존 Seq 재사용·출력 유지·장애/종료 구현과 580건 자동시험·실제 연동 근거 연결. 로컬 검증 완료, 커밋/PR 미진행.</td>
+</tr>
+<tr>
+<td>2026-10-20</td>
+<td>v0.35</td>
+<td>#5 PR #25 develop 병합 b4265af·완료조건 7개 확인·Issue 종료. 병합 트리 동일, 재시험 없이 기존 근거 적용.</td>
+</tr>
+<tr>
+<td>2026-10-20</td>
+<td>v0.34</td>
+<td>#5 커밋 2d1e394·develop 대상 PR #25·AI COMMENT 리뷰 연결. 기존 시험 근거 대조, 재시험·병합·Issue 종료 미수행.</td>
+</tr>
+<tr>
+<td>2026-10-19</td>
+<td>v0.33</td>
+<td>#5 실제 대상·구현·566건 자동시험·6개 실제 접속 시나리오와 미커밋/PR 대기 상태 연결.</td>
+</tr>
+<tr>
+<td>2026-10-19</td>
+<td>v0.32 초안</td>
+<td>#23 종료 경합 보완·547건·실제 Broker 중단 근거, PR #24 develop 병합 e207614 확인 및 Issue 완료 종료. 과제 전체·main 배포 미완료와 미검증 범위 유지.</td>
+</tr>
+<tr>
 <td>2026-10-19</td>
 <td>v0.31 초안</td>
 <td>#23 콘솔 큐·취소/폐기/종료 보완, 자동 543건·실제 MQTT 15건·세 세션 종료 0. 미검증 경계와 미커밋 상태 유지.</td>
