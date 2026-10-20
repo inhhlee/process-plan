@@ -1,16 +1,32 @@
 # amr-control-system-demo Issue 초안과 작업 순서
 
-- 작성·확인일: 2026-10-07 / 수정일: 2026-10-20 / 버전: v0.30
+- 작성·확인일: 2026-10-07 / 수정일: 2026-10-20 / 버전: v0.33
 - 대상: [inhhlee/amr-control-system-demo](https://github.com/inhhlee/amr-control-system-demo), 로컬 코드 `C:\amr-control-system-demo`
 - 문서 원본: `C:\process-plan`
+
+2026-10-20 후속 보관: 재리뷰·병합 확인 근거 192개 파일을 기존 #6 브랜치의 [20950a2](https://github.com/inhhlee/amr-control-system-demo/commit/20950a2132bd39917013418928412772ea701559)로 커밋·푸시했다. 이 문서의 #6 관련 변경과 C1~C4 검증결과 5개·과제1 HTML을 이번 문서 커밋에 포함한다. 이전 기록의 미커밋 표시는 당시 상태이며 별도 사용자 변경인 과제2 HTML은 제외한다. 이번 단계는 근거 보관으로 제품 코드·시험 결과·#6 완료 상태를 바꾸지 않는다.
+
+**2026-10-20 최신 후속 요청 — PR #31 develop 반영·#6 완료 종료:** [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)을 develop에 merge commit 방식으로 병합했다. 병합 커밋 [e4bd66a](https://github.com/inhhlee/amr-control-system-demo/commit/e4bd66acc6612c6d5206b3ef3929c7f7640a40c3)의 전체 파일 트리가 재리뷰한 55ac854와 동일하며 로컬 develop과 origin/develop의 일치를 확인했다. [Issue #6](https://github.com/inhhlee/amr-control-system-demo/issues/6)의 원래 완료조건 8개와 최종 근거를 확인한 뒤 completed로 종료했다. [병합 확인](https://github.com/inhhlee/amr-control-system-demo/blob/20950a2132bd39917013418928412772ea701559/evidence/COM-03/20261020-pr31-merge-01/README.md). 재리뷰 이후 코드 차이 0·미해결 리뷰 0·완료조건 8/8. 이번 제품 재시험 없음, 과제1 전체 미완료·다른 보류·과제2 #28 예정·미정 기한 유지.
+
+**2026-10-20 앞선 후속 요청 — PR #31 재리뷰 완료:** PR #31의55ac854 재리뷰에서 P2 두 건 해결을 확인했고 수정 범위의 추가 필수 결함은 발견하지 않았다. 도구30건 재실행 통과·실제4회귀 원본 감사·제품/xUnit60파일 동일을 확인했다. COMMENT 재리뷰를 게시했으며 코드 수정/추가 커밋·푸시/Issue체크 변경/병합은 없다. 남은 단계는 요청된 develop 병합·반영 확인 후 Issue 종료다. [COMMENT](https://github.com/inhhlee/amr-control-system-demo/pull/31#pullrequestreview-5580657608)·[근거](https://github.com/inhhlee/amr-control-system-demo/blob/20950a2132bd39917013418928412772ea701559/evidence/COM-03/20261020-pr31-rereview-01/README.md). 다른 보류·과제2예정·미정기한 유지.
+
+**2026-10-20 앞선 후속 요청 — PR #31 P2 수정·푸시 완료:** PR #31의 P2 두 건을 검증 도구 코드에서 수정하고 55ac854를 같은 #6 브랜치에 커밋·푸시했다. 새 재현 시험30건과 실제 C1/C2/C3a/C3b 회귀4실행 통과. 제품 코드·기존 합격 기준은 유지하며 기존768건은 소스 동일 근거로 재사용한다. PR·Issue 근거 갱신, 재검토·병합·종료 대기. 다른 보류·과제2 #28 예정·미정 기한·과제1 전체 미완료 유지. [검증 근거](https://github.com/inhhlee/amr-control-system-demo/blob/55ac85491bed143f1eb33162fa9a601eec9d2853/evidence/COM-03/20261020-pr31-p2-fix-01/README.md).
+
+**2026-10-20 앞선 후속 요청 — PR #31 리뷰·수정 필요:** da1e640의 #6/명세/원본 증거 대조 후 P2 2건을 재현했다. 프록시 block 대기 중stop 불응과 로그 실패 시 컨테이너 정리 생략이다. [COMMENT 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/31#pullrequestreview-5580054400)·[상세 재현](https://github.com/inhhlee/amr-control-system-demo/blob/20950a2132bd39917013418928412772ea701559/evidence/COM-03/20261020-pr31-review-01/README.md). 기존 정상768건/실제 측정은 유효하나 수정·재검토 전 병합 보류. 제품 수정/푸시·Issue체크 변경 없음, 다른 보류·과제2 예정 유지.
+
+**2026-10-20 앞선 후속 요청 — #6 PR 게시·8조건 갱신:** 같은 feature/6-mqtt-keepalive의 코드/근거 bccb461·게시 문서 da1e640을 커밋·푸시하고 [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)을 develop 대상으로 생성했다. #6 Issue에 최종768건·실제 C1~C3b·A~C 대조 및 PR을 연결해 원래8조건 체크. [담당 기록](04_COM-03_연결유지와_끊김감지.md)·[게시 확인](https://github.com/inhhlee/amr-control-system-demo/blob/20950a2132bd39917013418928412772ea701559/evidence/COM-03/20261020-pr-publication-01/README.md). PR/Issue open·미병합, 리뷰·병합·종료 대기. 다른 보류·과제2 예정 유지.
+
+**2026-10-20 앞선 후속 요청 — #6 C4 검증·A~C 최종 취합:** 신규7건 포함 자동768건·빌드 경고/오류0, 중복 단절·늦은 알림·두 종료 순서 통과. 실제 C1~C3b 근거를 최종 코드에 연결해 #6 조건7개 충족·실제 게시 연결1개 부분 충족으로 정리했다. [담당 C4](04_COM-03_연결유지와_끊김감지.md#com03-c4)·[검증결과](../산출물/2026-10-20_COM03-C4_경합과최종취합_20261020-c4-unit-02_검증결과.md). 미커밋·PR 없음·open, 리뷰/병합/종료는 남음. 다른 보류·과제2 예정 범위 유지.
+
+**2026-10-20 앞선 후속 요청 — #6 C1·C2 부분 재개:** 같은 feature/6-mqtt-keepalive에서 C2 단절 진단·실제 Broker 종료 감지 53.4907ms·정리·종료 1과 동일 Broker 재기동 후 새 콘솔 접속·12.0829546초/PING 2쌍/종료 0을 확인했다. 최종 자동761건·빌드 경고/오류 0, 시험 자원 정리·기존 3개 상태 보존이다. [담당 C2](04_COM-03_연결유지와_끊김감지.md#com03-c2)·[검증결과](../산출물/2026-10-20_COM03-C2_Broker종료_20261020-c2-mqtt-01_검증결과.md). #6은 진행 중이며 C3·C4 추가 범위가 남아 있다. 코드·도구·근거는 미커밋이며 다른 보류·과제2 예정 범위는 유지한다. 아래 다음 작업·보류 선택은 해당 시점 기록이다.
 - 관련 계획: [과제1](../과제계획.md#solo-task1) v0.39 · [전체일정](../../전체일정.md#solo-demo) v0.29 · [개발 진행 절차](../../../기준/개발%20진행%20절차.md#2-작업-나누기와-issue-생성) v0.6
 - 현재 단계: COM01-B [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 병합됐고 Issue 종료를 확인했다. 기존 자동시험 529건·실제 MQTT 근거는 PR에 연결돼 있다. COM01-C [#23](https://github.com/inhhlee/amr-control-system-demo/issues/23)은 [PR #24](https://github.com/inhhlee/amr-control-system-demo/pull/24)의 develop 병합(e207614)을 확인하고 완료조건 5개를 체크해 종료했다. 자동시험 547건·실제 MQTT 정상/종료/새 세션·Broker 중단을 확인했다. [최종 검증결과](https://github.com/inhhlee/amr-control-system-demo/blob/e2076145615d1310e1a52405cd5c35d66ca71a5e/evidence/COM-01/20261019-queue-pr-unit-02/README.md). 실제 MQTT 과부하·장시간 부하·네트워크 무응답은 미검증이다.
 
-최신 작업: COM03-B [#5](https://github.com/inhhlee/amr-control-system-demo/issues/5)는 [PR #25](https://github.com/inhhlee/amr-control-system-demo/pull/25)를 develop에 merge commit 방식으로 병합한 뒤 완료조건 7개를 확인해 completed로 종료했다. 병합 커밋은 [b4265af](https://github.com/inhhlee/amr-control-system-demo/commit/b4265aff198ead9d234c592cfaf9b89f9e217024)이며 전체 파일 트리는 검토한 2d1e394와 동일하다. 기존 자동시험 566건·실제 TCP/MQTT 6개 시나리오와 AI COMMENT 리뷰가 근거다. 이번 병합 단계에서 재시험은 하지 않았고, CI 검사 결과·필수 보호 규칙·미해결 리뷰 지적은 없다. COM-03 전체·과제1 전체는 미완료이며 과제1 재개 시 다음 기능은 #6이다.
+앞선 병합 기록: COM03-B [#5](https://github.com/inhhlee/amr-control-system-demo/issues/5)는 [PR #25](https://github.com/inhhlee/amr-control-system-demo/pull/25)를 develop에 merge commit 방식으로 병합한 뒤 완료조건 7개를 확인해 completed로 종료했다. 병합 커밋은 [b4265af](https://github.com/inhhlee/amr-control-system-demo/commit/b4265aff198ead9d234c592cfaf9b89f9e217024)이며 전체 파일 트리는 검토한 2d1e394와 동일하다. 기존 자동시험 566건·실제 TCP/MQTT 6개 시나리오와 AI COMMENT 리뷰가 근거다. 이번 병합 단계에서 재시험은 하지 않았고, CI 검사 결과·필수 보호 규칙·미해결 리뷰 지적은 없다. COM-03 전체·과제1 전체는 미완료이며 과제1 재개 시 다음 기능은 #6이다.
 
 **2026-10-20 후속 요청:** COM05-A만 [#29](https://github.com/inhhlee/amr-control-system-demo/issues/29)로 게시·재개하여 로컬 구현·자동758개·실제 MQTT/Seq 시험을 완료했다. [담당 문서](23_COM-05_Command_발행.md). [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 병합(d777ab7)·#29 완료 종료를 확인했으며 다른 보류 기능과 과제2 #28 예정 범위는 유지한다. 아래 보류 선택은 당시 기록이다.
 
-**2026-10-20 사용자 선택:** 과제1의 남은 개발은 보류하고 [과제2 첫 실행본](../../과제2/과제계획.md#task2-first-run)을 먼저 진행한다. 현재 다음 예정 업무는 [10/21 과제2](../../../일일업무/2026-10-21.md)다. 아래 추천 순서는 과제1 재개 시 참고하며 #6과 미게시 8개 초안의 범위·선행 조건·미완료 상태는 보존한다. [보류 범위·재조율 조건](../../전체일정.md#task2-priority).
+**2026-10-20 당시 사용자 선택 — 이후 #29와 #6만 별도 요청으로 완료:** 과제1의 남은 개발은 보류하고 [과제2 첫 실행본](../../과제2/과제계획.md#task2-first-run)을 먼저 진행한다. 현재 다음 예정 업무는 [10/21 과제2](../../../일일업무/2026-10-21.md)다. 아래 추천 순서는 과제1 재개 시 참고하며 #6과 미게시 8개 초안의 범위·선행 조건·미완료 상태는 보존한다. [보류 범위·재조율 조건](../../전체일정.md#task2-priority).
 
 이 폴더의 현재 계획 범위는 **과제1 COM-01~06 전체**다. 2026-10-08 사용자 승인으로 A2 #8·A3 #9를 #8 하나로 통합했다. A1 #7은 유지하고 #4는 원래 완료조건을 보존하는 총괄이다. 05번은 A1 원본, 06번은 통합 #8 원본, 07번은 #9 통합 안내·이전 본문 보관이다. #5·#6 학습 안내와 08~15번 연결 문서는 유지한다.
 
@@ -63,7 +79,7 @@
 | 5 | [COM01-B — 여러 AMR의 네 메시지 유형 구독·전달](19_COM-01_다중AMR_유형별전달.md) | COM-01 | 검사한 Heartbeat·Telemetry·Alarm·ACK를 대상 AMR과 유형에 맞게 시험 수신자에 전달한다. | #18·PR #20 develop 반영 | [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21) closed, 로컬 기록 v0.4 / [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22) develop 병합 |
 | 6 | [COM01-C — AMR별 수신 순서와 과부하·종료 처리](20_COM-01_AMR별_수신큐.md) | COM-01 | AMR별 도착 순서를 유지하며 느린 처리·큐 초과·종료를 제어한다. | #21·PR #22 develop 반영 | [#23](https://github.com/inhhlee/amr-control-system-demo/issues/23) closed/completed, 원본 v0.5 / [PR #24](https://github.com/inhhlee/amr-control-system-demo/pull/24) develop 반영, 자동 547건·실제 MQTT 정상/중단 통과, 실제 MQTT 과부하·장시간 부하 미검증 |
 | 7 | [COM03-B — 접속 실패·대기 제한·취소](03_COM-03_접속실패_처리.md) | COM-03 | 잘못된 입력·접속 실패·취소 구분 | #4 | [#5](https://github.com/inhhlee/amr-control-system-demo/issues/5) completed, [PR #25](https://github.com/inhhlee/amr-control-system-demo/pull/25) develop 병합 b4265af, 566건/실제 6시나리오·AI 리뷰 근거 |
-| 8 | [COM03-C — 연결 유지·끊김 감지](04_COM-03_연결유지와_끊김감지.md) | COM-03 | KeepAlive·실제 단절·무응답·종료 경합 확인 | #5 | 기존 [#6](https://github.com/inhhlee/amr-control-system-demo/issues/6) 활용 |
+| 8 | [COM03-C — 연결 유지·끊김 감지](04_COM-03_연결유지와_끊김감지.md) | COM-03 | KeepAlive·실제 단절·무응답·종료 경합 확인 | #5 | [#6](https://github.com/inhhlee/amr-control-system-demo/issues/6) completed·[PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31) develop 반영 e4bd66a |
 | 9 | [COM02-A — 한 AMR의 Heartbeat 중단·복구 감시](21_COM-02_Heartbeat_중단과복구.md) | COM-02 | 정상 Heartbeat를 보낸 AMR이 중단됐는지 판정하고 다시 보내면 복구를 알린다. | COM01-C · #6 | 새 초안·미게시 |
 | 10 | [COM02-B — 여러 AMR 감시와 연결 세션 정리](22_COM-02_다중AMR_세션감시.md) | COM-02 | 장비별 감시를 독립적으로 수행하고 Broker 단절·종료 때 이전 감시를 정리한다. | COM02-A | 새 초안·미게시 |
 | 11 | [COM05-A — Command 생성·검사·대상 AMR 발행](23_COM-05_Command_발행.md) | COM-05 | 콘솔에서 생성한 요청 ID를 유지해 MOVE·STOP·RESET을 올바른 AMR Topic으로 보낸다. | COM01-C | [#29](https://github.com/inhhlee/amr-control-system-demo/issues/29) 게시·구현/시험·[PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 병합(d777ab7)·#29 완료 종료 |
@@ -99,7 +115,7 @@ COM-05의 대조는 Core 시험 대역 범위다. 실제 Core의 요청 상태·
 | --- | --- | --- |
 | #4 / COM03-A | [A1 #7](05_COM-03_Broker_기동확인.md) → [통합 #8의 A2 → A3](06_COM-03_최소접속.md). [#9는 통합 안내](07_COM-03_CtrlC_정상종료.md) | #7·#8 PR 반영 후 원래 #4 전체 완료조건·최종 코드 근거 확인 |
 | #5 / COM03-B | 통합 완료: [B1 입력/최초 실패](03_COM-03_접속실패_처리.md#com03-b1) → [B2 대기 제한](03_COM-03_접속실패_처리.md#com03-b2) → [B3 사용자 취소](03_COM-03_접속실패_처리.md#com03-b3) | 원래 #5 완료조건 전체와 필요한 회귀 |
-| #6 / COM03-C | 통합 완료: [C1 KeepAlive](04_COM-03_연결유지와_끊김감지.md#com03-c1) → [C2 Broker 종료](04_COM-03_연결유지와_끊김감지.md#com03-c2) → [C3a 무응답 환경](04_COM-03_연결유지와_끊김감지.md#com03-c3a) → [C3b 측정](04_COM-03_연결유지와_끊김감지.md#com03-c3b) → [C4 경합/근거](04_COM-03_연결유지와_끊김감지.md#com03-c4) | 후속 확인까지 포함한 원래 #6 전체 조건. 연결 유지 한 번으로 종료하지 않음 |
+| #6 / COM03-C | #6 completed·PR #31 develop 병합(e4bd66a), 8조건 충족. 통합 완료: [C1 KeepAlive](04_COM-03_연결유지와_끊김감지.md#com03-c1) → [C2 Broker 종료](04_COM-03_연결유지와_끊김감지.md#com03-c2) → [C3a 무응답 환경](04_COM-03_연결유지와_끊김감지.md#com03-c3a) → [C3b 측정](04_COM-03_연결유지와_끊김감지.md#com03-c3b) → [C4 경합/근거](04_COM-03_연결유지와_끊김감지.md#com03-c4) | 후속 확인까지 포함한 원래 #6 전체 조건. 연결 유지 한 번으로 종료하지 않음 |
 
 ## 게시 결과
 
