@@ -2,13 +2,40 @@
 
 ## 로컬 관리 정보
 
-- 작업 ID: AMR2-A / 작성일: 2026-10-20 / 버전: v0.2
+- 작업 ID: AMR2-A / 작성일: 2026-10-20 / 수정일: 2026-10-21 / 버전: v0.5
 - 문서 작성·게시: 완료 / 게시 승인: 사용자 직접 요청 / GitHub Issue: [#28](https://github.com/inhhlee/amr-control-system-demo/issues/28) open
-- 구현: 미착수 / 실행 검증: 미검증 / 브랜치·PR: 없음
-- 게시 전 확인: 대상 저장소 전체 Issue 13개·PR 13개에서 같은 작업 조회되지 않음. 현재 develop 64df6f0과 새 프로젝트·설정 미생성 확인
-- 기준과 작업 목록: [과제2 계획](../과제계획.md#task2-first-run) v0.7 · [전체일정](../../전체일정.md#task2-priority) v0.30 · [내일 업무](../../../일일업무/2026-10-21.md)
+- 구현: 진행 중 — #32 설정·초기화 구현·시험 근거 확인, #33·#34 미착수 / 실행 검증: 검증 중 — #32 전용 표준 시험 88건 통과, 이동·실행 루프·과제 전체 미검증 / 브랜치·PR: `feature/32-simulator-settings` → `develop`, [PR #35](https://github.com/inhhlee/amr-control-system-demo/pull/35) develop 병합 완료·#32 Issue open
+- 게시 전 확인(10/20 이력): 대상 저장소 전체 Issue 13개·PR 13개에서 같은 작업 조회되지 않음. 당시 develop 64df6f0과 새 프로젝트·설정 미생성 확인. 게시 당시 구현 미착수·실행 미검증·브랜치/PR 없음
+- 게시 당시 관리 기준과 작업 목록: [과제2 계획](../과제계획.md#task2-first-run) v0.7 · [전체일정](../../전체일정.md#task2-priority) v0.30 · [10/21 예정 업무](../../../일일업무/2026-10-21.md)
 - 게시 후 조회: 제목·목적 이하 본문 일치, open 상태·완료조건 6개 미체크 확인. 게시 본문의 계획 v0.6·전체일정 v0.29는 준비 당시 기준이며 최신 버전에는 게시 결과만 추가했다.
-- 로컬 관리 정보는 게시 본문에서 제외한다. 아래 목적부터 GitHub에 게시하며 공유 URL 없는 원본은 문서명·버전·항목과 필요한 내용을 본문에 기록한다.
+- 현재 진행 기준(2026-10-21): [과제2 계획 v0.12의 첫 실행본](../과제계획.md#task2-first-run)과 AMR2-F01~05를 따른다. #32 구현에 적용한 계획 v0.10·기능명세 v0.9·데이터명세 v0.6·결정사항 v0.9의 식별은 PR 근거에 보존한다. 계획 v0.12은 분할·진행 결과를 반영한 문서 갱신이다.
+- 기존 골격 활용: [10/20 프로젝트 구성 확인](../과제계획.md#task2-project-check)은 당시 골격 상태의 이력이다. 현재 #32 PR #35가 병합된 develop에는 설정 로더·초기 AMR 모델·전용 시험·설정 예시가 게시돼 있으며 이동 계산·실행 루프·통신은 후속이다.
+- 승인 근거: [2026-10-20 첫 실행본 결정](../../명세/검토%20및%20결정사항.md#task2-first-run-decisions)과 [2026-10-21 검토 보완 결정](../../명세/검토%20및%20결정사항.md#task2-review-followup)을 적용한다. 이미 정한 범위를 다시 미정으로 취급하지 않으며 명령·장애·MQTT 연동은 후속 범위로 유지한다.
+- 승인된 규칙: [필수 설정·ID 검사](../../명세/공통데이터명세.md#task2-settings-data), [이동·경과 시간·계산 비교](../../명세/공통데이터명세.md#task2-motion-data), [State·현재 속도](../../명세/공통데이터명세.md#task2-state-data), [이동 처리·예외·로그](../../명세/기능명세.md#amr-02-command-수신과-동작-수행)를 따른다.
+- 로컬 갱신 이력: v0.3에서는 2026-10-21 사용자 요청으로 당시 구현 기준·골격 활용·승인된 규칙 링크를 추가했다. v0.4에서는 사용자 요청으로 확인한 #32~34 분할·PR #35 상태·최신 88건 통과 근거를 반영했다. 파일명·작업 ID와 아래 목적 이하의 최초 게시 본문을 보존한다. v0.5에서는 후속 조회로 PR #35 병합·#32 Issue open을 확인해 현재 요약을 갱신하고 앞선 Draft 기록을 보존했다.
+- 아래 `목적`부터는 2026-10-20 최초 게시 본문이다. 당시 단일 Issue·PR, 미착수·미검증 표현은 이력이며 현재 진행 기준으로 재게시하지 않는다. 현재 GitHub 본문과의 일치 확인은 최초 게시 당시의 기록이다.
+
+<a id="task2-split-status"></a>
+
+## 현재 분할·진행 현황 — 2026-10-21
+
+후속 조회에서 PR #35는 16:35 KST develop 병합·closed·draft=false이며 병합 커밋은 [3257f5e](https://github.com/inhhlee/amr-control-system-demo/commit/3257f5ee88041cbc03827256b155f5e481c7aed0)로 확인했다. #32 Issue는 open이다. 아래 앞선 Draft 상태와 최초 게시 본문은 당시 이력으로 보존한다.
+
+GitHub의 Issue·PR과 게시된 시험 근거를 직접 조회해 반영했다. #28은 총괄이며 2026-10-21 사용자 분할 요청으로 기존 단일 Issue·PR 방식을 대체한다. 기존 파일 한 곳에 연결하고 새 이슈 문서·폴더는 만들지 않는다.
+
+| Issue | 담당 범위·시험 연결 | 현재 상태·다음 조건 |
+| --- | --- | --- |
+| [#28 총괄](https://github.com/inhhlee/amr-control-system-demo/issues/28) | 설정 기반 단일 AMR 첫 실행본, 기존 완료조건 6개 전체 취합 | open·진행 중. 별도 중복 구현·PR 없음. #32~34 근거와 원래 완료조건 전체 확인 후 종료 판단 |
+| [#32 설정·초기화](https://github.com/inhhlee/amr-control-system-demo/issues/32) | JSON 로드·검사·AMR 초기 생성. F01·F05, F02 초기화 부분 | open. 구현·시험 근거 확인, PR #35 develop 병합 완료. #32 Issue open·사용자 직접 실행 여부는 별도 확인 |
+| [#33 이동 계산](https://github.com/inhhlee/amr-control-system-demo/issues/33) | 경과 시간·경유점·상태 전이·도착 정지. F03·F04 | open·미착수·미검증. #32 PR의 develop 반영·근거 확인 후 진행 |
+| [#34 실행·최종 검증](https://github.com/inhhlee/amr-control-system-demo/issues/34) | 실행 루프·정상 종료·실제 설정별 이동 비교, F01~05·총괄 완료조건 최종 대조 | open·미착수·미검증. #33 PR의 develop 반영·근거 확인 후 진행 |
+
+- 앞선 조회 이력 — PR #35: `feature/32-simulator-settings` → `develop`, head `95a43a579630a844d8dfe352717fe78206f39e5b`. Draft=true·state=open·merged=false를 확인했다. #32의 구현·시험 근거 충족과 병합·Issue 종료를 구분한다.
+- 최신 검증: [PR #35 인코딩 수정 검증결과](https://github.com/inhhlee/amr-control-system-demo/blob/95a43a579630a844d8dfe352717fe78206f39e5b/evidence/AMR/20261021-pr35-utf8-fix-01/README.md)의 전용 표준 `dotnet test` **88건 통과·실패 0건**. [TRX 원본](https://github.com/inhhlee/amr-control-system-demo/blob/95a43a579630a844d8dfe352717fe78206f39e5b/evidence/AMR/20261021-pr35-utf8-fix-01/after-full.trx) 집계와 [실행 기록](https://github.com/inhhlee/amr-control-system-demo/blob/95a43a579630a844d8dfe352717fe78206f39e5b/evidence/AMR/20261021-pr35-utf8-fix-01/after-full.json)의 종료 코드 0을 확인했다. UTF-8 BOM을 포함한 오류 바이트를 잘못된 ID로 보정하던 문제의 수정·회귀 근거를 포함한다.
+- 과거 검증: [최초 기록](https://github.com/inhhlee/amr-control-system-demo/blob/95a43a579630a844d8dfe352717fe78206f39e5b/evidence/AMR/20261021-settings-final-01/README.md)의 83건은 xUnit 프로세스 내 실행 결과이며 당시 표준 VSTest는 소켓 권한 오류로 중단됐다. 표준 `dotnet test` 83건 성공으로 기록하거나 최신 88건과 합산하지 않는다.
+- 확인 범위: 이번 문서 갱신은 기존 증거 조회이며 제품 재시험은 없다. 이동·도착·실행 루프·실제 키보드 Ctrl+C, MQTT·다중 AMR·장애·명령/ACK와 과제2 전체는 미검증이다. [과제2 계획의 결과 요약](../과제계획.md#task2-verification-status)·[10/21 실제 업무 기록](../../../일일업무/2026-10-21.md#task2-results)에 연결한다.
+
+> 아래는 최초 게시 당시 본문과 완료 체크를 보존한 이력이다. 현재 분할·진도는 위 표와 근거를 따른다.
 
 ## 목적
 
