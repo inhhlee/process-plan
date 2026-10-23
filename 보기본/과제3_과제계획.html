@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제3 관제 GUI 과제계획</h1><div class="meta"><div><span>문서</span>v0.5 초안 · 수정 2026-10-06</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>미착수 / 미검증</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제3 관제 GUI 과제계획</h1><div class="meta"><div><span>문서</span>v0.6 초안 · 수정 2026-10-23</div><div><span>계획 검토</span>사용자 검토 대기</div><div><span>개발 / 실행 검증</span>미착수 / 미검증</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><a href="%EA%B3%BC%EC%A0%9C1_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제1</a><a href="%EA%B3%BC%EC%A0%9C2_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제2</a><strong>과제3</strong><a href="%EA%B3%BC%EC%A0%9C4_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제4</a><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -52,11 +52,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>수정일</td>
-<td>2026-10-06</td>
+<td>2026-10-23</td>
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.5 초안</td>
+<td>v0.6 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -142,6 +142,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 <p>이 계획은 프로젝트의 과제3을 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 계획과 예상 결과를 작성한 상태이며 이 과제의 실제 구현·시험 결과는 이 문서에서 아직 확인하지 않았다. 기존 코드의 재사용 범위는 착수 전에 대조한다. 아래 작업 순서와 시험 항목은 요구사항·공통 규칙·데이터·기능명세를 기준으로 제안한 초기 계획이다.</p>
 </section>
 <section id="s2"><h2><span class="num">2</span>배경과 목적</h2><p>공통 명세를 기반으로 Dashboard·Map·Alarm·History·Command 화면을 구성하고, Mock AMR로 독립 실행 가능한 GUI와 DataProvider 인터페이스를 제공한다.</p>
+<p>GUI 목업의 설계 순서·화면별 작성 항목·Mock 검토 기준은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/GUI%20%EB%AA%A9%EC%97%85%20%EC%84%A4%EA%B3%84%20%EB%B0%A9%EB%B2%95%EB%A1%A0.yaml">GUI 목업 설계 방법론</a>에서 YAML 원본으로 관리한다. 이 방법론의 작성은 GUI 구현·실행 검증 완료를 뜻하지 않는다.</p>
 </section>
 <section id="s3"><h2><span class="num">3</span>용어 설명</h2><div class="table-wrap"><table>
 <thead>
@@ -469,6 +470,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-23</td>
+<td>v0.6 초안</td>
+<td>사용자 요청에 따라 GUI 목업 설계 방법론의 YAML 관리 위치를 연결. 기존 기능·작업·시험·완료 상태 유지.</td>
+</tr>
+<tr>
 <td>2026-10-06</td>
 <td>v0.5 초안</td>
 <td>반복된 업무 기록·상태 갱신 안내를 공통 기준 참조로 정리. 기능·작업·시험·완료 상태 유지.</td>
