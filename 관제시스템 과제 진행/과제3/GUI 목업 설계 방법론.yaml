@@ -1,0 +1,349 @@
+# GUI 목업을 설계하고 검토하는 절차의 수정 원본이다.
+# YAML만 수정해도 화면이 자동 생성되거나 실행 설정에 반영되지는 않는다.
+schema_version: "2.0"
+document:
+  title: "AMR 관제 GUI 목업 설계 방법론"
+  version: "0.3"
+  created_on: "2026-10-23"
+  updated_on: "2026-10-23"
+  author: "Codex 작성 보조"
+  basis: "사용자의 GUI 목업 설계 방법론 YAML 관리 요청"
+  purpose: "화면마다 같은 순서로 요구·흐름·배치·상태·확인 기준을 설계한다."
+  status:
+    document: "초안 작성 완료"
+    user_review: "사용자 검토 대기"
+    design_decision: "제안"
+    gui_implementation: "이 파일의 작성 범위에 해당 없음"
+    gui_execution_verification: "이 파일에서 판정하지 않음"
+
+management:
+  source_of_truth: "이 YAML은 목업 설계 방법만 관리한다. 기능·데이터·정책 정의는 담당 명세를 따른다."
+  reference_base: "참조 경로는 이 YAML 파일이 있는 폴더를 기준으로 해석한다."
+  editing: "UTF-8, 공백 2칸 들여쓰기, 중복 키 금지. 날짜와 버전은 문자열로 작성한다."
+  schema_version_meaning: "작성 항목의 구조 버전이다. 2.0은 과제 정의에서 평가 결과를 분리한 구조이며 별도 자동 검사 스키마를 제공한다는 뜻은 아니다."
+  usage:
+    - "설계 시작 시 references의 최신 버전과 관련 ID를 확인한다."
+    - "workflow를 기본 순서로 수행하되, 평가 결과에 따라 iteration_rules의 해당 단계로 돌아가 수정·재평가한다. 산출물 위치는 과제계획에 연결한다."
+    - "screen_template을 화면별 설계 산출물의 작성 항목으로 사용한다."
+    - "사용성 평가 기록은 usability_records_template의 tasks와 evaluations에 각 과제·결과 양식을 복사하여 작성한다. 실제 기록 파일은 과제계획의 산출물 위치에 연결한다."
+    - "방법 변경은 이 파일의 version·updated_on·change_history에 함께 반영한다."
+    - "새 정책 결정은 결정사항에 먼저 기록하고 영향받는 명세·계획을 연결한다."
+  scope: "과제3 GUI-01~05의 목업 설계·검토와 구현 전달"
+  evidence_rule: "설계 검토, Mock 화면 실행, 사용자 사용성 평가, 실제 Core·MQTT 연동의 결과를 각각 기록한다."
+
+references:
+  - name: "요구사항정의"
+    path: "../명세/요구사항정의.md"
+    version_at_authoring: "v0.5 초안"
+    items: ["1.1 자료별 역할", "R-05"]
+  - name: "공통규칙"
+    path: "../명세/공통규칙.md"
+    version_at_authoring: "v0.6 초안"
+    items: ["C-01", "C-02", "C-03", "C-04", "C-07", "C-08", "C-09", "C-10", "C-11"]
+  - name: "공통데이터명세"
+    path: "../명세/공통데이터명세.md"
+    version_at_authoring: "v0.6 초안"
+    items: ["1.1 공통 데이터의 의미", "3. 과제1에서 재사용할 개발 계약", "4. 과제2 첫 실행본 설정·이동 데이터"]
+  - name: "기능명세"
+    path: "../명세/기능명세.md"
+    version_at_authoring: "v0.9 초안"
+    items: ["GUI-01", "GUI-02", "GUI-03", "GUI-04", "GUI-05"]
+  - name: "검토 및 결정사항"
+    path: "../명세/검토 및 결정사항.md"
+    version_at_authoring: "v0.9 초안"
+    items: ["D-02", "D-03", "D-05", "D-06", "D-07", "D-09", "D-10", "D-11"]
+  - name: "과제3 관제 GUI 과제계획"
+    path: "과제계획.md"
+    version_at_authoring: "v0.6 초안"
+    items: ["4. 기능 범위", "6. 개발 로드맵", "7. 완료 기준"]
+  - name: "공통 작성 규칙"
+    path: "../../기준/공통 작성 규칙.md"
+    version_at_authoring: "v1.1"
+    items: ["1. 근거와 해석", "2. 상태 표시", "4. 검증 결과 기록"]
+reference_limit: "원문 PDF·HWP는 이번에 재대조하지 않았다. 원문 제공·대조 상태는 요구사항정의 1.1을 따른다."
+
+methodology_references:
+  scope: "설계 방법 보완의 참고 근거다. AMR의 제품 요구·정책이나 특정 표준 준수 판정을 추가하지 않는다."
+  sources:
+    - name: "Design Council — Framework for Innovation"
+      url: "https://www.designcouncil.org.uk/resources/framework-for-innovation/"
+      reviewed_on: "2026-10-23"
+      application: "사용자를 이해하고 문제를 정의하며, 평가 결과에 따라 이전 단계로 돌아가 반복 개선한다."
+    - name: "GOV.UK — Using moderated usability testing"
+      url: "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing"
+      reviewed_on: "2026-10-23"
+      application: "실제 또는 예상 사용자가 목표 과제를 수행하는 모습을 관찰하고 이해·완료 여부와 문제를 기록한다."
+    - name: "GOV.UK — Making prototypes"
+      url: "https://www.gov.uk/service-manual/design/making-prototypes"
+      reviewed_on: "2026-10-23"
+      application: "평가 목적에 맞춰 정적 화면·클릭형·코드 프로토타입을 선택한다. 모든 평가에 동작 구현을 요구하지 않는다."
+
+# 아래 절차·검토 항목은 이번에 제안한 설계 방법이다. 제품 요구의 추가 확정이 아니다.
+workflow:
+  - id: "M01"
+    name: "요구와 계약 확인"
+    inputs: ["references", "대상 기능 ID", "기존 화면·코드가 있으면 해당 위치", "user_context_template"]
+    actions:
+      - "원문 요구·기존 설계·새 제안·사용자 결정을 구분한다."
+      - "화면 목적·대상 사용자·주요 동작과 포함 범위를 적는다."
+      - "실제 또는 예상 관제 담당자의 인터뷰·업무 관찰·기존 업무 자료로 역할·주요 작업·빈도·우선순위·현재 어려움을 확인한다."
+      - "AMR 수와 동시 알람 등 업무 규모, 모니터·입력 장치·사용 장소 등 사용 환경을 확인한다. 값은 조사 근거와 함께 기록하며 임의의 기본값으로 확정하지 않는다."
+      - "user_context_template에 확인 사실·가정·미확인을 구분하고 출처·확인일을 남긴다. 사용자에게 접근하지 못한 항목은 후속 확인 행동·시점·영향을 적는다."
+      - "필요한 데이터·단위·식별자와 미정 정책의 D 항목을 연결한다."
+    output: "기능별 설계 범위, 사용자·업무·환경의 확인 근거와 가정, 미정 항목 목록"
+    exit_criteria: "각 설계 항목의 근거·결정 상태와 주요 사용자·작업·사용 환경을 찾을 수 있다. 미확인은 확인 사실과 구분하고 후속 확인을 연결한다."
+  - id: "M02"
+    name: "사용자 작업과 화면 흐름"
+    inputs: ["M01 산출물"]
+    actions:
+      - "M01에서 확인한 작업·우선순위·사용 환경을 근거로, 사용자가 무엇을 보고 어떤 판단·조작을 하는지 시나리오로 적는다. 가정한 시나리오는 별도로 표시한다."
+      - "진입 화면 → 장비 선택 → 상세 확인 → 조작 → 결과 확인 흐름을 그린다."
+      - "뒤로 이동·선택 해제·오류 후 복귀 경로를 함께 정한다."
+    output: "사용자 시나리오와 화면 전환도"
+    exit_criteria: "각 주요 작업에 시작·종료 조건과 관찰할 결과가 있다."
+  - id: "M03"
+    name: "정보 구조와 와이어프레임"
+    inputs: ["M02 산출물", "screen_catalog"]
+    actions:
+      - "요약·목록·지도·상세·조작 영역의 정보 우선순위를 정한다."
+      - "흑백 배치로 데이터·조작 위치를 먼저 확인한다."
+      - "대상 화면 크기와 축소 시 스크롤·표·상세 영역의 배치를 명시한다."
+    output: "화면별 와이어프레임과 영역·이동 관계"
+    exit_criteria: "GUI-01~04의 표시·조작과 GUI-05의 공급자 표시 위치를 확인할 수 있다."
+  - id: "M04"
+    name: "상태와 상호작용 설계"
+    inputs: ["M03 산출물", "screen_template", "관련 D 항목"]
+    actions:
+      - "초기·로딩·정상·빈 결과·오류·선택 없음 상태의 표시를 작성한다."
+      - "버튼 허용 조건·입력 검사·진행 표시·결과·재시도 동작을 작성한다."
+      - "글자·아이콘·색상을 함께 사용하고 키보드 이동·포커스·오류 안내를 검토한다."
+      - "폰트·간격·색상·상태 표현의 공통 기준은 제안값으로 관리한다."
+    output: "화면별 상태표·상호작용표와 공통 표현 기준"
+    exit_criteria: "입력·현재 상태·사용자 행동에 따른 다음 표시를 설명할 수 있다."
+  - id: "M05"
+    name: "Mock 검토와 사용자 사용성 평가"
+    inputs: ["M04 산출물", "mock_scenarios", "usability_evaluation", "usability_task_template", "usability_result_template", "usability_records_template"]
+    actions:
+      - "정적 목업은 화면 전환·상태를 순서대로 대조하고 검토한 범위를 적는다."
+      - "동작 목업을 만들 때는 합성 데이터와 고정된 재현 절차를 사용한다."
+      - "GUI-05의 DataProvider 계약 후보를 연결하고 Mock 실행임을 화면에 표시한다."
+      - "예상과 실제 결과·판정·화면 근거를 남기고 미실행은 미검증으로 둔다."
+      - "Mock의 데이터·표시 일치 검토와 별도로, 실제 또는 예상 사용자를 대상으로 한 사용성 평가를 계획한다. 참여자 역할·선정 이유·평가 질문·대상 목업 버전과 표현 수준을 기록한다."
+      - "usability_task_template으로 중립적인 목표 과제·초기 조건·예상 관찰·성공/실패 기준을 평가 전에 정한다. 필요한 시간 목표는 근거와 합의가 있을 때만 둔다."
+      - "과제 정의는 task_id·task_version으로 식별하고, 참여자 한 명의 과제 수행 한 번마다 usability_result_template으로 새 evaluation_id를 부여한다. 참여자·평가 차수·목업 버전과 실행 시각을 결과에 기록한다."
+      - "참여자가 도움 없이 과제를 수행하는 모습을 관찰하고 완료·부분 완료·실패, 혼동·오조작·도움 제공 여부와 근거를 기록한다. 이해 확인은 정답을 암시하지 않는 질문으로 한다."
+      - "참여자를 확보하지 못하면 사용성 평가는 미검증으로 남긴다. 개발자 점검·가상 사용자 응답은 실제 사용자 평가를 대체한 통과 근거로 쓰지 않는다."
+    output: "목업·Mock 검토 결과, 사용자 사용성 평가 기록, 미실행 사유와 남은 문제"
+    exit_criteria: "설계 대조·Mock 실행·사용자 평가가 구분되고, 각 평가 ID에서 참여자·차수·과제 기준 버전·목업 버전과 실제 결과·문제를 찾을 수 있다. 실패·미검증 항목은 M06의 수정·보류·재평가 계획으로 연결한다."
+  - id: "M06"
+    name: "검토 반영과 구현 전달"
+    inputs: ["M05 산출물", "review_checklist", "iteration_rules"]
+    actions:
+      - "검토 의견·조치·보류 이유와 사용자 결정을 연결한다."
+      - "문제별로 iteration_rules에 따라 원인이 있는 단계로 돌아가 수정하고, 영향을 받는 Mock 검토·사용자 과제를 M05에서 다시 평가한다."
+      - "수정 전후 목업 버전·문제 ID·변경 내용·재평가 과제와 결과를 연결한다. 수정했다는 사실만으로 해결 완료로 표시하지 않는다."
+      - "재평가는 새 evaluation_id로 추가하고 previous_evaluation_id에 근거가 된 이전 결과를 연결한다. 이전 결과를 보존하고 참여자·과제 기준·목업 버전·조건의 차이와 비교 한계를 기록한다."
+      - "전달을 막는 문제는 수정·재평가 후 통과 근거를 확인한다. 미검증 또는 비차단 보류 항목은 사유·영향·후속 행동·담당 역할·확인 시점과 전달 판단 주체·근거를 기록한다."
+      - "화면·상태·입력·데이터 계약·수용 기준을 기능 ID별로 묶는다."
+      - "버전·산출물 위치·미정 정책·미검증 범위를 과제계획에 연결한다."
+    output: "구현에 전달할 목업 설계 묶음"
+    exit_criteria: "구현자가 화면별 입력·출력·상태·확인 조건과 남은 결정을 찾을 수 있고, 전달을 막는 미해결 문제가 없다. 미검증·비차단 보류의 영향과 전달 판단 근거가 명시되어 있다."
+
+iteration_rules:
+  return_paths:
+    - cause: "사용자·작업·사용 환경 가정이 틀리거나 새 근거가 확인됨"
+      return_to: ["M01", "M02"]
+    - cause: "업무 흐름·화면 이동·배치·정보 우선순위 문제"
+      return_to: ["M02", "M03"]
+    - cause: "상태 해석·입력·조작 피드백·오류 복귀·표현 문제"
+      return_to: ["M04"]
+  reevaluate: "수정한 단계 이후의 영향받는 산출물을 갱신한 뒤 M05에서 관련 과제를 재평가한다. 단순 문구 수정도 해당 이해·조작에 미치는 영향을 확인한다."
+  blocking_rule: "핵심 과제 수행 불가·잘못된 장비 대상의 조작·명령 발행과 동작 완료의 혼동 등은 전달을 막는 문제의 판단 후보다. 검토자가 발생 조건·영향·차단 여부와 이유를 기록한다."
+  record_fields: ["문제 ID", "발견 근거", "영향 기능·과제", "차단 여부·판단 근거", "돌아갈 단계", "수정 전후 버전", "수정 내용", "이전·재평가 ID와 참여자·차수", "재평가 결과·증거", "보류 사유·영향·후속 행동·담당 역할·확인 시점", "전달 판단 주체·근거"]
+
+# 빈 작성 항목이다. 실제 조사를 수행한 기록으로 해석하지 않는다.
+user_context_template:
+  context_id: null
+  user_roles: []                  # 관제 담당 역할·경험·선정 이유
+  tasks: []                       # 작업 목표·빈도·우선순위·현재 어려움
+  operating_scale: []             # AMR 수·동시 알람 등 실제 확인값과 범위
+  environment: []                 # 모니터·입력 장치·사용 장소 등 확인 항목
+  evidence: []                    # 항목별 확인 사실/가정/미확인·인터뷰/관찰/자료 출처·확인일
+  follow_ups: []                  # 미확인 항목·확인 행동·담당 역할·시점·설계 영향
+
+usability_evaluation:
+  distinction: "Mock 검토는 데이터와 표시·동작의 일치를, 사용자 평가는 작업 수행과 화면 이해를 확인한다. 둘의 결과를 합쳐 하나의 통과로 표시하지 않는다."
+  planning_fields: ["평가 차수 ID", "평가 질문", "참여자 식별자·역할·선정 이유", "설계·목업 버전", "표현 수준·선정 이유", "관련 기능·사용자 맥락", "과제 ID·기준 버전", "목표 과제", "사전 성공/실패 기준"]
+  prototype_choice: "배치·용어 검토에는 정적 목업을, 선택·입력·결과 확인 흐름에는 필요한 범위의 클릭형 또는 코드 프로토타입을 사용한다. 표현할 수 없는 동작은 평가 한계에 적는다."
+  example_goals:
+    - "통신 수신이 중단된 AMR을 찾아 운행 State와 구분해 설명한다."
+    - "지정한 AMR을 선택하고 명령 요청 전 대상 장비를 확인한다."
+    - "명령 발행 표시를 보고 실제 동작 완료를 확인할 수 있는지, 무엇이 아직 미확인인지 설명한다."
+  example_rule: "위 목표는 평가 설계 예시다. 실제 과제는 M01의 확인 근거·채택된 계약과 대상 목업 범위에 맞춰 정한다."
+  observation_fields: ["평가 ID·차수 ID", "과제 ID·기준 버전", "참여자 식별자·역할", "실행 시각", "사용 목업 버전·조건", "이전 평가 ID·재평가 이유", "관찰 행동·발언", "완료/부분 완료/실패", "혼동·오조작", "도움 제공 여부·내용", "실제 결과·판정·근거", "발견 문제 ID", "평가·비교 한계"]
+  status_rule: "미실행은 미검증으로 기록한다. 핵심 과제를 이해·수행하지 못한 결과는 실패로 기록하고 M06에서 수정·재평가 대상으로 처리한다."
+  recording_rules:
+    - "tasks에는 과제 정의를 task_id·task_version 조합당 한 번 기록한다. 목표·초기 조건·안내문·성공/실패 기준을 바꾸면 새 task_version으로 추가하고 기존 정의를 보존한다."
+    - "evaluations의 한 항목은 참여자 한 명이 과제 하나를 수행한 한 번의 기록이다. evaluation_id는 프로젝트 평가 기록 전체에서 중복 없이 부여한다. 같은 참여자·과제·목업을 반복해도 새 ID를 사용한다."
+    - "participant_id는 같은 사람에게 일관되게 쓰는 식별자다. 역할이 같아도 서로 다른 참여자는 다른 ID를 사용한다. round_id는 같은 평가 차수의 결과를 묶는다."
+    - "결과의 task_id·task_version은 보존된 과제 정의를 참조한다. mockup_version과 실제 조건을 함께 기록해 과제 기준 변경과 화면 변경을 구분한다."
+    - "최초 평가는 previous_evaluation_id를 null로 둔다. 재평가는 같은 task_id의 앞선 결과 ID를 연결하며 자신·미존재 ID·순환 참조를 허용하지 않는다. 다른 참여자나 과제 버전의 결과를 비교할 때는 comparison_notes에 차이와 비교 한계를 적는다."
+    - "과거 평가 결과를 새 결과로 덮어쓰지 않는다. 참여자별·차수별 결과를 유지하고 한 사람의 통과로 다른 사람의 실패를 해소한 것으로 처리하지 않는다."
+    - "미실행 기록의 evaluated_at·assistance_given·outcome은 null로 둔다. 실행한 기록에는 실제 값과 판정 근거·증거를 채운다. outcome은 관찰된 과제 수행 결과다. execution_status는 미검증/검증 중/통과/실패를 쓰며, 도움 제공과 사전 기준을 대조해 통과·실패를 판정한다."
+  migration_from_v1: "기존 과제 양식에 결과가 있다면 과제 정의를 tasks에 보존하고, 실제 결과 필드는 evaluations로 옮긴다. 기존 근거에서 식별자·버전·시각을 확인하며 확인할 수 없는 값은 추정하지 않고 limitations에 남긴다."
+
+# 공유할 과제 정의의 빈 양식이다. 실제 관찰·판정은 결과 양식에 기록한다.
+usability_task_template:
+  task_id: null
+  task_version: null             # 문자열. 기준 변경 시 새 버전을 추가하고 이전 정의 보존
+  feature_ids: []
+  context_refs: []
+  goal: null
+  initial_conditions: null
+  participant_instruction: null  # 목표만 안내하고 클릭 위치·정답은 암시하지 않음
+  success_criteria: []            # 사전 정의: 완료할 작업·올바른 대상·설명할 의미
+  failure_criteria: []            # 수행 불가·잘못된 대상·의미 혼동 등 관찰 가능한 조건
+
+# 참여자 한 명의 과제 수행 한 번마다 복사한다. 모든 값은 작성 전 상태다.
+usability_result_template:
+  evaluation_id: null            # 한 번의 수행을 식별하는 고유 ID
+  round_id: null                 # 평가 차수. 같은 차수의 여러 참여자·과제를 묶음
+  task_id: null
+  task_version: null             # 실제 사용한 과제 기준 버전
+  participant_id: null           # 동일 참여자는 차수가 바뀌어도 같은 식별자 사용
+  participant_role: null
+  mockup_version: null
+  evaluated_at: null             # 실제 실행 시각, 시간대 포함 ISO 8601 문자열
+  previous_evaluation_id: null   # 최초 평가 null; 재평가의 근거가 된 앞선 결과 ID
+  reevaluation_reason: null      # 최초 평가 null; 재평가 시 수정·확인할 이유
+  comparison_notes: []           # 이전 결과와 참여자·과제 기준·화면·조건 차이와 비교 한계
+  actual_conditions: []          # 사용 환경·Mock 데이터·설정 등 실제 조건
+  actual_observations: []
+  assistance_given: null          # 실행 후 true/false; 미실행은 null
+  assistance_details: null        # 제공한 도움의 내용; 제공하지 않았으면 null
+  outcome: null                   # 실행 후 완료/부분 완료/실패
+  judgement_reason: null          # outcome·도움 제공·사전 기준을 대조한 판정 이유
+  evidence_paths: []
+  issue_ids: []
+  limitations: []                 # 평가하지 못한 동작·누락 근거·이전 결과와의 비교 한계
+  execution_status: "미검증"
+
+# 실제 기록 파일에 복사할 빈 묶음이다. 방법론 파일 자체에는 평가 실적을 쌓지 않는다.
+usability_records_template:
+  tasks: []                       # usability_task_template으로 작성한 버전별 과제 정의
+  evaluations: []                 # usability_result_template으로 작성한 참여자·수행별 결과
+
+# 식별 관계만 보여 주는 설명용 예시다. 실제 참여자·실행·통과 결과가 아니다.
+usability_linkage_example:
+  task: {task_id: "UT-01", task_version: "1"}
+  evaluations:
+    - {evaluation_id: "EV-001", round_id: "R01", task_id: "UT-01", task_version: "1", participant_id: "P01", mockup_version: "1", previous_evaluation_id: null}
+    - {evaluation_id: "EV-002", round_id: "R01", task_id: "UT-01", task_version: "1", participant_id: "P02", mockup_version: "1", previous_evaluation_id: null}
+    - {evaluation_id: "EV-003", round_id: "R02", task_id: "UT-01", task_version: "1", participant_id: "P01", mockup_version: "2", previous_evaluation_id: "EV-001"}
+
+screen_catalog:
+  - name: "대시보드"
+    feature_ids: ["GUI-01"]
+    focus: "전체 현황·장비 목록·운행과 통신 상태·알람과 명령 요약"
+  - name: "Map과 선택 AMR 정보"
+    feature_ids: ["GUI-02"]
+    focus: "장비별 Marker·선택 ID·좌표·속도·State의 일치"
+  - name: "Alarm과 History"
+    feature_ids: ["GUI-03"]
+    focus: "현재 알람과 이력의 구분·기간/장비/유형 조회·빈 결과·오류"
+  - name: "AMR 상세와 Command"
+    feature_ids: ["GUI-04"]
+    focus: "명령 대상·입력·요청 식별자·발행과 응답·동작 결과의 구분"
+  - name: "전체 화면의 공통 데이터 접점"
+    feature_ids: ["GUI-05"]
+    focus: "별도 화면을 강제하지 않으며 Mock 구분과 DataProvider 계약을 모든 화면에 적용"
+
+# 작성 항목의 빈 양식이며 실제 화면의 작성·검토·실행 결과가 아니다.
+screen_template:
+  screen_id: null
+  name: null
+  feature_ids: []
+  purpose: null
+  user_task: null
+  context_refs: []                # user_context_template으로 작성한 사용자·업무·환경 근거
+  source_refs: []                 # 문서명·버전·관련 ID·원문/기존 설계/새 제안/사용자 결정 구분
+  decision_refs: []               # D 항목·적용 범위·미정 또는 채택 근거
+  viewport: null                 # 대상 크기와 축소 시 동작
+  layout_regions: []             # 영역명·표시 정보·우선순위·선택 연동
+  data_fields: []                 # 공급자 항목·표시명·단위·시간대·결측 표시·계약 참조
+  interactions: []                # 현재 상태·입력/행동·허용 조건·다음 표시·실패/복귀
+  state_views: []                 # 초기·로딩·정상·빈 결과·오류·선택 없음; 미적용은 이유
+  visual_rules: []                # 폰트·간격·색상·아이콘·키보드/포커스; 제안/확정 구분
+  mock_case_ids: []
+  usability_task_ids: []          # 사용자 목표 과제 연결. 실행에 사용한 기준 버전은 결과에 기록
+  usability_evaluation_ids: []    # 이 화면 버전에 대한 참여자·차수별 결과 ID
+  acceptance_cases: []            # 입력·절차·예상 결과·실제 결과·판정·증거 위치
+  artifact_paths: []              # 실제 파일/URL과 생성 예정 위치 구분
+  review_notes: []                # 검토자·검토 범위·의견·조치·보류 사유
+  open_questions: []
+  status:
+    authoring: "미착수"
+    review: "미검토"
+    execution: "미검증"
+
+# 모두 예정 시나리오다. 실행 시 실제 입력·절차·결과·증거를 별도로 기록한다.
+mock_scenarios:
+  - id: "MOCK-01"
+    feature_ids: ["GUI-01", "GUI-02", "GUI-05"]
+    input: "서로 다른 ID·위치·운행 상태를 가진 복수 AMR과 위치 변경을 공급"
+    expected: "요약·목록·Marker·선택 상세가 같은 AMR 데이터와 일치하고 Mock 표시가 보인다."
+  - id: "MOCK-02"
+    feature_ids: ["GUI-01", "GUI-02", "GUI-05"]
+    input: "로딩·빈 목록·공급자 오류·장비 미선택을 각각 재현"
+    expected: "각 상태를 구분하며 데이터가 없을 때 정상 운행이나 성공으로 오인시키지 않는다."
+  - id: "MOCK-03"
+    feature_ids: ["GUI-01", "GUI-02"]
+    input: "Broker 연결 상태와 특정 AMR의 수신 중단 상태를 별도 값으로 공급"
+    expected: "Broker 상태·개별 AMR 통신 상태·운행 State가 구분된다. 판단 정책은 D-09에 연결한다."
+  - id: "MOCK-04"
+    feature_ids: ["GUI-03"]
+    input: "알람 발생/해제 및 기간·장비·유형별 이력·빈 결과·조회 오류 공급"
+    expected: "현재 알람과 이력이 구분되고 조회 조건과 결과·오류가 일치한다."
+  - id: "MOCK-05"
+    feature_ids: ["GUI-04"]
+    input: "서로 다른 요청 ID에 성공·거부·Timeout·역순 응답을 공급"
+    expected: "원래 장비·요청의 결과가 표시되고 발행 성공을 동작 완료로 표시하지 않는다. ACK 의미·기한은 D-07에 연결한다."
+
+review_checklist:
+  - "각 화면의 목적·기능 ID·근거·미정 항목·완료 확인 조건이 연결되는가?"
+  - "실제 또는 예상 사용자의 업무·우선순위·환경을 확인하고 가정·미확인과 구분했는가?"
+  - "사용자 목표 과제와 사전 성공/실패 기준이 있고 Mock 검토와 사용성 평가 결과를 구분했는가?"
+  - "각 결과의 평가 ID가 고유하고 참여자·차수·과제 기준 버전·목업 버전·이전 평가를 구분하며, 재평가 후에도 과거 결과를 보존했는가?"
+  - "문제의 원인 단계로 돌아가 수정·재평가하고, 전달 차단 문제와 미검증·보류의 판단 근거를 기록했는가?"
+  - "운행·Alarm·통신·명령 상태를 각각 읽을 수 있는가?"
+  - "선택 AMR을 바꿔도 Marker·상세·명령 대상이 같은 ID를 가리키는가?"
+  - "좌표 단위·축·Map 변환과 시각 표시 기준이 명시되거나 미정 D 항목으로 연결되는가?"
+  - "오류·빈 결과·로딩·선택 없음에서 다음 행동과 복귀 방법을 알 수 있는가?"
+  - "글자·아이콘으로도 상태를 구별하고 키보드 조작·포커스·좁은 화면을 확인했는가?"
+  - "Mock 표시와 DataProvider 계약을 확인하고 GUI의 직접 MQTT·DB 접근을 추가하지 않았는가?"
+  - "설계 제안·사용자 확정·Mock 실행·실제 Core 연동 결과를 구분했는가?"
+
+pending_decisions:
+  - refs: ["D-02", "D-03"]
+    topic: "GUI의 축·Map 변환·좌표 범위와 표시 시간대"
+    resolve_before: "해당 표시 계약을 확정할 때; 과제2의 단위 결정을 전체 GUI 정책으로 확대하지 않는다."
+  - refs: ["D-05", "D-06", "D-07"]
+    topic: "명령 허용 조건·요청 ID 생성 책임·ACK 의미·Timeout·늦은 응답 표시"
+    resolve_before: "명령 상호작용을 확정할 때; Mock 임시 조건에는 제안임을 표시한다."
+  - refs: ["D-09", "D-10", "D-11"]
+    topic: "GUI 통신 상태 표현·History 조회 계약·DataProvider 상세 계약과 화면 갱신 방식"
+    resolve_before: "공급자 계약과 Mock 구현을 확정할 때; 기존 Heartbeat 개발 계약은 유지한다."
+  - refs: []
+    topic: "대상 화면 크기·GUI 프레임워크·폰트·색상·간격·목업 제작 도구"
+    resolve_before: "목업 제작 시 후보와 이유를 기록한다. 이 YAML에서 특정 기술이나 수치를 확정하지 않는다."
+
+change_history:
+  - date: "2026-10-23"
+    version: "0.3"
+    change: "사용자 요청에 따라 공유 과제 정의와 참여자·수행별 평가 결과를 분리. 과제 기준 버전·평가 ID·참여자·차수·목업 버전·재평가 연결과 과거 결과 보존 규칙을 추가하고 작성 구조 버전을 2.0으로 갱신. 실제 사용자 평가 미실행."
+  - date: "2026-10-23"
+    version: "0.2"
+    change: "사용자가 승인한 세 보완점을 반영. M01의 사용자·업무·환경 확인, M05의 목표 과제 기반 사용성 평가, M06의 수정·재평가와 전달 기준 및 작성 항목·참고 근거를 추가. 실제 조사·사용자 평가·GUI 실행은 수행하지 않음."
+  - date: "2026-10-23"
+    version: "0.1"
+    change: "사용자 요청에 따라 GUI 목업 설계 절차·화면 작성 항목·Mock 시나리오·검토 기준을 YAML로 작성. 화면 구현·실행 시험은 수행하지 않음."
