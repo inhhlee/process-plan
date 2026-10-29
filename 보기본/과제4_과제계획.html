@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제4 관제 시스템 기본 기능 과제계획</h1><div class="meta"><div><span>문서</span>v0.8 초안 · 수정 2026-10-25</div><div><span>계획 검토</span>전체 사용자 검토 대기. 2026-10-25 Core·Infrastructure 추가 위치와 Windows Forms 연계 구조는 사용자 승인</div><div><span>개발 / 실행 검증</span>실제 Core 업무 기능 미착수. 과제3의 최소 공유 계약은 구현됨 / 실제 Core 업무·저장 미검증. 공유 계약의 Mock 시험은 과제3 첫 작업에서 통과</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제4 관제 시스템 기본 기능 과제계획</h1><div class="meta"><div><span>문서</span>v0.9 초안 · 수정 2026-10-28</div><div><span>계획 검토</span>전체 사용자 검토 대기. 2026-10-25 Core·Infrastructure 추가 위치와 Windows Forms 연계 구조는 사용자 승인</div><div><span>개발 / 실행 검증</span>진행 중 — 두 AMR 최신 조회·통신 이상 업무 상태/경보·관제 미션 보류/명시 재개의 제한된 첫 Core 구현 로컬 완료. 전체 업무/저장은 후속 / Core9·전체1141·실제 MQTT6단계/GUI 연계 통과. SQLite·수신 Alarm 전체·정식 Command/ACK·배차/교통/안전은 미구현/미검증</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><a href="%EA%B3%BC%EC%A0%9C1_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제1</a><a href="%EA%B3%BC%EC%A0%9C2_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제2</a><a href="%EA%B3%BC%EC%A0%9C3_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제3</a><strong>과제4</strong><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C4/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -52,11 +52,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>수정일</td>
-<td>2026-10-25</td>
+<td>2026-10-28</td>
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.8 초안</td>
+<td>v0.9 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -76,11 +76,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>개발 상태</td>
-<td>실제 Core 업무 기능 미착수. 과제3의 최소 공유 계약은 구현됨</td>
+<td>진행 중 — 두 AMR 최신 조회·통신 이상 업무 상태/경보·관제 미션 보류/명시 재개의 제한된 첫 Core 구현 로컬 완료. 전체 업무/저장은 후속</td>
 </tr>
 <tr>
 <td>실행 검증 상태</td>
-<td>실제 Core 업무·저장 미검증. 공유 계약의 Mock 시험은 과제3 첫 작업에서 통과</td>
+<td>Core9·전체1141·실제 MQTT6단계/GUI 연계 통과. SQLite·수신 Alarm 전체·정식 Command/ACK·배차/교통/안전은 미구현/미검증</td>
 </tr>
 <tr>
 <td>개발 시작 예정일</td>
@@ -92,7 +92,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>실제 개발 착수일</td>
-<td>미정</td>
+<td>2026-10-28 — 두 AMR 통신 관측에 따른 제한된 Core 업무 처리</td>
 </tr>
 <tr>
 <td>관련 일정</td>
@@ -128,18 +128,34 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>이번 작업</td>
-<td>과제3에서 구현한 Core 최소 조회·명령 계약과 검증 근거 연결. 실제 Core 업무 기능의 첫 구현·검증은 미선정</td>
+<td><a href="#two-amr-domain-20261028">두 AMR 도메인 관리자</a>: CORE-01/02 일부·통신 업무 경보·시연 미션 보류/명시 재개</td>
 </tr>
 <tr>
 <td>이번 작업 준비</td>
-<td>최소 조회·명령 계약은 과제3의 Mock 기반 첫 작업에서 공유. 업무 서비스·Infrastructure·DB와 대응 시험은 해당 기능 착수 때 추가</td>
+<td>기존 공유 계약 유지, AmrDomainManager/AmrDomainModels·Core 시험 추가. 미등록 자동 등록/DB·정식 Command/ACK는 후속</td>
 </tr>
 <tr>
 <td>실제 진행 기록</td>
-<td><a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-25.md#gui-first-implementation">10/25 공유 계약·Mock 결과</a> — 실제 Core 업무 완료와 구분</td>
+<td><a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-28.md#two-amr-domain-20261028">10/28 두 AMR 결과</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-25.md#gui-first-implementation">10/25 기존 공유 계약</a></td>
 </tr>
 </tbody></table></div>
-<p>이 계획은 프로젝트의 과제4를 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 계획과 예상 결과를 작성한 상태이며 이 과제의 실제 구현·시험 결과는 이 문서에서 아직 확인하지 않았다. 기존 코드의 재사용 범위는 착수 전에 대조한다. 아래 작업 순서와 시험 항목은 요구사항·공통 규칙·데이터·기능명세를 기준으로 제안한 초기 계획이다.</p>
+<p>이 계획은 과제4 전체 목표·작업·시험을 관리한다. 2026-10-28 두 AMR 통신 관측에 따른 제한된 Core 업무 처리를 구현·검증했으며 아래 최신 결과에 연결한다. 전체 업무/DB는 후속이고 과거 미착수 기록은 당시 이력으로 보존한다.</p>
+<p><a id="two-amr-domain-20261028"></a></p>
+<p><strong>2026-10-28 착수 — 두 AMR 독립 감시·Core 도메인 후속 처리</strong></p>
+<ul>
+<li>사용자 요청으로 기존 AMR별 수신 큐를 재사용해 등록한 두 AMR의 Heartbeat를 독립 감시한다. 통신 관측 이벤트 → Core AMR 도메인 관리자 → 조회 상태/업무 경보 → GUI 경로를 추가한다. 기존 단일 AMR·Mock·F5 경로와 모든 미커밋 변경·증거를 보존하며 커밋·푸시·PR·병합은 하지 않는다.</li>
+<li>사용자 선택 정책: 무응답/통신 단절에는 해당 AMR의 관제 미션을 보류하고 업무 경보를 표시한다. Heartbeat 복구로 생존/통신 관측과 경보는 복구하지만 미션은 자동 재개하지 않고 명시적 재개를 기다린다. 차량 이동 중단 명령·교통 노드 락·실제 안전 인터록은 이번 범위가 아니다. Telemetry 운행 상태와 관제 미션 보류는 구분한다.</li>
+<li>기존 대상: Communication 세션/AMR별 큐/감시기, Core 공유 계약, Map 조립 호스트·GUI 공급자/폼. 생성 예정: Core AMR 도메인 관리자/입력·조회 모델·단위시험, 통신의 형식화 관측 이벤트와 다중 ID 감시, 두 AMR 호스트/변환 어댑터·설정·시험. Core는 MQTT·타이머·GUI 참조 없이 도메인 정책을 소유하고 통신은 미션을 모른다. 기존 F5 프로필은 유지하고 두 AMR 프로필을 추가한다.</li>
+<li>완료조건/시험 입력·예상: A1 처리 지연에도 A2 큐 진행, 두 Heartbeat 정상→A1만 중단 시 A1무응답/미션 보류·경보1/A2정상, 복구 시 미션 보류 유지→명시 재개, 불량/미등록 ID 격리, Broker 단절 시 두 감시 중지/도메인 상태와 마지막 Telemetry 보존, 중복·이전 세션/늦은 입력 배제와 종료 정리. 자동 회귀·실제 MQTT·Windows Forms 두 장비/경보/선택/재개·기존 Mock/단일 F5를 대조한다.</li>
+<li>착수 기준: HEAD4e44fa8·feature/46-grid-map-integration, 기존3263파일 SHA256 및 소스ZIP 백업 완료. 실행별 코드·입력·예상/실제·판정·실패/미검증은 <code>C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\</code>에서 관리한다. 전체 Core/DB·교통/안전·장시간/대규모·과제 전체 완료로 확대하지 않는다.</li>
+</ul>
+<p><strong>2026-10-28 후속 결과 — 제한된 Core 첫 업무 구현 로컬 완료</strong></p>
+<ul>
+<li>신규 AmrDomainManager/AmrDomainModels가 등록한 두 ID의 최신 상태·관제 미션·통신 업무 경보·불변 조회를 관리한다. 통신 관측은 FleetCommunicationBridge가 Core 입력으로 변환한다. Core에는 MQTT·타이머·GUI 참조가 없고 I/O 없는 짧은 잠금으로 조회 일관성을 유지한다.</li>
+<li><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EA%B2%80%ED%86%A0%20%EB%B0%8F%20%EA%B2%B0%EC%A0%95%EC%82%AC%ED%95%AD.md#two-amr-core-policy-20261028">사용자 선택</a>대로 COMM_LOST/BROKER_LOST에서 해당 미션을 보류하고 경보를 만든다. 통신 복구는 활성 경보를 해제하되 명시 재개를 기다린다. 보류 중 도착은 완료 관측을 유지해 명시 재개 시 완료 처리한다. Telemetry 운행 State/물리 이동은 바꾸지 않는다. 이전 세션·중복/역순 관측·이전 미션 완료를 배제하며 마지막 Heartbeat/Telemetry를 보존한다.</li>
+<li>Core9·전체1141/1141, 실제 MQTT6단계·GUI 연계 통과. 불변 조회·동시 갱신·복구 후 보류·Broker 단절을 확인했다. <a href="C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md">실행별 코드·입력/예상/실제·실패/한계·보존 감사</a> · <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md#two-amr-domain-20261028">GUI 검증 구분</a>.</li>
+<li>메모리 내 두 대·관제 미션·통신 업무 경보의 제한 범위다. CORE-03 수신 Alarm 전체·정식 Command/ACK·DB·배차·교통 락·차량 Watchdog·자동 재접속·운영 전체 완료는 포함하지 않는다. 기존 Core 공유 계약·Mock·미커밋 변경·시험 근거를 유지했고 Git 게시 단계는 수행하지 않았다.</li>
+</ul>
 </section>
 <section id="s2"><h2><span class="num">2</span>배경과 목적</h2><p>GUI와 통신 사이의 핵심 서비스 계층을 라이브러리로 구성하여 장비·최신 상태·알람·명령·이력을 처리하고, 입력과 처리 결과를 개별 시험으로 확인한다.</p>
 </section>
@@ -302,7 +318,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </ul>
 <ol class="timeline" aria-label="개발 단계"><li>업무 계약</li><li>장비·최신 상태</li><li>알람·명령</li><li>이력 저장·조회</li><li>개별 시험·정리</li></ol>
 <h3>전체 작업 순서</h3>
-<p>이 계획의 개발 상태는 미착수로 유지하며 작업별 예정 기한은 미정이다. 기존 코드의 해당 과제 적용 범위를 확인한 뒤 실제 상태를 갱신한다. 필요한 설계 결정부터 정리하고 결정 내용을 적용한 버전으로 시험한다.</p>
+<p>개발 상태는 제한된 Core 첫 업무 구현으로 진행 중이다. 두 AMR 최신 상태·통신 업무 경보·미션 보류/명시 재개만 완료했으며, 아래 표는 과제 전체 작업 순서다. 나머지 정책·업무/저장 구현·기한은 후속/미정으로 유지한다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -356,7 +372,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </tbody></table></div>
 <h3>이번 구현 작업 단위</h3>
-<p>현재 구현 대상은 <code>C:/amr-control-system-demo</code>이다. Core의 최소 공유 계약은 존재하고 Infrastructure·실제 업무 구현·대응 시험 프로젝트는 추가 예정이다. 최소 Core 계약의 작성 범위·시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md#gui-first-work">과제3 첫 작업</a>에서 관리하고 중복 구현하지 않는다. 과제4의 실제 업무 기능 첫 구현은 미선정이며 <a href="../%EA%B8%B0%EC%A4%80/%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%20%EC%9E%91%EC%84%B1%20%EA%B7%9C%EC%B9%99.md">개발계획 작성 규칙</a>에 따라 착수 전에 아래 표의 세부 파일·변경·시험을 구체화한다.</p>
+<p>현재 구현 대상은 C:/amr-control-system-demo다. 기존 Core 공유 계약을 보존하고 AmrDomainManager.cs·AmrDomainModels.cs와 tests/Amr.Core.Tests를 추가했다. 아래 작업은 이번 두 AMR 범위이며 Infrastructure·SQLite·정식 명령 업무는 추가하지 않았다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -368,11 +384,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </thead>
 <tbody><tr>
-<td>미선정 — 착수 전 기능 선택</td>
-<td>기존 <code>src/Amr.Core/</code>에 업무 구현 추가, 신규 <code>src/Amr.Infrastructure/</code>·대응 시험 프로젝트</td>
-<td>선택한 기능의 변경 범위·정확한 파일은 착수 때 작성</td>
-<td>채택한 계약을 유지하고 8절 D 항목의 남은 상세 중 필요한 것부터 확인</td>
-<td>아래 이번 작업 시험에 실제 입력·판정 기준 작성</td>
+<td>CORE-01/02 일부·통신 업무 경보·시연 미션</td>
+<td>신규 src/Amr.Core/AmrDomainManager.cs·AmrDomainModels.cs·tests/Amr.Core.Tests, Map FleetCommunicationBridge/FleetMapSession, 기존 통신/GUI 연결</td>
+<td>고정 두 ID·관측→업무 상태·경보·보류/명시 재개·불변 조회</td>
+<td>D-09 사용자 선택, DN-10 유지. 물리 정지·수신 Alarm/정식 Command/ACK·DB는 제외</td>
+<td>A1 무응답만 보류/경보1·A2 정상, 복구해도 보류, 명시 재개, Broker 단절 보류2·경보2, 이전 세션/중복 배제</td>
 </tr>
 </tbody></table></div>
 </section>
@@ -428,7 +444,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tbody></table></div>
 <p>실행 후에는 사용 설정·계약 버전, 입력, 절차, 예상 결과, 실제 결과, 판정 및 Log·화면·DB 등 근거를 검증 결과에 작성한다. 미정 정책에 의존하는 시험은 해당 결정 항목과 적용 값을 함께 기록한다.</p>
 <h3>이번 작업 시험</h3>
-<p>실제 Core 업무 기능의 이번 작업은 미선정이며 아래 항목은 착수 전에 작성한다. 공유 계약의 Mock 시험은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md#gui-first-work">과제3 첫 작업</a>에서 관리한다. 전체 시험 계획에서 선택한 업무 범위를 구체화하며 실제 결과는 실행별 검증결과에 기록한다.</p>
+<p>이번 시험은 두 AMR 제한 Core 업무다. 기존 Mock 공유 계약 회귀와 실제 통신→Core→GUI 연계를 구분한다. 전체 수신 Alarm·명령/ACK·DB 성공으로 확대하지 않는다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -439,14 +455,14 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </thead>
 <tbody><tr>
-<td>미선정 — 작업 선택 후 부여</td>
-<td>미작성 — 실제 입력·조건 작성</td>
-<td>미작성 — 관찰 가능한 결과 작성</td>
-<td>미작성 — 실패로 판단할 결과 작성</td>
+<td>CORE-FLEET-01~09</td>
+<td>두 고정 ID·수신/Timeout/복구·Broker 단절·이전 세션/순번·보류 중 도착·동시 갱신</td>
+<td>해당 ID만 보류/경보, 복구 뒤 명시 재개, 마지막 상태/시각 보존·불변 조회·늦은 입력 배제. Core9 및 전체1141/실제6단계 통과</td>
+<td>다른 AMR 오염·자동 재개·물리 State 위조·이전 입력 반영·Broker 단절 후 가짜 Timeout</td>
 </tr>
 </tbody></table></div>
 <h3>상세 실행 절차</h3>
-<p>미작성 — 이번 작업 선택 후 실행 환경·명령·순서·관찰 조건·기록 위치를 착수 전에 작성한다. 실제 시험 결과는 <a href="../%EA%B8%B0%EC%A4%80/%EC%96%91%EC%8B%9D/%EA%B2%80%EC%A6%9D%EA%B2%B0%EA%B3%BC.md">검증결과 빈 양식</a>을 사용해 이 과제의 <code>산출물/</code>에 남긴다.</p>
+<p>실행 환경·명령·시험 입력·예상/실제·판정은 코드 저장소 evidence/COM-02/20261028-two-amr-domain-01/README.md와 최종 소스 해시에 연결했다. 실제 MQTT는 전용 Broker/시험 호스트를 사용했고 단일 AMR15건도 회귀했다. 네이티브 Fleet F5/재개 버튼 클릭·정상 GUI 닫힘은 이번 미검증이다.</p>
 </section>
 <section id="s8"><h2><span class="num">8</span>참고 사항·제약</h2><h3>근거와 미정 사항</h3>
 <ul>
@@ -463,7 +479,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </ul>
 <h3>다음 작업·기록 위치</h3>
 <ul>
-<li>첫 개발 준비 작업: GUI의 최소 공유 계약은 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md#gui-first-result">과제3 첫 작업 결과</a>를 재사용한다. 실제 업무 기능은 채택한 Core CommandId 생성·발행 전 기록과 최종 결과 ACK를 적용하고, 미등록 처리·최신 상태 판정·SQLite 업무 이벤트와 저장 실패 정책 중 해당 기능에 필요한 상세를 정한다.</li>
+<li>다음 업무 구현: 이번 두 AMR Core 범위와 기존 공유 계약을 재사용한다. 정식 CommandId/발행 전 기록·최종 ACK·SQLite 업무 이벤트/실패 처리·수신 Alarm은 해당 기능 착수 시 필요한 정책을 선택하고 별도 검증한다.</li>
 <li>결정 항목 처리: 검토 및 결정사항의 D-01, D-03, D-05~D-11에 후보·영향·결정 근거를 갱신한다.</li>
 <li>기록 위치와 상태 갱신: <a href="../README.md#document-map">업무 문서 역할 안내</a>와 <a href="../%EA%B8%B0%EC%A4%80/%EA%B3%B5%ED%86%B5%20%EC%9E%91%EC%84%B1%20%EA%B7%9C%EC%B9%99.md#changes">공통 변경 기준</a>을 따른다.</li>
 </ul>
@@ -477,6 +493,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-28</td>
+<td>v0.9 초안</td>
+<td>두 AMR 최신 상태·통신 업무 경보·관제 미션 보류/명시 재개 첫 Core 구현으로 진행 중 전환. Core9/전체1141·실제6단계·GUI 연결과 보존/미검증 기록. 전체 업무·DB·운영 정책은 후속.</td>
+</tr>
+<tr>
 <td>2026-10-25</td>
 <td>v0.8 초안</td>
 <td>과제3에서 생성·검증한 최소 Core 계약의 현재 상태와 결과 연결. 실제 업무 서비스·Infrastructure·SQLite는 미착수·미검증으로 구분 유지.</td>

@@ -26,7 +26,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 @media(max-width:700px){.cover{padding:28px 20px}.wrap{padding:20px 12px 36px}h1{font-size:25px}.meta{grid-template-columns:1fr;gap:12px}.toc,section{padding:22px 18px}.toc ol{columns:1}.timeline{flex-direction:column}.timeline li{text-align:left;display:flex;gap:12px;align-items:center;padding:10px 12px}.timeline li:before{margin:0;flex-shrink:0}.table-wrap table{min-width:540px}section:first-of-type table{min-width:0}section:first-of-type td:first-child{width:100px}section h2{font-size:19px}}
 @media print{body{background:white}.cover{background:white;color:var(--navy);padding:0 0 18px}.eyebrow,.meta span{color:var(--muted)}.meta{border-color:var(--line)}.wrap{padding:0}.toolbar,.notice{display:none}.toc,section{border:0;border-radius:0;padding:16px 0;margin:0}h2,h3{break-after:avoid}tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit;text-decoration:none}input{opacity:1}.timeline{break-inside:avoid}}
 </style></head>
-<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제2 가상 AMR 과제계획</h1><div class="meta"><div><span>문서</span>v0.16 초안 · 수정 2026-10-22</div><div><span>계획 검토</span>전체 상세는 기존 검토 상태 유지. 첫 실행본 승인에 더해 격자·고정 장애물·4방향 다익스트라/A* 비교 범위를 2026-10-21 사용자 추가 승인</div><div><span>개발 / 실행 검증</span>첫 실행본·MQTT #38·보존자료 #40 develop 반영 완료. [PR #39](https://github.com/inhhlee/amr-control-system-demo/pull/39)·[PR #41](https://github.com/inhhlee/amr-control-system-demo/pull/41) 병합·Issue completed 종료. 지도 후속·격자 탐색 미착수 / MQTT 리뷰 수정 후 빌드 경고/오류0·Simulator154·실제 MQTT7시나리오 통과. 통신768은 동일 소스 기존 근거 재사용. 자료 정리는 제품 변경0·제품 재시험0. MQTT 지도 최종 화면·격자 미검증</div></div></div></header>
+<body><header class="cover"><div class="cover-inner"><div class="eyebrow">DEVELOPMENT PLAN · 개발계획서</div><h1>과제2 가상 AMR 과제계획</h1><div class="meta"><div><span>문서</span>v0.19 초안 · 수정 2026-10-27</div><div><span>계획 검토</span>전체 상세는 기존 검토 상태 유지. 첫 실행본 승인에 더해 격자·고정 장애물·4방향 다익스트라/A* 비교 범위를 2026-10-21 사용자 추가 승인</div><div><span>개발 / 실행 검증</span>진행 중 — 첫 실행본·MQTT 정식 반영 완료. 보존 격자 시연은 #46에서 최신 develop로 선별 이관·로컬 검증 완료, 미커밋. A* 비교·과제 전체는 후속 / 후속 Simulator202·Map66 및 실제 격자15/설정6 회귀 통과. 과제1 감시/GUI를 포함한 자동1095와 이전 실행 근거는 구분, PF 전체·실제 Core/DB·로봇은 미검증</div></div></div></header>
 <main class="wrap"><nav class="toolbar" aria-label="계획서 이동"><a href="%EA%B0%9C%EB%B0%9C%EA%B3%84%ED%9A%8D%EC%84%9C.html">빈 양식</a><a href="%EA%B3%BC%EC%A0%9C1_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제1</a><strong>과제2</strong><a href="%EA%B3%BC%EC%A0%9C3_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제3</a><a href="%EA%B3%BC%EC%A0%9C4_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제4</a><a href="%EA%B3%BC%EC%A0%9C5_%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.html">과제5</a><a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C2/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md">Markdown 원본</a></nav><p class="notice">이 문서는 Markdown 원본에서 만든 보기본입니다. 완료 체크는 실제 결과를 확인한 후 원본에서 갱신합니다.</p><nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#s1">문서 개요</a></li><li><a href="#s2">배경과 목적</a></li><li><a href="#s3">용어 설명</a></li><li><a href="#s4">기능 범위</a></li><li><a href="#s5">사용할 기술</a></li><li><a href="#s6">개발 로드맵</a></li><li><a href="#s7">완료 기준</a></li><li><a href="#s8">참고 사항·제약</a></li></ol></nav><section id="s1"><h2><span class="num">1</span>문서 개요</h2><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -52,11 +52,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>수정일</td>
-<td>2026-10-22</td>
+<td>2026-10-27</td>
 </tr>
 <tr>
 <td>버전</td>
-<td>v0.16 초안</td>
+<td>v0.19 초안</td>
 </tr>
 <tr>
 <td>양식 버전</td>
@@ -76,11 +76,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>개발 상태</td>
-<td>첫 실행본·MQTT #38·보존자료 #40 develop 반영 완료. <a href="https://github.com/inhhlee/amr-control-system-demo/pull/39">PR #39</a>·<a href="https://github.com/inhhlee/amr-control-system-demo/pull/41">PR #41</a> 병합·Issue completed 종료. 지도 후속·격자 탐색 미착수</td>
+<td>진행 중 — 첫 실행본·MQTT 정식 반영 완료. 보존 격자 시연은 #46에서 최신 develop로 선별 이관·로컬 검증 완료, 미커밋. A* 비교·과제 전체는 후속</td>
 </tr>
 <tr>
 <td>실행 검증 상태</td>
-<td>MQTT 리뷰 수정 후 빌드 경고/오류0·Simulator154·실제 MQTT7시나리오 통과. 통신768은 동일 소스 기존 근거 재사용. 자료 정리는 제품 변경0·제품 재시험0. MQTT 지도 최종 화면·격자 미검증</td>
+<td>후속 Simulator202·Map66 및 실제 격자15/설정6 회귀 통과. 과제1 감시/GUI를 포함한 자동1095와 이전 실행 근거는 구분, PF 전체·실제 Core/DB·로봇은 미검증</td>
 </tr>
 <tr>
 <td>개발 시작 예정일</td>
@@ -128,19 +128,37 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 <tr>
 <td>이번 작업</td>
-<td><a href="#mqtt-map-next-deliverable">MQTT 리뷰 수정·게시·병합과 보존 자료 정리 완료</a>. 코드 저장소 미커밋0·stash0, 다음은 별도 수신 지도 작업</td>
+<td><a href="#grid-map-integration-46">#46 격자 지도 선별 이관·검증</a> 완료. Issue open·작업 브랜치 로컬 변경, 커밋·푸시·PR·병합 미수행</td>
 </tr>
 <tr>
 <td>이번 작업 준비</td>
-<td>develop 4bd0be3에 PR #39·#41 반영 확인. 검증된 소스100개·보존 자료70개 해시와 병합 tree 일치. 후속 지도·격자 범위 유지</td>
+<td>최신 origin/develop=4e44fa8에서 feature/46-grid-map-integration 생성. 보존4b9f950·stash1개·원래 미추적50개를 복구 검증된 백업과 함께 유지</td>
 </tr>
 <tr>
 <td>실제 진행 기록</td>
-<td><a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-22.md#finish-38-40-results">10/22 최종 반영·정리</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-22.md#pr39-review-results">리뷰·재검증</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-22.md#mqtt-38-results">앞선 분리 결과</a></td>
+<td><a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-27.md#grid-map-integration-46">10/27 백업·선별 이관·검증</a> · <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-22.md#finish-38-40-results">10/22 최종 반영·정리</a></td>
 </tr>
 </tbody></table></div>
-<p>이 계획은 프로젝트의 과제2를 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 2026-10-20 사용자는 과제1의 남은 개발을 보류하고 과제2를 먼저 진행하도록 요청했다. 10/21 우선 목표였던 설정 로드 → AMR 1대 생성 → 경로 이동·도착의 첫 실행본은 PR #35<del>37로 develop에 반영됐다. 10/22 현재 #28·#32</del>34는 완료 종료이며, 다음 결과물은 보존한 MQTT 송수신과 지도 시연의 정식 반영으로 제안한다. 과제2 전체 검증·과제1 전체 완료·책임님의 검토 및 납품 일정 승인은 남아 있다.</p>
+<p><a id="grid-map-integration-46"></a></p>
+<p><strong>10/27 후속 GUI 연결:</strong> 사용자 Figma 요청으로 기존 Windows Forms에 이 격자 호스트의 수신 상태를 연결했다. GUI48건·실제9/15회/중단/서버 종료 근거는 <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C3/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md#grid-gui-connect">과제3 담당 기록</a>을 따른다. 아래 자동1063·보호85파일 불변은 앞선 선별 이관 시점의 결과이며 GUI후속에서 기존4파일을 의도적으로 수정했다. Core/MQTT/Simulator와 이관31파일·기존 증거는 유지했다.</p>
+<p><strong>2026-10-27 현재 — 보존 격자 지도 선별 이관·로컬 검증 완료</strong></p>
+<ul>
+<li>사용자 요청 범위는 Issue·브랜치 생성과 선별 이관·검증까지다. <a href="https://github.com/inhhlee/amr-control-system-demo/issues/46">Issue #46</a>, <code>feature/46-grid-map-integration</code>, 기준 develop <code>4e44fa880cb0d1fcccb000dbc53e634fd90381b5</code>, 보존 원본 <code>4b9f950555aff6ad23e67495b5d0ec9cb9371b3b</code>이다. 새 커밋·푸시·PR·병합 없이 로컬 변경으로 남겼다.</li>
+<li>실제 대상은 Simulator Navigation·Map 웹 호스트/수신 모델·설정·관련 시험 31파일과 솔루션·실행 안내다. 기존 MQTT 접속/단절 수정·Core·Mock GUI 보호85파일, 원래 미추적50파일, stash1개·보존 브랜치·백업의 해시/참조가 같음을 확인했다. 초기 추출의 과거 11회 우회 시험1개는 현재15회 계약과 달라 이관에서 제외하고 원본/ZIP에 유지했다.</li>
+<li>이번 시험: 빌드 경고0·오류0, 자동1063건(통신768·Simulator200·ControlGui32·Map63), 실제 격리 MQTT15시나리오·설정6항목 통과. 실제 브라우저에서 이동1회 뒤(2,2)차단→총15회·W1/W2/G 방문11/13/15회·수신(4,5)·Telemetry(5,-4)/IDLE/속도0·최종 송수신 시각 일치를 확인했다. 기존 WinForms 화면은 이번 재조작 없이 자동32건과 소스 보존으로 회귀를 확인했다.</li>
+<li><a href="C:/amr-control-system-demo/evidence/AMR/20261027-grid-integration-01/README.md">이번 코드·환경·입력·예상·실제·판정·실패/미검증 원본</a> · <a href="C:/amr-control-system-demo/evidence/AMR/20261027-grid-integration-01/final-audit.json">최종 보존 감사</a> · <a href="C:/amr-control-system-demo/evidence/GIT/20261027-preservation-backup-01/README.md">복구 가능한 백업</a>. 새 근거는 로컬 미게시이며 GitHub 공개 링크로 표시하지 않는다.</li>
+<li>이번 대상은 단일 AMR 다익스트라·동적 장애물·1칸=1m·X=열/Y=-행의 기존 시연이다. 기능명세 v0.13·공통데이터 v0.12·결정사항 v0.16의 후속 A* 비교·셀 중심 좌표·고정 비교 스냅샷 계약을 바꾸지 않는다. AMR2-PF01~10 전체 통과·전체 GUI/Core/DB·명령/ACK·다중 AMR 완료로 확대하지 않는다.</li>
+<li>종료: 시험 소유 서버/Broker만 정리하고 기존 컨테이너 상태를 보존했다. 다음은 사용자 검토 후 별도 요청에 따른 커밋·게시·PR 단계다. Issue는 open, 과제 전체·과제1 보류·미정 기한은 유지한다. 아래 10/22까지의 미착수/미커밋0/stash0·후속 제안은 당시 기록이다.
+이 계획은 프로젝트의 과제2를 완료하기 위한 목표·작업 순서·산출물·확인 기준을 정리한다. 2026-10-20 사용자는 과제1의 남은 개발을 보류하고 과제2를 먼저 진행하도록 요청했다. 10/21 우선 목표였던 설정 로드 → AMR 1대 생성 → 경로 이동·도착의 첫 실행본은 PR #35<del>37로 develop에 반영됐다. 10/22 현재 #28·#32</del>34는 완료 종료이며, 다음 결과물은 보존한 MQTT 송수신과 지도 시연의 정식 반영으로 제안한다. 과제2 전체 검증·과제1 전체 완료·책임님의 검토 및 납품 일정 승인은 남아 있다.</li>
+</ul>
 <p><strong>2026-10-21 추가 문서 반영:</strong> <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EB%AA%85%EC%84%B8/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98.md#grid-pathfinding-scope">사용자 추가 요구</a>의 격자 최단 경로 비교를 후속 작업으로 추가한다. 새 기능은 미착수·미검증이며 이번 요청은 명세·계획 작성까지다. 아래의 첫 실행본 일정·상태 설명은 앞선 계획/조회 이력이고, 현재 기존 구현의 근거는 위 실제 진행 기록을 따른다. #33 검증 통과를 격자 탐색 성공으로 확대하지 않는다.</p>
+<p><a id="heartbeat-one-20261027"></a></p>
+<p><strong>2026-10-27 후속 — 임무 사이의 AMR 통신 유지</strong></p>
+<ul>
+<li>사용자 요청으로 지도 호스트 시작부터 AMR 송수신 세션을 열고 Ready·차단 대기·도착·중단·초기화에도 Heartbeat/Telemetry를 유지한다. 최종 정지 수신은 임무 완료이며 통신 종료와 구분한다. 초기화는 마지막 수신값·수신 건수를 보존하고 다음 실제 Telemetry로 시작 위치를 갱신한다.</li>
+<li>최종 발행 중 초기화는 임무 세대 번호로 이전 완료 알림을 배제한다. AMR 송신 실패는 독립 관제 연결·감시를 유지하며 Broker 단절과 구분한다. 새 임무 궤적에는 이미 실제 수신한 시작 좌표만 남긴다.</li>
+<li>Simulator202·Map66 자동시험, 실제 격자15·설정6 회귀 통과. <a href="../%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/%EA%B3%BC%EC%A0%9C1/%EA%B3%BC%EC%A0%9C%EA%B3%84%ED%9A%8D.md#heartbeat-one-20261027">과제1 감시 결과·근거</a> · <a href="C:/amr-control-system-demo/evidence/COM-02/20261027-heartbeat-one-01/README.md">상세 검증</a>. 기존 증거는 보존하며 게시·다중 AMR·A* 비교·실제 Core/DB·전체 과제 완료는 후속이다.</li>
+</ul>
 </section>
 <section id="s2"><h2><span class="num">2</span>배경과 목적</h2><p>이동·상태 변경·알람 발생·명령 응답을 제공하는 독립 시뮬레이터를 구성하고, 수량·초기 좌표·속도·이동 경로·장애 시나리오를 설정 파일로 바꾸어 시험할 수 있도록 한다.</p>
 </section>
@@ -731,7 +749,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </ul>
 <h3>다음 작업·기록 위치</h3>
 <ul>
-<li>현재 다음 행동: MQTT #38/PR #39와 자료 정리 #40/PR #41의 develop 반영·종료를 완료했다. 별도 MQTT 수신 지도 Issue/PR에서 실제 브라우저·수신 대조와 안내를 정리하고, 이후 승인 격자 비교를 진행한다. <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-22.md#finish-38-40-results">최종 반영 기록</a> 참조.</li>
+<li>현재 다음 행동: <a href="#grid-map-integration-46">#46 로컬 이관·검증</a>을 사용자와 검토한 뒤 요청된 단계에서 커밋·게시·PR을 진행한다. A* 비교·전체 통합은 별도 후속이다.</li>
 <li>추가 범위의 다음 작업: 사용자 구현 요청 후 <a href="#grid-pathfinding-work">격자 작업 단위</a>의 입력/API·코드/PR 기준을 대조하고 AMR2-PF01~10 준비부터 진행한다. 이번에는 문서 반영에서 마친다.</li>
 <li>앞선 첫 실행본 다음 작업 기록: PR #35의 develop 병합은 확인했다. #32 완료조건·근거와 남은 Issue 종료 여부를 확인하고 최신 develop에서 #33 이동 계산의 착수 조건을 점검한다. #33 PR 반영 후 #34 실행 루프·최종 검증 순서다. 다음 작업일·전체 완료 기한은 미정이며 <a href="../%EC%9D%BC%EC%9D%BC%EC%97%85%EB%AC%B4/2026-10-21.md#task2-results">10/21 실제 결과와 이월</a>에 연결한다.</li>
 <li>결정 항목 처리: D-02·D-05·D-12의 승인한 첫 실행본 범위를 구현 때 적용하고, 후속 명령·장애·송신 단계 전에 남은 후보·영향·결정 근거를 갱신한다. 이미 정한 범위를 다시 미정으로 만들지 않는다.</li>
@@ -747,6 +765,21 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}.sour
 </tr>
 </thead>
 <tbody><tr>
+<td>2026-10-27</td>
+<td>v0.19 초안</td>
+<td>단일 AMR 통신 수명을 임무와 분리하고 대기/도착/중단/초기화 Heartbeat 유지·최종 수신 고정·늦은 완료 격리·출발 궤적 보존 및 회귀 근거 연결.</td>
+</tr>
+<tr>
+<td>2026-10-27</td>
+<td>v0.18 초안</td>
+<td>후속 Figma/Windows Forms 격자 연결·GUI48/실제 창 검증의 담당 과제3 기록 연결. 앞선 이관1063/보호85 불변의 실행 시점을 구분하고 Core/MQTT·이관31·증거 보존 유지.</td>
+</tr>
+<tr>
+<td>2026-10-27</td>
+<td>v0.17 초안</td>
+<td>#46 최신 develop 기반 격자 선별 이관31파일·자동1063/실제 MQTT15/설정6/브라우저15회 결과, 보호85·미추적50·stash/백업 보존과 미커밋 상태 연결. 기존 시연과 후속 A*·셀 중심 계약·전체 미완료를 구분.</td>
+</tr>
+<tr>
 <td>2026-10-22</td>
 <td>v0.16 초안</td>
 <td>MQTT 리뷰 수정154건/실제7·PR #39 develop 반영과 #38 종료, 기존72개 검토·PR #41 반영/#40 종료·코드 미커밋0 연결. 기존 실행과 새 문서 검사 구분, 지도/격자·기한·과제 전체 미완료 유지.</td>
